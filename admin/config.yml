@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: kirami18-dev/insee-uav
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "หน้าเว็บ"
+    files:
+      - label: "หน้าหลัก"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
+          - {label: "Hero Title (TH)", name: "hero_title_th", widget: "string"}
+          - {label: "Hero Subtitle (TH)", name: "hero_subtitle_th", widget: "text"}
