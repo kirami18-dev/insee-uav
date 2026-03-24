@@ -1,20 +1,169 @@
 backend:
-  name: github
-  repo: kirami18-dev/insee-uav
+  name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# ทำให้ editorial workflow ปิด (ง่ายกว่าสำหรับผู้ใช้คนเดียว)
+publish_mode: simple
 
 collections:
-  - name: "pages"
-    label: "หน้าเว็บ"
+
+  # ==============================
+  # HERO SECTION
+  # ==============================
+  - name: "hero"
+    label: "🏠 Hero (หน้าแรก)"
     files:
-      - label: "หน้าหลัก"
-        name: "home"
-        file: "content/home.json"
+      - label: "Hero Content"
+        name: "hero"
+        file: "content/hero.json"
         fields:
-          - {label: "Hero Title", name: "hero_title", widget: "string"}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
-          - {label: "Hero Title (TH)", name: "hero_title_th", widget: "string"}
-          - {label: "Hero Subtitle (TH)", name: "hero_subtitle_th", widget: "text"}
+          - { label: "Tagline (บรรทัดเล็ก)", name: "tagline", widget: "string", default: "INNOVATE BEYOND LIMITS" }
+          - { label: "หัวข้อหลัก", name: "headline", widget: "string", default: "Defense & Security UAV Solutions" }
+          - { label: "คำอธิบาย", name: "description", widget: "text" }
+          - { label: "ปุ่ม CTA", name: "cta_text", widget: "string", default: "Explore Our Platforms" }
+          - { label: "รูป Background / UAV หลัก", name: "hero_image", widget: "image" }
+
+  # ==============================
+  # PLATFORMS (UAV Products)
+  # ==============================
+  - name: "platforms"
+    label: "✈️ Platforms (สินค้า UAV)"
+    label_singular: "Platform"
+    folder: "content/platforms"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ชื่อรุ่น", name: "title", widget: "string", hint: "เช่น INSEE-250, INSEE-350" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", hint: "เช่น E-VTOL Fixed-Wing UAV" }
+      - { label: "รายละเอียด", name: "description", widget: "text" }
+      - { label: "รูป UAV", name: "image", widget: "image" }
+      - label: "Specs (ตัวเลขสำคัญ)"
+        name: "specs"
+        widget: "list"
+        fields:
+          - { label: "ชื่อ spec", name: "label", widget: "string", hint: "เช่น Wingspan, Flight Time" }
+          - { label: "ค่า", name: "value", widget: "string", hint: "เช่น 2.5m, 120-180min" }
+          - { label: "Icon (emoji)", name: "icon", widget: "string", default: "📐" }
+      - label: "Key Features"
+        name: "features"
+        widget: "list"
+        field: { label: "Feature", name: "item", widget: "string" }
+      - label: "Applications (การใช้งาน)"
+        name: "applications"
+        widget: "list"
+        field: { label: "Application", name: "item", widget: "string" }
+      - { label: "ลำดับการแสดง", name: "order", widget: "number", default: 1 }
+
+  # ==============================
+  # PAYLOADS
+  # ==============================
+  - name: "payloads"
+    label: "📷 Payloads (กล้อง/อุปกรณ์)"
+    label_singular: "Payload"
+    folder: "content/payloads"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ชื่อ Payload", name: "title", widget: "string", hint: "เช่น Sony A7RV, YellowScan Voyager" }
+      - { label: "ประเภท", name: "category", widget: "select", options: ["LiDAR", "RGB Camera", "Thermal", "Multispectral", "Multi-Sensor", "Other"] }
+      - { label: "รายละเอียด", name: "description", widget: "text", required: false }
+      - { label: "รูป", name: "image", widget: "image", required: false }
+      - { label: "Compatible กับ", name: "compatible_with", widget: "string", hint: "เช่น INSEE-250, INSEE-350", required: false }
+
+  # ==============================
+  # SECURITY & COMMUNICATION
+  # ==============================
+  - name: "security"
+    label: "🔒 Security & Communication"
+    files:
+      - label: "Security Features"
+        name: "security"
+        file: "content/security.json"
+        fields:
+          - { label: "หัวข้อ Section", name: "title", widget: "string", default: "Advanced Security & Anti-Jamming" }
+          - { label: "คำอธิบายรวม", name: "description", widget: "text" }
+          - label: "Feature Cards"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "หัวข้อ", name: "title", widget: "string" }
+              - { label: "รายละเอียด", name: "description", widget: "text" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string", default: "🛡️" }
+              - label: "Bullet Points"
+                name: "bullets"
+                widget: "list"
+                field: { label: "รายการ", name: "item", widget: "string" }
+
+  # ==============================
+  # APPLICATIONS / USE CASES
+  # ==============================
+  - name: "applications"
+    label: "🎯 Applications (การใช้งาน)"
+    label_singular: "Application"
+    folder: "content/applications"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ชื่อ Use Case", name: "title", widget: "string", hint: "เช่น Mapping & Surveying" }
+      - { label: "คำอธิบาย", name: "description", widget: "text" }
+      - { label: "Icon (emoji)", name: "icon", widget: "string", default: "🗺️" }
+      - { label: "รูป", name: "image", widget: "image", required: false }
+      - { label: "ลำดับ", name: "order", widget: "number", default: 1 }
+
+  # ==============================
+  # OUR WORK / PROJECTS
+  # ==============================
+  - name: "projects"
+    label: "🏆 Our Work (ผลงาน)"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ชื่อโปรเจกต์", name: "title", widget: "string" }
+      - { label: "ลูกค้า/หน่วยงาน", name: "client", widget: "string", required: false }
+      - { label: "รายละเอียด", name: "description", widget: "text" }
+      - { label: "รูป", name: "image", widget: "image", required: false }
+      - { label: "วันที่", name: "date", widget: "date", required: false }
+      - { label: "Tag / Category", name: "tag", widget: "string", hint: "เช่น Defense, Survey, Smart City" }
+
+  # ==============================
+  # ABOUT / COMPANY INFO
+  # ==============================
+  - name: "about"
+    label: "🏢 About INSEE"
+    files:
+      - label: "Company Info"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - { label: "ชื่อบริษัท", name: "company_name", widget: "string", default: "INSEE Defense & Security" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Innovate Beyond Limits" }
+          - { label: "เกี่ยวกับบริษัท", name: "about_text", widget: "text" }
+          - label: "Milestones / Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "ตัวเลข", name: "value", widget: "string", hint: "เช่น 10+, 97km" }
+              - { label: "คำอธิบาย", name: "label", widget: "string", hint: "เช่น Years Experience" }
+
+  # ==============================
+  # CONTACT INFO
+  # ==============================
+  - name: "contact"
+    label: "📞 Contact Info"
+    files:
+      - label: "Contact Details"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - { label: "อีเมล", name: "email", widget: "string" }
+          - { label: "โทรศัพท์", name: "phone", widget: "string" }
+          - { label: "LINE ID / QR", name: "line_id", widget: "string", required: false }
+          - { label: "ที่อยู่", name: "address", widget: "text", required: false }
+          - { label: "Website", name: "website", widget: "string", default: "www.inseeuav.com" }
+          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }

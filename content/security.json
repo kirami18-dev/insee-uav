@@ -1,0 +1,36 @@
+{
+  "title": "Advanced Security & Anti-Jamming Communication",
+  "description": "หัวใจสำคัญของ INSEE UAV คือการใช้ระบบสื่อสารที่ออกแบบมาสำหรับสภาพแวดล้อมที่ท้าทาย (Industrial Rugged) โดยมีกลไกป้องกันการกวนสัญญาณและรักษาความลับข้อมูล",
+  "features": [
+    {
+      "title": "Advanced Anti-Jamming",
+      "icon": "📡",
+      "description": "ป้องกันการรบกวนขั้นสูง",
+      "bullets": [
+        "FHSS: เทคนิคกระโดดสลับความถี่อัตโนมัติ",
+        "Adaptive Spectrum Learning: เรียนรู้และปรับตัวตัดคลื่นรบกวน",
+        "Forward Error Correction (FEC): แก้ไขความผิดพลาดแม้สัญญาณไม่เสถียร"
+      ]
+    },
+    {
+      "title": "Enterprise Cybersecurity",
+      "icon": "🔐",
+      "description": "ความปลอดภัยระดับสูงสุด",
+      "bullets": [
+        "AES Encryption: เข้ารหัสข้อมูล 128/256-bit",
+        "Secure Access: รองรับมาตรฐาน SSH และ SNMPv3",
+        "ป้องกันการดักฟังและจารกรรมข้อมูล"
+      ]
+    },
+    {
+      "title": "High Performance Link",
+      "icon": "⚡",
+      "description": "ประสิทธิภาพการส่งสัญญาณ",
+      "bullets": [
+        "Ultra-Long Range: ส่งสัญญาณไกลสูงสุด 97 กม.",
+        "High Speed: รับส่งข้อมูลไวถึง 4 Mbps",
+        "Packet Compression & Aggregation เพิ่ม Throughput"
+      ]
+    }
+  ]
+}
