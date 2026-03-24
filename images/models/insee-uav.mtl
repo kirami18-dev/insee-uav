@@ -1,0 +1,498 @@
+#
+# Bunkspeed OBJ Material File
+# http://www.bunkspeed.com
+#
+
+newmtl carbon_fiber_eproxy_2d
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl carbon_fiber_eproxy_2d
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white-3
+Kd 0 0 0.5019608
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white-4
+Kd 0.5176471 0.7568628 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white-5
+Kd 0.2941177 0.4392157 0.9215686
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl gloss_red
+Kd 0 0 0
+Ks 1 1 1
+pr 0.4
+pm 1
+d 1
+illum 2
+Ns 1.614907
+
+newmtl gloss_blue
+Kd 0 0 0
+Ks 1 1 1
+pr 0.4
+pm 1
+d 1
+illum 2
+Ns 1.614907
+
+newmtl black
+Kd 0.01960784 0.01960784 0.01960784
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl carbon_fiber_eproxy_2d-2
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl color
+Kd 0.7921569 0.8196079 0.9333333
+Ks 1 1 1
+pr 0.15
+pm 0
+d 1
+illum 2
+Ns 5.212766
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl color
+Kd 0.7921569 0.8196079 0.9333333
+Ks 1 1 1
+pr 0.15
+pm 0
+d 1
+illum 2
+Ns 5.212766
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl color
+Kd 0.7921569 0.8196079 0.9333333
+Ks 1 1 1
+pr 0.15
+pm 0
+d 1
+illum 2
+Ns 5.212766
+
+newmtl black
+Kd 0.01960784 0.01960784 0.01960784
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl color
+Kd 0.7921569 0.8196079 0.9333333
+Ks 1 1 1
+pr 0.15
+pm 0
+d 1
+illum 2
+Ns 5.212766
+
+newmtl black
+Kd 0.01960784 0.01960784 0.01960784
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl PW-MT11150
+Kd 0.2509804 0.2509804 0.2509804
+Ks 0.8941177 0.8941177 0.8941177
+norm D:\3D\05OBJ\plasticmt11150_normalmap.dds
+pr 0.2325
+pm 0
+d 1
+illum 2
+Ns 2.798161
+
+newmtl polished_steel
+Kd 0.7764706 0.7568628 0.7372549
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
+
+newmtl dark_grey_soft_touch_plastic
+Kd 0.2980392 0.2980392 0.2980392
+Ks 1 1 1
+pr 0.525
+pm 0
+d 1
+illum 2
+Ns 1.357885
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl polished_aluminum
+Kd 1 1 1
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
+
+newmtl polished_aluminum
+Kd 1 1 1
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
+
+newmtl white-9
+Kd 0.1137255 0.2941177 0.7294118
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white-9
+Kd 0.1137255 0.2941177 0.7294118
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white-9
+Kd 0.1137255 0.2941177 0.7294118
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white-9
+Kd 0.1137255 0.2941177 0.7294118
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl dark_grey_satin_finish_plastic
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.4
+pm 0
+d 1
+illum 2
+Ns 1.614907
+
+newmtl dark_grey_satin_finish_plastic
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.4
+pm 0
+d 1
+illum 2
+Ns 1.614907
+
+newmtl dark_grey_satin_finish_plastic
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.4
+pm 0
+d 1
+illum 2
+Ns 1.614907
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl white
+Kd 1 1 1
+Ks 1 1 1
+pr 0.85
+pm 1
+d 1
+illum 2
+Ns 1.136835
+
+newmtl matte_aluminum
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.675
+pm 1
+d 1
+illum 2
+Ns 1.216808
+
+newmtl matte_aluminum
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.675
+pm 1
+d 1
+illum 2
+Ns 1.216808
+
+newmtl matte_aluminum
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.675
+pm 1
+d 1
+illum 2
+Ns 1.216808
+
+newmtl matte_aluminum
+Kd 0.2509804 0.2509804 0.2509804
+Ks 1 1 1
+pr 0.675
+pm 1
+d 1
+illum 2
+Ns 1.216808
+
+newmtl carbon_fiber_eproxy_2d-3
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl carbon_fiber_eproxy_2d-3
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl carbon_fiber_eproxy_2d-3
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl carbon_fiber_eproxy_2d-3
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl carbon_fiber_eproxy_2d-3
+Kd 1 1 1
+map_Kd D:\3D\05OBJ\carbon fiber eproxy.jpg
+Ks 1 1 1
+norm D:\3D\05OBJ\cf_epoxy_bump_normal.jpg
+pr 0.001
+pm 0
+d 1
+illum 2
+Ns 99.90109
+
+newmtl polished_steel
+Kd 0.7764706 0.7568628 0.7372549
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
+
+newmtl polished_steel
+Kd 0.7764706 0.7568628 0.7372549
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
+
+newmtl polished_steel
+Kd 0.7764706 0.7568628 0.7372549
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
+
+newmtl polished_steel
+Kd 0.7764706 0.7568628 0.7372549
+Ks 1 1 1
+pr 0.15
+pm 1
+d 1
+illum 2
+Ns 5.212766
