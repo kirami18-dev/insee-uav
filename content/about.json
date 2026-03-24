@@ -1,11 +1,23 @@
 {
-  "company_name": "INSEE Defense & Security",
+  "company_name": "INSEE-UAV",
   "tagline": "Innovate Beyond Limits",
-  "about_text": "INSEE UAV designs and manufactures professional E-VTOL fixed-wing unmanned aerial vehicles for defense, security, surveying, and critical infrastructure applications. Our platforms combine multi-rotor VTOL flexibility with the long-endurance efficiency of fixed-wing flight.",
+  "about_text": "INSEE UAV designs and manufactures professional VTOL fixed-wing unmanned aerial vehicles for surveying, defense, security, and critical infrastructure applications. Our platforms combine multi-rotor VTOL flexibility with the long-endurance efficiency of fixed-wing flight.",
   "stats": [
-    { "value": "97km", "label": "Max Signal Range" },
-    { "value": "180min", "label": "Max Flight Time" },
-    { "value": "4800m", "label": "Max Altitude" },
-    { "value": "AES-256", "label": "Encryption Standard" }
+    {
+      "value": "97km",
+      "label": "Max Signal Range"
+    },
+    {
+      "value": "180min",
+      "label": "Max Flight Time"
+    },
+    {
+      "value": "4800m",
+      "label": "Max Altitude"
+    },
+    {
+      "value": "AES-256",
+      "label": "Encryption Standard"
+    }
   ]
 }
