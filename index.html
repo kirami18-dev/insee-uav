@@ -945,7 +945,7 @@ if (canvas) {
       const center = box.getCenter(new THREE.Vector3());
       const size = box.getSize(new THREE.Vector3());
       const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 7 / maxDim;
+      const scale = 6 / maxDim;
       object.scale.setScalar(scale);
       object.position.sub(center.multiplyScalar(scale));
       scene.add(object);
