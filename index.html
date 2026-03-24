@@ -102,6 +102,8 @@
             }
         }
     </script>
+    <!-- Netlify Identity Widget -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 <header class="fixed top-0 w-full z-50 bg-[#0A1628]/80 backdrop-blur-xl border-b border-outline-variant/10">
@@ -865,4 +867,15 @@
 </div>
 </div>
 </footer>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body></html>
