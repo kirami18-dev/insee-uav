@@ -1,4 +1,5 @@
 <html class="dark" lang="en"><head>
+<style>html { scroll-behavior: smooth; }</style>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>INSEE UAV | Thai-Engineered Fixed-Wing VTOL Drones</title>
@@ -112,15 +113,15 @@
 <img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
 </a>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest" href="#">Home</a>
+<a class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest" href="#top">Home</a>
 <div class="nav-dropdown">
 <button class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
                     Products <span class="material-symbols-outlined text-xs">expand_more</span>
 </button>
 <div class="nav-dropdown-content">
-<a class="dropdown-item" href="#">INSEE-250</a>
-<a class="dropdown-item" href="#">INSEE-350</a>
-<a class="dropdown-item" href="#">Payloads</a>
+<a class="dropdown-item" href="#platforms">INSEE-250</a>
+<a class="dropdown-item" href="#platforms">INSEE-350</a>
+<a class="dropdown-item" href="#payloads">Payloads</a>
 <a class="dropdown-item" href="#">Comparison Table</a>
 </div>
 </div>
@@ -129,8 +130,8 @@
                     Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
 </button>
 <div class="nav-dropdown-content">
-<a class="dropdown-item" href="#">Applications</a>
-<a class="dropdown-item" href="#">References / Our Work</a>
+<a class="dropdown-item" href="#solutions">Applications</a>
+<a class="dropdown-item" href="#work">References / Our Work</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -138,7 +139,7 @@
                     About <span class="material-symbols-outlined text-xs">expand_more</span>
 </button>
 <div class="nav-dropdown-content">
-<a class="dropdown-item" href="#">Our Story</a>
+<a class="dropdown-item" href="#milestones">Our Story</a>
 <a class="dropdown-item" href="#">Certificates</a>
 <a class="dropdown-item" href="#">Team</a>
 </div>
@@ -153,14 +154,14 @@
 <a class="dropdown-item" href="#">Gallery</a>
 </div>
 </div>
-<a class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest" href="#">Contact</a>
+<a class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest" href="#contact">Contact</a>
 </nav>
 <div class="flex items-center gap-4">
 <div class="flex rounded-full overflow-hidden p-1 border border-brand-blue">
 <button class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" id="lang-en">EN</button>
 <button class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" id="lang-th">TH</button>
 </div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all active:scale-95">
+<button onclick="openDemoModal()" class="bg-primary-container text-on-primary-container px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all active:scale-95">
                 Request Demo
             </button>
 </div>
@@ -187,10 +188,10 @@
                 </p>
 <div class="flex flex-wrap gap-4 pt-4">
 <button class="bg-primary-container text-on-primary-container px-8 py-4 font-bold uppercase clip-path-angled flex items-center gap-2 group">
-                        Explore Products 
+                        <a href="#platforms">Explore Products 
                         <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<button class="border border-primary-container text-primary-container px-8 py-4 font-bold uppercase clip-path-angled hover:bg-primary-container/10 transition-all">
+</a>
+<button onclick="openDemoModal()" class="border border-primary-container text-primary-container px-8 py-4 font-bold uppercase clip-path-angled hover:bg-primary-container/10 transition-all">
                         Request Demo
                     </button>
 </div>
@@ -237,7 +238,7 @@
 </div>
 </section>
 <!-- Our Milestones Horizontal Timeline Section -->
-<section class="py-[80px] bg-white relative overflow-hidden">
+<section id="milestones" class="py-[80px] bg-white relative overflow-hidden">
 <div class="max-w-[1440px] mx-auto px-8 mb-12">
 <p class="text-brand-blue font-bold text-xs mb-2 tracking-[0.2em] uppercase">// EVOLUTION</p>
 <h2 class="text-5xl font-bold text-brand-navy uppercase tracking-tighter" data-en="Our Milestones" data-th="เส้นทางความสำเร็จ">Our Milestones</h2>
@@ -253,11 +254,11 @@
 <div class="absolute -top-[160px] flex flex-col items-center group">
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2018.jpg</span>
+<img src="/images/milestones/milestone-2018.jpg" class="w-full h-full object-cover rounded-lg" alt="2018"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2018</div>
-<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="Founded INSEE UAV" data-th="ก่อตั้ง INSEE UAV">ก่อตั้ง INSEE UAV</h4>
+<div class="text-[18px] font-bold text-brand-blue">2018–2020</div>
+<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="Founded INSEE UAV" data-th="เริ่มพัฒนา มี eBee และ Atmos เป็นแรงบันดาลใจ">เริ่มพัฒนา มี eBee และ Atmos เป็นแรงบันดาลใจ</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-brand-blue text-white uppercase">FOUNDED</span>
 </div>
@@ -277,11 +278,11 @@
 <div class="h-8 w-[2px] bg-[#CCE5F5]"></div>
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2019.jpg</span>
+<img src="/images/milestones/milestone-2021.jpg" class="w-full h-full object-cover rounded-lg" alt="2021"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2019</div>
-<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-320 Prototype" data-th="INSEE-320: Prototype แรก">INSEE-320: Prototype แรก</h4>
+<div class="text-[18px] font-bold text-brand-blue">2023–2024</div>
+<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-320 Prototype" data-th="INSEE-320 Prototype">INSEE-320 Prototype</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#FF6B00] text-white uppercase">FIRST FLIGHT</span>
 </div>
@@ -297,10 +298,10 @@
 <div class="absolute -top-[160px] flex flex-col items-center group">
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2020.jpg</span>
+<img src="/images/milestones/milestone-2022.jpg" class="w-full h-full object-cover rounded-lg" alt="2022"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2020</div>
+<div class="text-[18px] font-bold text-brand-blue">2024</div>
 <h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-250 Gen 001" data-th="INSEE-250 Gen 001">INSEE-250 Gen 001</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-brand-blue text-white uppercase">PRODUCT LAUNCH</span>
@@ -321,11 +322,11 @@
 <div class="h-8 w-[2px] bg-[#CCE5F5]"></div>
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2021.jpg</span>
+<img src="/images/milestones/milestone-2023.jpg" class="w-full h-full object-cover rounded-lg" alt="2023"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2021</div>
-<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="Market Expansion" data-th="ขยายฐานลูกค้า">ขยายฐานลูกค้า</h4>
+<div class="text-[18px] font-bold text-brand-blue">2023–2024</div>
+<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="APAC Expansion" data-th="ขยายฐานลูกค้าไปที่ APAC">ขยายฐานลูกค้าไปที่ APAC</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#00A651] text-white uppercase">GROWTH</span>
 </div>
@@ -341,11 +342,11 @@
 <div class="absolute -top-[160px] flex flex-col items-center group">
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2022.jpg</span>
+<img src="/images/milestones/milestone-2024.jpg" class="w-full h-full object-cover rounded-lg" alt="2024"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2022</div>
-<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-250 Gen 004" data-th="INSEE-250 Gen 004">INSEE-250 Gen 004</h4>
+<div class="text-[18px] font-bold text-brand-blue">2024</div>
+<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-250 Gen 003-004" data-th="INSEE-250 Gen 003-004">INSEE-250 Gen 003–004</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-brand-blue text-white uppercase">UPGRADE</span>
 </div>
@@ -365,11 +366,11 @@
 <div class="h-8 w-[2px] bg-[#CCE5F5]"></div>
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2023.jpg</span>
+<img src="/images/milestones/milestone-2025.jpg" class="w-full h-full object-cover rounded-lg" alt="2025"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2023</div>
-<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="Defense &amp; Security" data-th="Defense &amp; Security">Defense &amp; Security</h4>
+<div class="text-[18px] font-bold text-brand-blue">2025</div>
+<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="Defense and Surveillance" data-th="INSEE-250 Defense + INSEE-350">INSEE-250 Defense + INSEE-350</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#1A3A5C] text-white uppercase">DEFENSE</span>
 </div>
@@ -385,11 +386,11 @@
 <div class="absolute -top-[160px] flex flex-col items-center group">
 <div class="bg-white border border-[#CCE5F5] rounded-[12px] p-2 w-[160px] shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-full h-[120px] bg-[#E8F4FF] rounded-lg flex items-center justify-center mb-3">
-<span class="text-[10px] font-bold text-brand-blue/40 uppercase">milestone-2024.jpg</span>
+<img src="/images/milestones/milestone-2026.jpg" class="w-full h-full object-cover rounded-lg" alt="2026"/>
 </div>
 <div class="px-2 pb-2">
-<div class="text-[18px] font-bold text-brand-blue">2024–2025</div>
-<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-250 Gen 006 + INSEE-350" data-th="INSEE-250 Gen 006 + INSEE-350">INSEE-250 Gen 006 + INSEE-350</h4>
+<div class="text-[18px] font-bold text-brand-blue">2026</div>
+<h4 class="text-[13px] font-semibold text-brand-navy leading-tight line-clamp-2" data-en="INSEE-250 Gen 006" data-th="INSEE-250 Gen 006 พร้อม Payload หลากหลาย">INSEE-250 Gen 006</h4>
 <div class="mt-2">
 <span class="inline-block px-2 py-0.5 rounded-full text-[9px] font-bold bg-[#FF6B00] text-white uppercase">LATEST</span>
 </div>
@@ -407,7 +408,7 @@
 </div>
 </section>
 <!-- Products Section -->
-<section class="py-24 bg-white relative overflow-hidden">
+<section id="platforms" class="py-24 bg-white relative overflow-hidden">
 <div class="max-w-[1440px] mx-auto px-8 relative z-10">
 <div class="flex items-end justify-between mb-16">
 <div>
@@ -432,7 +433,7 @@
 <p class="text-xl font-bold text-brand-blue">2.5M</p>
 </div>
 </div>
-<img alt="INSEE-250 Drone" class="w-full h-64 object-cover mb-8 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCCe56qHDLQbrzVTGImC6YRsR2sh8EhWh5kqPjhG3WQY6iRU6sjWdH1vKs90_7hFDF0k1znKUZ-lM-sqEnNPZpQCqlqmsa9wf3Dpa4pZnxP9QSNBlH-SBLIG3ppWIffZ-G3T-GKzdFubNmBg8KM91SGQMSw073CqIsXW_cByoOvoY45EOmTDgzXJBRcPIQEZ1vNo16I63iAuQy6thAJR8EldVvALcIafwO6JFwGxv-C-XZJOmWaV9axAz6QuTWyb-MzCG5wjnSlbc"/>
+<img alt="INSEE-250 Drone" class="w-full h-64 object-cover mb-8 grayscale group-hover:grayscale-0 transition-all duration-500" src="/images/products/insee-250.jpg"/>
 <div class="grid grid-cols-3 gap-4 border-t border-[#CCE5F5] pt-6">
 <div>
 <p class="text-[10px] text-brand-muted uppercase">ENDURANCE</p>
@@ -460,7 +461,7 @@
 <p class="text-xl font-bold text-brand-blue">3.5M</p>
 </div>
 </div>
-<img alt="INSEE-350 Drone" class="w-full h-64 object-cover mb-8 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8WMiZ5-iDGtmu69Bi_Q6ddCZYuedSK-FlXffxo2kG4ONp_6NI395JDvWicE3fV4jXdEXg927vstwOmL9obSZEbY8hUFsaBDL2W-BYe-JK5jedEZ0QgJ9Z2Vx0oYE90sZ3vs6FjVt3vVNrANpHlyvmxScF-5goxlmGYmqbAmbYzhVk35AHSmbrRUe4_vPR1FK4Wazuy8uxMnl47x6A5OLl2U4uvFHBOdrsl5VzuwDJjiZ_p6O5nLfTHJ8otd08RSv3dFqv0BOoWRE"/>
+<img alt="INSEE-350 Drone" class="w-full h-64 object-cover mb-8 grayscale group-hover:grayscale-0 transition-all duration-500" src="/images/products/insee-350.jpg"/>
 <div class="grid grid-cols-3 gap-4 border-t border-[#CCE5F5] pt-6">
 <div>
 <p class="text-[10px] text-brand-muted uppercase">ENDURANCE</p>
@@ -480,7 +481,7 @@
 </div>
 </section>
 <!-- Payload Ecosystem -->
-<section class="py-24 bg-brand-light-blue">
+<section id="payloads" class="py-24 bg-brand-light-blue">
 <div class="max-w-[1440px] mx-auto px-8">
 <div class="mb-12 space-y-4">
 <p class="text-brand-blue font-bold text-xs tracking-[0.2em] uppercase">// ECOSYSTEM</p>
@@ -490,12 +491,12 @@
 <!-- Card 1 -->
 <div class="bg-white border border-[#CCE5F5] hover:border-brand-blue transition-all flex flex-col h-full overflow-hidden relative">
 <div class="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#E8F4FF] border-2 border-[#CCE5F5] flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-brand-blue/60 text-3xl">photo_camera</span>
+<img src="/images/payloads/riebo-d2m-insee-250.png" class="w-full h-full object-cover" alt="Riebo D2M"/>
 </div>
 <div class="p-6 flex flex-col h-full pr-24">
-<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">Photogrammetry Camera</span>
+<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">Oblique Camera · 130MP · 5-Lens</span>
 <h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">Riebo D2M</h4>
-<p class="text-sm text-brand-muted font-light mb-6">กล้องถ่ายภาพทางอากาศความละเอียดสูง เหมาะสำหรับงาน mapping และ orthophoto</p>
+<p class="text-sm text-brand-muted font-light mb-6">กล้อง Oblique 5 เลนส์ 130MP น้ำหนักเพียง 630g ถ่ายภาพพร้อมกัน 5 มุม สร้าง 3D Model ความแม่นยำระดับ 1:500 รองรับงาน Cadastral Mapping โดยไม่ต้องใช้ GCP</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
 <p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
@@ -505,12 +506,12 @@
 <!-- Card 2 -->
 <div class="bg-white border border-[#CCE5F5] hover:border-brand-blue transition-all flex flex-col h-full overflow-hidden relative">
 <div class="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#E8F4FF] border-2 border-[#CCE5F5] flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-brand-blue/60 text-3xl">photo_camera</span>
+<img src="/images/payloads/sony-ilx-lr1-insee-250.png" class="w-full h-full object-cover" alt="Sony ILX-LR1"/>
 </div>
 <div class="p-6 flex flex-col h-full pr-24">
-<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">Full-Frame Mapping Camera 61MP</span>
+<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">Full-Frame RGB Camera · 61MP</span>
 <h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">Sony ILX-LR1</h4>
-<p class="text-sm text-brand-muted font-light mb-6">กล้อง full-frame 61MP จาก Sony สำหรับงาน photogrammetry ระดับ professional</p>
+<p class="text-sm text-brand-muted font-light mb-6">กล้อง Full-Frame 61MP จาก Sony ออกแบบมาสำหรับ UAV โดยเฉพาะ ให้ภาพ Orthophoto ความละเอียดสูง เหมาะสำหรับงาน Photogrammetry และ 3D Mapping ระดับ Professional</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
 <p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
@@ -520,12 +521,12 @@
 <!-- Card 3 -->
 <div class="bg-white border border-[#CCE5F5] hover:border-brand-blue transition-all flex flex-col h-full overflow-hidden relative">
 <div class="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#E8F4FF] border-2 border-[#CCE5F5] flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-brand-blue/60 text-3xl">sensors</span>
+<img src="/images/payloads/YSMapper+OEM-insee-250.png" class="w-full h-full object-cover" alt="YellowScan Mapper+"/>
 </div>
 <div class="p-6 flex flex-col h-full pr-24">
-<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">LiDAR Sensor</span>
+<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">UAV LiDAR Sensor · Compact OEM</span>
 <h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">YellowScan Mapper+ OEM</h4>
-<p class="text-sm text-brand-muted font-light mb-6">ระบบ LiDAR น้ำหนักเบาสำหรับการสำรวจภูมิประเทศ สร้าง point cloud ความหนาแน่นสูง</p>
+<p class="text-sm text-brand-muted font-light mb-6">ระบบ LiDAR OEM น้ำหนักเบา ออกแบบมาสำหรับ Fixed-Wing UAV โดยเฉพาะ สร้าง Point Cloud ความหนาแน่นสูง เหมาะสำหรับงาน Terrain Mapping และ Corridor Survey</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
 <p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
@@ -535,12 +536,12 @@
 <!-- Card 4 -->
 <div class="bg-white border border-[#CCE5F5] hover:border-brand-blue transition-all flex flex-col h-full overflow-hidden relative">
 <div class="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#E8F4FF] border-2 border-[#CCE5F5] flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-brand-blue/60 text-3xl">sensors</span>
+<img src="/images/payloads/gvi-h600-insee-250.png" class="w-16 h-16 object-cover" alt="GVI H600"/>
 </div>
 <div class="p-6 flex flex-col h-full pr-24">
-<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">Multispectral / Thermal</span>
-<h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">GVI H600</h4>
-<p class="text-sm text-brand-muted font-light mb-6">เซ็นเซอร์ multispectral สำหรับงานเกษตร วิเคราะห์สุขภาพพืช และ thermal inspection</p>
+<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">UAV LiDAR System · 750m Range · 1.3kg</span>
+<h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">GVI LiAir H600</h4>
+<p class="text-sm text-brand-muted font-light mb-6">ระบบ LiDAR น้ำหนักเพียง 1.3kg พร้อมกล้อง 26MP ในตัว ระยะวัดสูงสุด 750m ความแม่นยำ &lt;5cm รองรับ 7 Returns เจาะทะลุเรือนยอดป่าได้ เหมาะสำหรับงาน Forestry และ Terrain Mapping</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
 <p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
@@ -550,12 +551,12 @@
 <!-- Card 5 -->
 <div class="bg-white border border-[#CCE5F5] hover:border-brand-blue transition-all flex flex-col h-full overflow-hidden relative">
 <div class="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#E8F4FF] border-2 border-[#CCE5F5] flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-brand-blue/60 text-3xl">sensors</span>
+<img src="/images/payloads/chcnav-AA10-insee-250.png" class="w-full h-full object-cover" alt="CHCNav AA10"/>
 </div>
 <div class="p-6 flex flex-col h-full pr-24">
-<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">High-Precision Positioning</span>
-<h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">CHC GNSS/PPK</h4>
-<p class="text-sm text-brand-muted font-light mb-6">ระบบ GNSS/PPK ความแม่นยำสูงสำหรับงานสำรวจที่ต้องการความถูกต้องระดับเซนติเมตร</p>
+<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">Airborne LiDAR + RGB · 1.55kg · 800m</span>
+<h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">CHCNav AlphaAir 10</h4>
+<p class="text-sm text-brand-muted font-light mb-6">ระบบ LiDAR + RGB แบบ All-in-One น้ำหนัก 1.55kg รวม LiDAR, GNSS, IMU และกล้อง 45MP ในตัวเดียว ความแม่นยำ 2-5cm สแกน 500,000 จุด/วินาที รองรับ 8 Returns เจาะป่าทึบได้</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
 <p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
@@ -565,22 +566,22 @@
 <!-- Card 6 -->
 <div class="bg-white border border-[#CCE5F5] hover:border-brand-blue transition-all flex flex-col h-full overflow-hidden relative">
 <div class="absolute top-4 right-4 w-20 h-20 rounded-full bg-[#E8F4FF] border-2 border-[#CCE5F5] flex items-center justify-center z-10">
-<span class="material-symbols-outlined text-brand-blue/60 text-3xl">videocam</span>
+<img src="/images/payloads/ys_voyager_insee-350.png" class="w-24 h-24 object-contain p-2" alt="YellowScan Voyager"/>
 </div>
 <div class="p-6 flex flex-col h-full pr-24">
-<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">EO/IR Gimbal</span>
-<h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">Surveillance System</h4>
-<p class="text-sm text-brand-muted font-light mb-6">กล้อง EO/IR สำหรับงานเฝ้าระวัง ลาดตระเวน และงานด้าน defense &amp; security</p>
+<span class="text-[10px] font-bold text-brand-blue mb-2 uppercase">High-Performance LiDAR · Long Range</span>
+<h4 class="text-xl font-bold text-brand-navy mb-3 uppercase">YellowScan Voyager</h4>
+<p class="text-sm text-brand-muted font-light mb-6">ระบบ LiDAR สมรรถนะสูงจาก YellowScan ออกแบบสำหรับ Fixed-Wing UAV โดยเฉพาะ ครอบคลุมพื้นที่กว้างในเที่ยวบินเดียว เหมาะสำหรับงาน Forest Survey, Corridor Mapping และ Large-Scale Terrain</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
-<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-350 ✓ only</p>
+<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-350 ✓</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 bg-white">
+<section id="solutions" class="py-24 bg-white">
 <div class="max-w-[1440px] mx-auto px-8">
 <div class="mb-12">
 <p class="text-brand-blue font-bold text-xs mb-2 tracking-[0.2em] uppercase">// APPLICATIONS</p>
@@ -609,7 +610,7 @@
 </div>
 </section>
 <!-- Communication Security -->
-<section class="py-24 bg-brand-steel relative text-white">
+<section id="security" class="py-24 bg-brand-steel relative text-white">
 <div class="max-w-[1440px] mx-auto px-8 relative z-10">
 <div class="grid md:grid-cols-2 gap-16 items-center">
 <div>
@@ -646,7 +647,7 @@
 </div>
 </section>
 <!-- NEW Our Work Section -->
-<section class="py-24 bg-brand-light-blue">
+<section id="work" class="py-24 bg-brand-light-blue">
 <div class="max-w-[1440px] mx-auto px-8">
 <div class="mb-12">
 <p class="text-brand-blue font-bold text-xs mb-2 tracking-[0.2em] uppercase">// REFERENCES</p>
@@ -655,127 +656,128 @@
 </div>
 <!-- Filter Tabs -->
 <div class="flex flex-wrap gap-3 mb-12">
-<button class="px-6 py-2 bg-brand-blue text-white rounded-full text-xs font-bold uppercase">All</button>
-<button class="px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors">Mapping</button>
-<button class="px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors">LiDAR</button>
-<button class="px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors">Agriculture</button>
-<button class="px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors">Defense</button>
-<button class="px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors">Inspection</button>
+<button class="work-filter-btn px-6 py-2 bg-brand-blue text-white rounded-full text-xs font-bold uppercase" data-filter="all">All</button>
+<button class="work-filter-btn px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors" data-filter="mapping">Mapping</button>
+<button class="work-filter-btn px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors" data-filter="lidar">LiDAR</button>
+<button class="work-filter-btn px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors" data-filter="agriculture">Agriculture</button>
+<button class="work-filter-btn px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors" data-filter="defense">Defense</button>
+<button class="work-filter-btn px-6 py-2 border border-brand-navy/20 text-brand-navy rounded-full text-xs font-bold uppercase hover:border-brand-blue transition-colors" data-filter="inspection">Inspection</button>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Project 1 -->
-<div class="bg-[#0C1E30] rounded-[12px] overflow-hidden group">
-<div class="h-[200px] bg-slate-800 flex items-center justify-center text-slate-500">
-<span class="text-xs uppercase font-bold">topo-survey-01.jpg</span>
+
+<!-- Project 1: INSEE-250 + H600 -->
+<div class="work-card bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer" data-category="lidar">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250+H600/Insee250+H600-1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="LiDAR Terrain Survey"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-brand-blue text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/80 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
 </div>
 <div class="p-6">
-<span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold uppercase mb-4">Mapping</span>
-<h4 class="text-xl font-bold text-white mb-4 uppercase">Topographic Survey - Industrial Estate</h4>
+<p class="text-[10px] text-brand-blue font-bold uppercase mb-1">GVI LiAir H600</p>
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Terrain & Topographic Survey</h4>
 <div class="flex flex-col gap-2 text-on-surface-variant text-xs">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">location_on</span> Rayong, Thailand
-                            </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">calendar_month</span> Oct 2023
-                            </div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Thailand</div>
 </div>
 </div>
 </div>
-<!-- Project 2 -->
-<div class="bg-[#0C1E30] rounded-[12px] overflow-hidden group">
-<div class="h-[200px] bg-slate-800 flex items-center justify-center text-slate-500">
-<span class="text-xs uppercase font-bold">lidar-forest-02.jpg</span>
+
+<!-- Project 2: INSEE-250 + Riebo D2M -->
+<div class="work-card bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer" data-category="mapping">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250+Riebo-D2M/Insee250+Riebo-D2M-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Oblique Mapping"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-brand-blue text-white text-[9px] font-bold uppercase rounded">Mapping</span>
+<span class="px-2 py-1 bg-[#0A1628]/80 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
 </div>
 <div class="p-6">
-<span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold uppercase mb-4">LiDAR</span>
-<h4 class="text-xl font-bold text-white mb-4 uppercase">Forest Biomass Mapping via LiDAR</h4>
+<p class="text-[10px] text-brand-blue font-bold uppercase mb-1">Riebo D2M Oblique</p>
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">3D Oblique Photogrammetry</h4>
 <div class="flex flex-col gap-2 text-on-surface-variant text-xs">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">location_on</span> Chiang Mai, Thailand
-                            </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">calendar_month</span> Nov 2023
-                            </div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Thailand</div>
 </div>
 </div>
 </div>
-<!-- Project 3 -->
-<div class="bg-[#0C1E30] rounded-[12px] overflow-hidden group">
-<div class="h-[200px] bg-slate-800 flex items-center justify-center text-slate-500">
-<span class="text-xs uppercase font-bold">agri-ndvi-03.jpg</span>
+
+<!-- Project 3: INSEE-250 + Sony ILX-LR1 -->
+<div class="work-card bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer" data-category="mapping">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250+SonyILX-LR1/Insee250+SonyILX-LR1-1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Orthophoto Survey"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-brand-blue text-white text-[9px] font-bold uppercase rounded">Mapping</span>
+<span class="px-2 py-1 bg-[#0A1628]/80 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
 </div>
 <div class="p-6">
-<span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold uppercase mb-4">Agriculture</span>
-<h4 class="text-xl font-bold text-white mb-4 uppercase">Sugarcane Health Analysis (NDVI)</h4>
+<p class="text-[10px] text-brand-blue font-bold uppercase mb-1">Sony ILX-LR1 Full-Frame</p>
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">High-Res Orthophoto Production</h4>
 <div class="flex flex-col gap-2 text-on-surface-variant text-xs">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">location_on</span> Kanchanaburi, Thailand
-                            </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">calendar_month</span> Dec 2023
-                            </div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Thailand</div>
 </div>
 </div>
 </div>
-<!-- Project 4 -->
-<div class="bg-[#0C1E30] rounded-[12px] overflow-hidden group">
-<div class="h-[200px] bg-slate-800 flex items-center justify-center text-slate-500">
-<span class="text-xs uppercase font-bold">defense-border-04.jpg</span>
+
+<!-- Project 4: INSEE-250 + AA10 -->
+<div class="work-card bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer" data-category="lidar">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250-AA10/Insee250-AA10-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="LiDAR + RGB Survey"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-brand-blue text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/80 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
 </div>
 <div class="p-6">
-<span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold uppercase mb-4">Defense</span>
-<h4 class="text-xl font-bold text-white mb-4 uppercase">Border Surveillance Exercise</h4>
+<p class="text-[10px] text-brand-blue font-bold uppercase mb-1">CHCNav AlphaAir 10</p>
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">LiDAR + RGB Corridor Mapping</h4>
 <div class="flex flex-col gap-2 text-on-surface-variant text-xs">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">location_on</span> Tak, Thailand
-                            </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">calendar_month</span> Jan 2024
-                            </div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Thailand</div>
 </div>
 </div>
 </div>
-<!-- Project 5 -->
-<div class="bg-[#0C1E30] rounded-[12px] overflow-hidden group">
-<div class="h-[200px] bg-slate-800 flex items-center justify-center text-slate-500">
-<span class="text-xs uppercase font-bold">highway-map-05.jpg</span>
+
+<!-- Project 5: INSEE-350 + H800 -->
+<div class="work-card bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer" data-category="lidar">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee350+H800/Insee350+H800-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Long Range LiDAR"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-[#e0c700] text-[#0A1628] text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/80 text-white text-[9px] font-bold uppercase rounded">INSEE-350</span>
+</div>
 </div>
 <div class="p-6">
-<span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold uppercase mb-4">Mapping</span>
-<h4 class="text-xl font-bold text-white mb-4 uppercase">Highway Corridor Expansion Mapping</h4>
+<p class="text-[10px] text-brand-blue font-bold uppercase mb-1">GVI LiAir H800</p>
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Large-Scale LiDAR Terrain Mapping</h4>
 <div class="flex flex-col gap-2 text-on-surface-variant text-xs">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">location_on</span> Nakhon Ratchasima, Thailand
-                            </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">calendar_month</span> Feb 2024
-                            </div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Thailand</div>
 </div>
 </div>
 </div>
-<!-- Project 6 -->
-<div class="bg-[#0C1E30] rounded-[12px] overflow-hidden group">
-<div class="h-[200px] bg-slate-800 flex items-center justify-center text-slate-500">
-<span class="text-xs uppercase font-bold">ppk-survey-06.jpg</span>
+
+<!-- Project 6: INSEE-350 + Voyager -->
+<div class="work-card bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer" data-category="lidar">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee350+Voyager/Insee350+Voyager-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="YellowScan Voyager"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-[#e0c700] text-[#0A1628] text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/80 text-white text-[9px] font-bold uppercase rounded">INSEE-350</span>
+</div>
 </div>
 <div class="p-6">
-<span class="inline-block px-3 py-1 bg-brand-blue text-white text-[10px] font-bold uppercase mb-4">Inspection</span>
-<h4 class="text-xl font-bold text-white mb-4 uppercase">GCP-Free Dam Wall Inspection</h4>
+<p class="text-[10px] text-brand-blue font-bold uppercase mb-1">YellowScan Voyager</p>
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Forest & Complex Terrain Survey</h4>
 <div class="flex flex-col gap-2 text-on-surface-variant text-xs">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">location_on</span> Surat Thani, Thailand
-                            </div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">calendar_month</span> March 2024
-                            </div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Thailand</div>
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </section>
 <!-- Meet Alex Section -->
-<section class="py-24 bg-white">
+<section id="about" class="py-24 bg-white">
 <div class="max-w-[1440px] mx-auto px-8">
 <div class="mb-16">
 <p class="text-brand-blue font-bold text-xs mb-2 tracking-[0.2em] uppercase">// BRAND CHARACTER</p>
@@ -784,7 +786,7 @@
 </div>
 <div class="grid md:grid-cols-2 gap-16 items-center">
 <div class="relative flex justify-center">
-<img alt="Alex the INSEE UAV Mascot" class="relative z-10 w-full max-w-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_cabJHBJ-l2SQHNGCS4t7kNMYnsepFSN6xei6V4_icaeVCNMpExJvCNmdcSiycmNMSrrRErEB4BhwZDAeqoSoOtepurfIUrhYr4caMwfp9nXALiyJrSolGJSlMkM4HbqOefSKAZDv8mIUwoSMWswQdklAQWDXKjSqfsqIMfQ7Un2AlZ4riux7ClURob_Z4-d8mcku1dcjP_9QwgUzHkF5ic9j87c7uBoIUnU8JnpgpdTzx4bwqcM4l0HYI4koI4_aTk2v5S6Ci8"/>
+<img alt="Alex the INSEE UAV Mascot" class="relative z-10 w-full max-w-md" src="/images/team/alex-mascot.jpg"/>
 </div>
 <div class="bg-brand-light-blue p-10 border border-[#CCE5F5]">
 <h3 class="text-2xl font-bold text-brand-navy mb-8 uppercase tracking-tight">Alex — Guardian of the Skies</h3>
@@ -803,56 +805,102 @@
 <h2 class="text-5xl font-bold text-white uppercase tracking-tighter mb-4">Get In Touch</h2>
 </div>
 <div class="grid md:grid-cols-2 gap-12">
-<div class="space-y-12">
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary-container">location_on</span>
-<div>
-<h4 class="font-bold text-white uppercase text-sm mb-1">Headquarters</h4>
-<p class="text-on-surface-variant font-light">Bangkok Technology Park, Lat Krabang, Thailand</p>
+<!-- Contact Info + Map -->
+<div class="space-y-8">
+  <div class="space-y-6">
+    <div class="flex items-start gap-4">
+      <span class="material-symbols-outlined text-primary-container mt-1">location_on</span>
+      <div>
+        <h4 class="font-bold text-white uppercase text-sm mb-1">Headquarters</h4>
+        <p class="text-on-surface-variant font-light leading-relaxed">160/546-547 ชั้น 24 อาคาร ITF Silom Palace<br>ถ.สีลม แขวงสุริยวงศ์ เขตบางรัก<br>กรุงเทพมหานคร 10500</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="material-symbols-outlined text-primary-container mt-1">call</span>
+      <div>
+        <h4 class="font-bold text-white uppercase text-sm mb-1">Phone</h4>
+        <a href="tel:+66814025355" class="text-on-surface-variant font-light hover:text-white transition-colors">+668-1402-5355</a>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="material-symbols-outlined text-primary-container mt-1">mail</span>
+      <div>
+        <h4 class="font-bold text-white uppercase text-sm mb-1">Email</h4>
+        <a href="mailto:sakan@thaiskyvision.com" class="text-on-surface-variant font-light hover:text-white transition-colors">sakan@thaiskyvision.com</a>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="material-symbols-outlined text-primary-container mt-1">language</span>
+      <div>
+        <h4 class="font-bold text-white uppercase text-sm mb-1">Website</h4>
+        <a href="https://www.inseeuav.com" target="_blank" class="text-on-surface-variant font-light hover:text-white transition-colors">www.inseeuav.com</a>
+      </div>
+    </div>
+  </div>
+  <!-- Google Maps Embed -->
+  <div class="w-full h-64 rounded-lg overflow-hidden border border-outline-variant/20">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5!2d100.5255863!3d13.7276547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29996303d083b%3A0xaf02d219fb56b445!2sITF%20Silom%20Palace!5e0!3m2!1sth!2sth!4v1700000000000"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 </div>
-</div>
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-primary-container">mail</span>
-<div>
-<h4 class="font-bold text-white uppercase text-sm mb-1">Email</h4>
-<p class="text-on-surface-variant font-light">ops@inseeuav.com</p>
-</div>
-</div>
-</div>
-<div class="h-64 bg-surface-container border border-outline-variant/20 flex items-center justify-center text-on-surface-variant/40">
-<div class="text-center">
-<span class="material-symbols-outlined text-4xl mb-2">map</span>
-<p class="text-[10px] uppercase font-bold tracking-widest">Map Placeholder</p>
-</div>
-</div>
-</div>
-<form class="bg-surface-container p-10 border border-outline-variant/10 space-y-6">
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="text-[10px] text-on-surface-variant uppercase font-bold">Name</label>
-<input class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="text-[10px] text-on-surface-variant uppercase font-bold">Email</label>
-<input class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors" type="email"/>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-[10px] text-on-surface-variant uppercase font-bold">Subject</label>
-<select class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors">
-<option>Request Product Demo</option>
-<option>Service Inquiry</option>
-<option>Partnership</option>
-</select>
-</div>
-<div class="space-y-2">
-<label class="text-[10px] text-on-surface-variant uppercase font-bold">Message</label>
-<textarea class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors h-32"></textarea>
-</div>
-<button class="w-full bg-primary-container text-on-primary-container py-4 font-bold uppercase clip-path-angled hover:brightness-110 transition-all">Send Mission Request</button>
+
+<!-- Contact Form -->
+<form id="contact-form" class="bg-surface-container p-10 border border-outline-variant/10 space-y-6">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="space-y-2">
+      <label class="text-[10px] text-on-surface-variant uppercase font-bold">ชื่อ-นามสกุล / Name</label>
+      <input id="form-name" class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors" type="text" placeholder="กรอกชื่อของคุณ" required/>
+    </div>
+    <div class="space-y-2">
+      <label class="text-[10px] text-on-surface-variant uppercase font-bold">อีเมล / Email</label>
+      <input id="form-email" class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors" type="email" placeholder="your@email.com" required/>
+    </div>
+  </div>
+  <div class="space-y-2">
+    <label class="text-[10px] text-on-surface-variant uppercase font-bold">เบอร์โทรศัพท์ / Phone</label>
+    <input id="form-phone" class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors" type="tel" placeholder="0XX-XXX-XXXX"/>
+  </div>
+  <div class="space-y-2">
+    <label class="text-[10px] text-on-surface-variant uppercase font-bold">ประเภทการติดต่อ / Subject</label>
+    <select id="form-subject" class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors">
+      <option>Request Product Demo</option>
+      <option>Mapping & Survey Inquiry</option>
+      <option>LiDAR Survey Inquiry</option>
+      <option>Defense & Security Inquiry</option>
+      <option>Partnership / Reseller</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="space-y-2">
+    <label class="text-[10px] text-on-surface-variant uppercase font-bold">ข้อความ / Message</label>
+    <textarea id="form-message" class="w-full bg-surface border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors h-32" placeholder="รายละเอียดเพิ่มเติม..."></textarea>
+  </div>
+  <button type="button" onclick="submitForm()" class="w-full bg-primary-container text-on-primary-container py-4 font-bold uppercase clip-path-angled hover:brightness-110 transition-all">
+    ส่งข้อความ / Send Request
+  </button>
 </form>
 </div>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('form-name').value;
+  const email = document.getElementById('form-email').value;
+  const phone = document.getElementById('form-phone').value;
+  const subject = document.getElementById('form-subject').value;
+  const message = document.getElementById('form-message').value;
+
+  if (!name || !email) {
+    alert('กรุณากรอกชื่อและอีเมลก่อนส่ง');
+    return;
+  }
+
+  const body = `ชื่อ: ${name}%0AEmail: ${email}%0APhone: ${phone}%0A%0ASubject: ${subject}%0A%0AMessage:%0A${message}`;
+  window.location.href = `mailto:sakan@thaiskyvision.com?subject=${encodeURIComponent(subject + ' - ' + name)}&body=${body}`;
+}
+</script>
 </div>
 </section>
 </main>
@@ -867,6 +915,142 @@
 </div>
 </div>
 </footer>
+
+<script>
+  // Our Work Filter
+  const filterBtns = document.querySelectorAll('.work-filter-btn');
+  const workCards = document.querySelectorAll('.work-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // active state
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-brand-blue', 'text-white');
+        b.classList.add('border', 'border-brand-navy/20', 'text-brand-navy');
+      });
+      btn.classList.add('bg-brand-blue', 'text-white');
+      btn.classList.remove('border', 'border-brand-navy/20', 'text-brand-navy');
+
+      const cat = btn.dataset.filter;
+      workCards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+<!-- Request Demo Modal -->
+<div id="demo-modal" class="fixed inset-0 z-[999] hidden items-center justify-center p-4">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-[#0A1628]/90 backdrop-blur-sm" onclick="closeDemoModal()"></div>
+  <!-- Modal Box -->
+  <div class="relative bg-[#0C1E30] border border-outline-variant/20 w-full max-w-lg p-8 z-10">
+    <!-- Close Button -->
+    <button onclick="closeDemoModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white transition-colors">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <!-- Header -->
+    <p class="text-primary-container text-[10px] font-bold uppercase tracking-[0.2em] mb-2">// REQUEST</p>
+    <h3 class="text-2xl font-bold text-white uppercase tracking-tighter mb-6">Request a Demo</h3>
+    <!-- Netlify Form -->
+    <form name="request-demo" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+      onsubmit="handleDemoSubmit(event)" class="space-y-4">
+      <input type="hidden" name="form-name" value="request-demo"/>
+      <p class="hidden"><input name="bot-field"/></p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="text-[10px] text-on-surface-variant uppercase font-bold">ชื่อ / Name *</label>
+          <input name="name" type="text" placeholder="ชื่อของคุณ" required class="w-full bg-[#0A1628] border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors text-sm"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] text-on-surface-variant uppercase font-bold">บริษัท / Company</label>
+          <input name="company" type="text" placeholder="ชื่อบริษัท" class="w-full bg-[#0A1628] border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors text-sm"/>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="text-[10px] text-on-surface-variant uppercase font-bold">อีเมล / Email *</label>
+          <input name="email" type="email" placeholder="your@email.com" required class="w-full bg-[#0A1628] border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors text-sm"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] text-on-surface-variant uppercase font-bold">โทรศัพท์ / Phone</label>
+          <input name="phone" type="tel" placeholder="0XX-XXX-XXXX" class="w-full bg-[#0A1628] border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors text-sm"/>
+        </div>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] text-on-surface-variant uppercase font-bold">ประเภทงาน / Interest</label>
+        <select name="interest" class="w-full bg-[#0A1628] border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors text-sm">
+          <option>Mapping & Survey (RGB)</option>
+          <option>LiDAR Survey</option>
+          <option>Defense & Security</option>
+          <option>Platform Demo (INSEE-250)</option>
+          <option>Platform Demo (INSEE-350)</option>
+          <option>Partnership / Reseller</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] text-on-surface-variant uppercase font-bold">ข้อความเพิ่มเติม / Message</label>
+        <textarea name="message" placeholder="รายละเอียดเพิ่มเติม..." class="w-full bg-[#0A1628] border border-outline-variant/20 px-4 py-3 text-white focus:border-primary-container outline-none transition-colors text-sm h-24"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-primary-container text-on-primary-container py-4 font-bold uppercase clip-path-angled hover:brightness-110 transition-all mt-2">
+        ส่งข้อความ / Send Request →
+      </button>
+      <!-- Success Message -->
+      <div id="demo-success" class="hidden text-center py-4">
+        <span class="material-symbols-outlined text-4xl text-primary-container mb-2 block">check_circle</span>
+        <p class="text-white font-bold">ส่งข้อความเรียบร้อยแล้ว!</p>
+        <p class="text-on-surface-variant text-sm mt-1">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openDemoModal() {
+  const modal = document.getElementById('demo-modal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDemoModal() {
+  const modal = document.getElementById('demo-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+// ปิด modal เมื่อกด ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeDemoModal();
+});
+
+function handleDemoSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    form.reset();
+    form.style.display = 'none';
+    document.getElementById('demo-success').classList.remove('hidden');
+    setTimeout(() => closeDemoModal(), 3000);
+  })
+  .catch(() => alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง'));
+}
+</script>
+
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
