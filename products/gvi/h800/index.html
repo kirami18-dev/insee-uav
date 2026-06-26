@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GVI LiAir H800 — Long-Range UAV LiDAR 1km Range | INSEE UAV</title>
+<link rel="alternate" hreflang="th" href="https://www.inseeuav.com/products/gvi/h800/"/>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/products/gvi/h800/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.inseeuav.com/products/gvi/h800/"/>
+  <meta name="description" content="GVI LiAir H800 — Long-range UAV LiDAR ระยะ 1km, 1M pts/sec, unlimited returns สำหรับงาน Survey ขนาดใหญ่"/>
+  <meta name="keywords" content="GVI LiAir H800, GreenValley H800, Long-Range UAV LiDAR, 1km LiDAR, INSEE UAV, Thai Sky Vision"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --blue: #2E7D32; --sky: #66BB6A; --navy: #0A1628;
+      --cloud: #EBF5FF; --light: #F5FAFF;
+      --text: #1E3A4F; --muted: #4A6B80; --border: #CCE5F5;
+      --ys-amber: #F2A900; --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Kanit', system-ui, sans-serif;
+      background: linear-gradient(180deg, var(--cloud) 0%, var(--white) 30%, var(--white) 70%, var(--cloud) 100%);
+      color: var(--text); min-height: 100vh;
+    }
+    .clip-path-angled { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+
+    /* NAV */
+    .mega-menu { position: relative; }
+    .mega-menu-content {
+  display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%);
+      background: var(--white); border: 1px solid var(--border);
+      z-index: 100; padding: 24px; gap: 32px; min-width: 780px;
+      box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 12px;
+    }
+    .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
+    .mega-menu:hover .mega-menu-content { display: flex; }
+    .mega-col { min-width: 160px; }
+    .mega-col-title { font-size: 9px; font-weight: 700; color: var(--ys-amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(242,169,0,0.2); }
+    .mega-col-title.blue { color: var(--blue); border-color: rgba(46,125,50,0.2); }
+    .mega-link { display: block; padding: 6px 0; font-size: 12px; font-weight: 600; color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; white-space: nowrap; }
+    .mega-link:hover { color: var(--blue); }
+    .mega-link.current { color: var(--blue); }
+    .mega-link.ys { color: var(--ys-amber); }
+    .mega-divider { width: 1px; background: var(--border); align-self: stretch; }
+    .mega-sub-title { font-size: 8px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 2px; margin-top: 14px; margin-bottom: 6px; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--border); min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 8px; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
+    .nav-dropdown:hover .nav-dropdown-content { display: block; }
+    .dropdown-item { color: var(--text); padding: 8px 20px; text-decoration: none; display: block; font-size: 13px; transition: all 0.2s; }
+    .dropdown-item:hover { color: var(--blue); background: var(--light); }
+    .lang-toggle-btn { color: rgba(10,22,40,0.5); cursor: pointer; border: none; background: none; }
+    .lang-toggle-btn.active { background: var(--blue); color: white; }
+
+    .page-content { max-width: 1200px; margin: 0 auto; padding: 60px 32px 80px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 48px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span { color: var(--navy); font-weight: 600; }
+    .cards-grid { display: flex; flex-direction: column; gap: 40px; }
+    .card-label { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    .card-label::before { content: ''; width: 24px; height: 2px; background: var(--blue); }
+    .section-label { margin-bottom: 16px; }
+
+    /* HERO */
+    .card-hero { background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%); border-radius: 24px; padding: 56px; position: relative; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(46,125,50,0.08); }
+    .card-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(79,195,247,0.18) 0%, transparent 70%); pointer-events: none; }
+    .card-hero::after { content: ''; position: absolute; bottom: -50px; left: -50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(46,125,50,0.08) 0%, transparent 70%); pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 460px; }
+    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
+    .hero-badges { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+    .badge { padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
+    .badge-blue { background: rgba(46,125,50,0.1); color: var(--blue); border: 1px solid rgba(46,125,50,0.25); }
+    .badge-sky { background: rgba(79,195,247,0.15); color: #0066A0; border: 1px solid rgba(79,195,247,0.3); }
+    .badge-amber { background: rgba(242,169,0,0.12); color: #B07900; border: 1px solid rgba(242,169,0,0.3); }
+    .hero-pretitle { font-size: 13px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+    .hero-title { font-size: 56px; font-weight: 700; line-height: 1; margin-bottom: 12px; color: var(--navy); letter-spacing: -2px; }
+    .hero-title .blue { color: var(--blue); }
+    .hero-tagline { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 16px; letter-spacing: 0.5px; }
+    .hero-separator { width: 60px; height: 4px; background: var(--blue); border-radius: 2px; margin: 20px 0 24px; }
+    .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 540px; margin-bottom: 32px; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), #1B5E20); color: white; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,125,50,0.3); }
+    .btn-outline { background: white; color: var(--blue); border: 1.5px solid var(--blue); }
+    .btn-outline:hover { background: var(--cloud); }
+    .hero-image-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+    .hero-image-wrap img { max-width: 100%; max-height: 380px; object-fit: contain; filter: drop-shadow(0 25px 50px rgba(46,125,50,0.15)); position: relative; z-index: 1; }
+
+    /* QUICK STATS */
+    .quick-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(46,125,50,0.06); }
+    @media (max-width: 768px) { .quick-stats { grid-template-columns: repeat(2, 1fr); } }
+    .qs-item { padding: 28px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .qs-item:last-child { border-right: none; }
+    .qs-icon { font-size: 24px; margin-bottom: 8px; color: var(--blue); }
+    .qs-value { font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px; letter-spacing: -1px; }
+    .qs-value .unit { font-size: 14px; font-weight: 500; color: var(--muted); margin-left: 2px; }
+    .qs-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+    /* FEATURES */
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
+    .feature-card { background: var(--white); border-radius: 20px; padding: 32px; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; box-shadow: 0 4px 16px rgba(46,125,50,0.04); }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(46,125,50,0.12); border-color: var(--sky); }
+    .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
+    .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .feature-highlight { color: var(--blue); font-weight: 600; }
+
+    /* SPECS */
+    .card-specs { background: var(--white); border-radius: 24px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(46,125,50,0.06); }
+    .specs-header { margin-bottom: 32px; }
+    .specs-header h2 { font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 4px; letter-spacing: -1px; }
+    .specs-header h2 span { color: var(--blue); }
+    .specs-header .separator { width: 50px; height: 3px; background: var(--blue); border-radius: 2px; margin-top: 12px; }
+    .specs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+    @media (max-width: 768px) { .specs-grid { grid-template-columns: 1fr; } }
+    .spec-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .spec-key { font-size: 13px; color: var(--muted); font-weight: 500; }
+    .spec-val { font-size: 14px; color: var(--navy); font-weight: 700; text-align: right; }
+
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; aspect-ratio: 16/9; }
+    .gallery-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; transition: transform 0.3s; cursor: pointer; }
+    .gallery-grid img:first-child { grid-row: 1 / 3; }
+    .gallery-grid img:hover { transform: scale(1.02); }
+
+    /* CTA */
+    .card-cta { background: linear-gradient(135deg, var(--blue) 0%, #1B5E20 100%); border-radius: 24px; padding: 56px; text-align: center; position: relative; overflow: hidden; color: white; }
+    .card-cta::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 200px; background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%); }
+    .cta-content { position: relative; z-index: 1; }
+    .card-cta h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+    .card-cta .cta-desc { font-size: 15px; opacity: 0.9; max-width: 550px; margin: 0 auto 32px; line-height: 1.65; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+    .cta-contact { font-size: 13px; margin-top: 28px; opacity: 0.85; }
+  
+    /* MISSION SHOWCASE GALLERY (big grid) */
+    .gallery-big { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    @media (max-width: 768px) { .gallery-big { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-big img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+    .gallery-big img:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(46,125,50,0.18); }
+    /* LIGHTBOX */
+    #lightbox { position: fixed; inset: 0; background: rgba(10,22,40,0.92); backdrop-filter: blur(8px); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 25px 60px rgba(0,0,0,0.5); }
+    #lightbox .close-btn { position: absolute; top: 24px; right: 32px; color: white; font-size: 36px; cursor: pointer; background: none; border: none; line-height: 1; opacity: 0.7; transition: opacity 0.2s; }
+    #lightbox .close-btn:hover { opacity: 1; }
+
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- ==================== NAVBAR ==================== -->
+<header class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-[#CCE5F5]">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<a class="flex items-center" href="/">
+<img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/">Home</a>
+<div class="mega-menu">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Products <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="mega-menu-content">
+  <div class="mega-col">
+    <div class="mega-col-title blue">INSEE Platforms</div>
+    <a class="mega-link" href="/products/insee-250/">INSEE-250</a>
+    <a class="mega-link" href="/products/insee-350/">INSEE-350</a>
+              <a class="mega-link" href="/products/gcs/">INSEE-GCS-01</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan LiDAR</div>
+    <a class="mega-link ys" href="/products/yellowscan/venturer/">Venturer</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-plus/">Mapper+</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+    <a class="mega-link" href="/products/yellowscan/voyager/">Voyager</a>
+    <a class="mega-link" href="/products/yellowscan/navigator/">Navigator</a>
+    <a class="mega-link" href="/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+            <a class="mega-link" href="/products/yellowscan/explorer/">Explorer</a>
+            <a class="mega-link" href="/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+  </div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan Accessories</div>
+    <a class="mega-link" href="/products/yellowscan/camera-modules/">Camera Modules</a>
+    <div class="mega-sub-title">Software</div>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation/">CloudStation</a>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+    <a class="mega-link" href="/products/yellowscan/software/livestation/">LiveStation</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title blue">Other Payloads</div>
+    <div class="mega-sub-title">Riebo</div>
+    <a class="mega-link" href="/products/riebo/d2m/">D2M Oblique</a>
+    <div class="mega-sub-title">GVI</div>
+    <a class="mega-link" href="/products/gvi/h600/">LiAir H600</a>
+    <a class="mega-link current" href="/products/gvi/h800/">LiAir H800</a>
+    <div class="mega-sub-title">CHCNav</div>
+    <a class="mega-link" href="/products/chcnav/aa10/">AlphaAir 10</a>
+    <div class="mega-sub-title">Sony</div>
+    <a class="mega-link" href="/products/sony/ilx-lr1/">ILX-LR1</a>
+    <div class="mega-sub-title">INSEE</div>
+    <a class="mega-link" href="/products/insee/is-tr-50/">IS-TR-50</a>
+  </div>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#solutions">Applications</a>
+<a class="dropdown-item" href="/works/">References / Our Work</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">Event <span class="material-symbols-outlined text-xs">expand_more</span></button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+<a class="dropdown-item" href="/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+<a class="dropdown-item" href="/events/intergeo-2024/">INTERGEO 2024</a>
+              <a class="dropdown-item" href="/events/malaysia-2024/">Malaysia Presentation 2024</a>
+              <a class="dropdown-item" href="/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  About <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#milestones">Our Story</a>
+</div>
+</div>
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/en/products/gvi/h800/" id="lang-en">EN</a>
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/products/gvi/h800/" id="lang-th">TH</a>
+</div>
+<button onclick="openDemoModal()" class="bg-[#0084C8] text-white px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all">
+Request Demo
+</button>
+</div>
+</div>
+</header>
+
+<main class="pt-20">
+  <div class="page-content">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="/#payloads">Payloads</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="#">GVI · GreenValley</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span>LiAir H800</span>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- HERO -->
+      <div class="card-hero">
+        <div class="hero-grid">
+          <div style="position: relative; z-index: 1;">
+            <div class="hero-badges">
+              <span class="badge badge-blue">1km LASER RANGE</span>
+              <span class="badge badge-sky">1M PTS/SEC</span>
+              <span class="badge badge-amber">UNLIMITED RETURNS</span>
+            </div>
+            <p class="hero-pretitle">GreenValley International · Long-Range LiDAR</p>
+            <h1 class="hero-title">LiAir <span class="blue">H800</span></h1>
+            <p class="hero-tagline">Long-Range LiDAR สำหรับงานสำรวจพื้นที่ใหญ่</p>
+            <div class="hero-separator"></div>
+            <p class="hero-desc">
+              Flagship LiDAR สำหรับ Long-Range Mission — ระยะวัด <strong style="color:var(--blue)">สูงสุด 1 กิโลเมตร</strong>
+              ความเร็ว <strong style="color:var(--blue)">1,000,000 จุด/วินาที</strong> และ Unlimited Waveform Returns
+              FOV 100° ครอบคลุมพื้นที่กว้างในเที่ยวเดียว — เหมาะกับ Long-Range Corridor / Large-Area Survey
+              ทดสอบและพิสูจน์แล้วบน INSEE-350 ในงาน Topographic Mapping
+            </p>
+            <div class="hero-cta">
+              <button onclick="openDemoModal()" class="btn btn-primary">ติดต่อสอบถาม
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
+              <a href="#showcase" class="btn btn-outline">ดูผลงาน</a>
+            </div>
+          </div>
+          <div class="hero-image-wrap">
+            <img src="/images/payloads/gvi-h800-insee-350.png" alt="GVI LiAir H800"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK STATS -->
+      <div class="quick-stats">
+        <div class="qs-item">
+          <div class="qs-icon"><span class="material-symbols-outlined">camera</span></div>
+          <div class="qs-value">2.2<span class="unit">kg</span></div>
+          <div class="qs-label">Total Weight</div>
+        </div>
+        <div class="qs-item">
+          <div class="qs-icon"><span class="material-symbols-outlined">lens</span></div>
+          <div class="qs-value">1,000<span class="unit">m</span></div>
+          <div class="qs-label">Max Laser Range</div>
+        </div>
+        <div class="qs-item">
+          <div class="qs-icon"><span class="material-symbols-outlined">scale</span></div>
+          <div class="qs-value">1<span class="unit">M pts/s</span></div>
+          <div class="qs-label">Point Rate</div>
+        </div>
+        <div class="qs-item">
+          <div class="qs-icon"><span class="material-symbols-outlined">timer</span></div>
+          <div class="qs-value">∞<span class="unit"></span></div>
+          <div class="qs-label">Waveform Returns</div>
+        </div>
+      </div>
+
+      <!-- WHY -->
+      <div class="section-label"><div class="card-label">Why LiAir H800</div></div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-outlined">view_in_ar</span></div>
+          <h3>1 km Long Range</h3>
+          <p>ระยะวัดสูงสุด <span class="feature-highlight">1,000 เมตร @ 80% reflectivity</span> — บินสูงครอบคลุมพื้นที่กว้าง ลด flight lines ในงาน Large-Area Survey</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-outlined">all_inclusive</span></div>
+          <h3>1 Million Points/sec</h3>
+          <p>Throughput สูงสุด <span class="feature-highlight">1,000,000 pts/sec</span> — สร้าง point cloud หนาแน่นแม้บินเร็ว ลด flight time ต่อภารกิจ</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-outlined">photo_camera</span></div>
+          <h3>Unlimited Waveform Returns</h3>
+          <p>บันทึก <span class="feature-highlight">Full Waveform ทุก echo</span> — ทะลุเรือนยอดป่าหนาทึบ ดึงข้อมูลพื้นดินใต้พุ่มไม้ได้แม่นยำ</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><span class="material-symbols-outlined">flash_on</span></div>
+          <h3>100° Wide FOV</h3>
+          <p>มุมมอง <span class="feature-highlight">100° Horizontal</span> + 1535nm wavelength — Swath กว้าง ลดเที่ยวบินที่ต้องบินซ้ำในพื้นที่ใหญ่</p>
+        </div>
+      </div>
+
+      <!-- SPECS -->
+      <div class="section-label"><div class="card-label">Technical Specifications</div></div>
+      <div class="card-specs">
+        <div class="specs-header">
+          <h2>Specifications<span>.</span></h2>
+          <div class="separator"></div>
+        </div>
+        <div class="specs-grid">
+          <div>
+            <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">Long-Range UAV LiDAR + RGB</span></div>
+            <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">2.2 kg</span></div>
+            <div class="spec-row"><span class="spec-key">Laser Range @ 80%</span><span class="spec-val">1,000 m</span></div>
+            <div class="spec-row"><span class="spec-key">Laser Range @ 50%</span><span class="spec-val">790 m</span></div>
+            <div class="spec-row"><span class="spec-key">Wavelength</span><span class="spec-val">1535 nm</span></div>
+          </div>
+          <div>
+            <div class="spec-row"><span class="spec-key">Point Rate</span><span class="spec-val">1,000,000 pts/sec</span></div>
+            <div class="spec-row"><span class="spec-key">Returns</span><span class="spec-val">Unlimited Waveform</span></div>
+            <div class="spec-row"><span class="spec-key">FOV</span><span class="spec-val">100° Horizontal</span></div>
+            <div class="spec-row"><span class="spec-key">Vertical Accuracy</span><span class="spec-val">±5 cm @ 200m AGL</span></div>
+            <div class="spec-row"><span class="spec-key">RGB Camera</span><span class="spec-val">26 MP (6252 × 4168)</span></div>
+          </div>
+        </div>
+        <div style="margin-top: 24px;">
+          <div class="spec-key" style="font-weight:700; color:var(--navy); font-size:13px; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Additional Specs</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; background: var(--cloud); color: var(--blue); border: 1px solid var(--border);">IMU 1000 Hz</span>
+            <span style="padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; background: var(--cloud); color: var(--blue); border: 1px solid var(--border);">18-24V · 61W</span>
+            <span style="padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; background: var(--cloud); color: var(--blue); border: 1px solid var(--border);">-20°C to +50°C</span>
+            <span style="padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; background: var(--cloud); color: var(--blue); border: 1px solid var(--border);">GSD ~4.7cm @ 200m</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALLERY -->
+      <div id="gallery" class="section-label"><div class="card-label">Real-World Results</div></div>
+      <div class="card-specs">
+        <div class="specs-header">
+          <h2>Mission Snapshots<span>.</span></h2>
+          <div class="separator"></div>
+        </div>
+        <div class="gallery-grid">
+          <img src="/images/products/gvi-h800-insee-350-1.jpg" alt="On INSEE-350"/>
+          <img src="/images/payloads/gvi-h800/gvi-h800-2.JPG" alt="H800"/>
+          <img src="/images/payloads/gvi-h800/gvi-h800-3.JPG" alt="H800"/>
+          <img src="/images/products/gvi-h800-insee-350-3.jpg" alt="On INSEE-350"/>
+          <img src="/images/payloads/gvi-h800/gvi-h800-gcs-1.JPG" alt="GCS"/>
+        </div>
+        <div style="margin-top: 20px; padding: 16px; background: var(--light); border: 1px dashed var(--border); border-radius: 12px;">
+          <p style="font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">Mission Results</p>
+          <p style="font-size: 13px; color: var(--muted); font-style: italic;">รายละเอียดข้อมูลภารกิจ — Coverage Area, GSD, Accuracy และ Flight Parameters จะเผยแพร่ตามความคืบหน้าของเอกสารภารกิจ</p>
+        </div>
+      </div>
+
+      <!-- REAL MISSION SHOWCASE -->
+      <div id="showcase" class="section-label"><div class="card-label">Real Mission Showcase · ผลงานจริง</div></div>
+      <div class="card-specs">
+        <div class="specs-header">
+          <h2>Long-Range LiDAR Showcase<span>.</span></h2>
+          <div class="separator"></div>
+          <p style="font-size: 14px; color: var(--muted); margin-top: 10px;">คลิกที่รูปเพื่อขยาย ดูรายละเอียดเต็มจอ</p>
+        </div>
+        <div class="gallery-big">
+          <img src="/images/work/Insee350%2BH800/Insee350%2BH800-1.png" alt="Result 1" onclick="openLightbox(this.src)"/>
+          <img src="/images/work/Insee350%2BH800/Insee350%2BH800-2.png" alt="Result 2" onclick="openLightbox(this.src)"/>
+          <img src="/images/work/Insee350%2BH800/Insee350%2BH800-3.png" alt="Result 3" onclick="openLightbox(this.src)"/>
+          <img src="/images/work/Insee350%2BH800/Insee350%2BH800-4.png" alt="Result 4" onclick="openLightbox(this.src)"/>
+        </div>
+      </div>
+
+      <!-- COMPATIBLE PLATFORMS -->
+      <div class="section-label"><div class="card-label">Compatible INSEE Platforms</div></div>
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+        <a href="/products/insee-350/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 20px; padding: 32px; border: 1px solid rgba(79,195,247,0.2); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(46,125,50,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+          <div style="position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(242,169,0,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+          <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px; align-items: center; position: relative; z-index: 1;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="/images/products/insee-350.png" alt="INSEE-350" style="max-width: 100%; max-height: 180px; object-fit: contain; filter: drop-shadow(0 10px 25px rgba(46,125,50,0.15));"/>
+            </div>
+            <div>
+              <p style="font-size: 11px; font-weight: 700; color: #F2A900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">REQUIRED PLATFORM</p>
+              <h3 style="font-size: 28px; font-weight: 700; color: #0A1628; margin-bottom: 6px; letter-spacing: -1px;">INSEE-350</h3>
+              <p style="font-size: 14px; color: #4A6B80; line-height: 1.6; margin-bottom: 16px;">H800 น้ำหนัก 2.2kg ต้องใช้ INSEE-350 (รองรับ payload 5kg) เท่านั้น — INSEE-250 รองรับสูงสุด 2kg ไม่สามารถใช้งานร่วมกันได้</p>
+              <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px;">
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">WINGSPAN</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">3.5 m</p></div>
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">PAYLOAD</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">5 kg</p></div>
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">2.5 hr</p></div>
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">SPEED</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">144 km/h</p></div>
+              </div>
+              <div style="display: inline-flex; align-items: center; gap: 6px; color: #0084C8; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                <span>ดูรายละเอียด INSEE-350</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="card-cta">
+        <div class="cta-content">
+          <h2>พร้อมยกระดับงาน Survey พื้นที่ใหญ่<br>กับ LiAir H800 แล้วหรือยัง?</h2>
+          <p class="cta-desc">
+            ติดต่อทีม INSEE UAV — รับคำปรึกษา สาธิตการบินจริง และ Solution Long-Range LiDAR สำหรับงาน Corridor, Large-Area Survey และ Forestry
+          </p>
+          <div class="cta-buttons">
+            <button onclick="openDemoModal()" class="btn-cta-primary">ติดต่อสอบถามเลย</button>
+            <a href="/#contact" class="btn-cta-outline">www.inseeuav.com</a>
+          </div>
+          <p class="cta-contact">INSEE UAV — Engineered in Thailand · Operated by Thai Sky Vision Co., Ltd.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#0A1628; padding: 48px 0; margin-top: 40px;">
+<div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<img alt="INSEE UAV Logo" class="h-8 opacity-60" src="/images/logo-insee.png"/>
+<div class="text-center space-y-1">
+<p class="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INSEE UAV CO., LTD. ALL RIGHTS RESERVED. ENGINEERED IN THAILAND.</p>
+<p class="text-[10px] text-[#4FC3F7]/70 uppercase tracking-widest">Operated by Thai Sky Vision Co., Ltd.</p>
+</div>
+<div class="flex gap-6 items-center">
+<a class="text-white/60 hover:text-white transition-colors" href="https://www.facebook.com/profile.php?id=61581020016653" target="_blank" rel="noopener" aria-label="Facebook">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+</a>
+<a class="text-white/60 hover:text-white transition-colors" href="https://www.linkedin.com/company/insee-uav/" target="_blank" rel="noopener" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+</a>
+</div>
+</div>
+</footer>
+
+<!-- MODAL -->
+<div id="demo-modal" class="fixed inset-0 z-[999] hidden items-center justify-center p-4">
+  <div class="absolute inset-0 bg-[#0A1628]/80 backdrop-blur-sm" onclick="closeDemoModal()"></div>
+  <div class="relative bg-white w-full max-w-lg p-8 z-10 rounded-2xl shadow-2xl">
+    <button onclick="closeDemoModal()" class="absolute top-4 right-4 text-[#4A6B80] hover:text-[#0A1628] transition-colors"><span class="material-symbols-outlined">close</span></button>
+    <p class="text-[#0084C8] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">// REQUEST</p>
+    <h3 class="text-2xl font-bold text-[#0A1628] uppercase tracking-tighter mb-2">Request a Demo</h3>
+    <p class="text-sm text-[#4A6B80] mb-6">GVI LiAir H800 · Long-Range UAV LiDAR</p>
+    <form name="request-demo-gvi-h800" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleDemoSubmit(event)" class="space-y-4">
+      <input type="hidden" name="form-name" value="request-demo-gvi-h800"/>
+      <p class="hidden"><input name="bot-field"/></p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1"><label class="text-[10px] text-[#4A6B80] uppercase font-bold">ชื่อ / Name *</label><input name="name" type="text" required class="w-full bg-[#F5FAFF] border border-[#CCE5F5] px-4 py-3 text-[#0A1628] focus:border-[#0084C8] outline-none text-sm rounded-lg"/></div>
+        <div class="space-y-1"><label class="text-[10px] text-[#4A6B80] uppercase font-bold">บริษัท / Company</label><input name="company" type="text" class="w-full bg-[#F5FAFF] border border-[#CCE5F5] px-4 py-3 text-[#0A1628] focus:border-[#0084C8] outline-none text-sm rounded-lg"/></div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1"><label class="text-[10px] text-[#4A6B80] uppercase font-bold">อีเมล / Email *</label><input name="email" type="email" required class="w-full bg-[#F5FAFF] border border-[#CCE5F5] px-4 py-3 text-[#0A1628] focus:border-[#0084C8] outline-none text-sm rounded-lg"/></div>
+        <div class="space-y-1"><label class="text-[10px] text-[#4A6B80] uppercase font-bold">โทรศัพท์ / Phone</label><input name="phone" type="tel" class="w-full bg-[#F5FAFF] border border-[#CCE5F5] px-4 py-3 text-[#0A1628] focus:border-[#0084C8] outline-none text-sm rounded-lg"/></div>
+      </div>
+      <div class="space-y-1"><label class="text-[10px] text-[#4A6B80] uppercase font-bold">ประเภทงาน / Interest</label>
+        <select name="interest" class="w-full bg-[#F5FAFF] border border-[#CCE5F5] px-4 py-3 text-[#0A1628] focus:border-[#0084C8] outline-none text-sm rounded-lg">
+          <option>LiAir H800 Demo</option>
+          <option>Long-Range Survey / Corridor</option>
+          <option>Forestry / Large-Area Mapping</option>
+          <option>Pricing &amp; Purchase</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="space-y-1"><label class="text-[10px] text-[#4A6B80] uppercase font-bold">ข้อความเพิ่มเติม / Message</label><textarea name="message" class="w-full bg-[#F5FAFF] border border-[#CCE5F5] px-4 py-3 text-[#0A1628] focus:border-[#0084C8] outline-none text-sm h-24 rounded-lg"></textarea></div>
+      <button type="submit" class="w-full py-4 font-bold uppercase text-sm rounded-lg hover:brightness-110 transition-all" style="background: linear-gradient(135deg, #0084C8, #1B5E20); color: white;">ส่งข้อความ / Send Request &rarr;</button>
+      <div id="demo-success" class="hidden text-center py-4">
+        <span class="material-symbols-outlined text-4xl text-[#0084C8] mb-2 block">check_circle</span>
+        <p class="text-[#0A1628] font-bold">ส่งข้อความเรียบร้อยแล้ว!</p>
+        <p class="text-[#4A6B80] text-sm mt-1">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openDemoModal() { const m = document.getElementById('demo-modal'); m.classList.remove('hidden'); m.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+function closeDemoModal() { const m = document.getElementById('demo-modal'); m.classList.add('hidden'); m.classList.remove('flex'); document.body.style.overflow = ''; }
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemoModal(); });
+function handleDemoSubmit(e) {
+  e.preventDefault();
+  const form = e.target; const data = new FormData(form);
+  fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() })
+    .then(() => { form.reset(); form.style.display = 'none'; document.getElementById('demo-success').classList.remove('hidden'); setTimeout(() => closeDemoModal(), 3000); })
+    .catch(() => alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง'));
+}
+if (window.netlifyIdentity) { window.netlifyIdentity.on("init", user => { if (!user) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); } }); }
+</script>
+
+
+<!-- LIGHTBOX OVERLAY -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="close-btn" onclick="event.stopPropagation(); closeLightbox()" aria-label="Close">×</button>
+  <img id="lightbox-img" src="" alt="Expanded view" onclick="event.stopPropagation()"/>
+</div>
+<script>
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

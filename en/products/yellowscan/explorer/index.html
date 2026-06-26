@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YellowScan Explorer — Long-Range 360° Survey LiDAR | INSEE UAV</title>
+<link rel="alternate" hreflang="th" href="https://www.inseeuav.com/products/yellowscan/explorer/"/>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/products/yellowscan/explorer/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.inseeuav.com/products/yellowscan/explorer/"/>
+  <meta name="description" content="YellowScan Explorer — Survey-Grade 360° Long-Range LiDAR with 300 m laser range and SBG Quanta Micro GNSS-Inertial. Distributed by Thai Sky Vision, Official YellowScan Distributor in Thailand."/>
+  <meta name="keywords" content="YellowScan Explorer, LiDAR UAV Thailand, Survey Grade LiDAR, 360 LiDAR, Long Range LiDAR, SBG Quanta Micro, INSEE UAV, Thai Sky Vision, drone LiDAR survey"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#0084C8',
+            'brand-navy': '#0A1628',
+            'ys-amber': '#F2A900',
+            'ys-dorian': '#1B181C',
+            'ys-raisin': '#1E1E24',
+            'ys-mist': '#8C8C92',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Netlify Identity -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <style>
+    :root {
+      --insee-blue: #4FC3F7;
+      --insee-navy: #0D47A1;
+      --insee-deep: #0A1628;
+      --ys-amber: #F2A900;
+      --ys-golden: #F7CB66;
+      --ys-dorian: #1B181C;
+      --ys-raisin: #1E1E24;
+      --ys-metal: #393945;
+      --ys-mist: #8C8C92;
+      --ys-soft: #E3E3E9;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Kanit', system-ui, sans-serif;
+      background: #0D1117;
+      color: var(--white);
+    }
+
+    /* NAV DROPDOWN */
+
+    .mega-menu { position: relative; }
+    .mega-menu-content {
+  display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%);
+      background: #0A1628;
+      border: 1px solid rgba(192,199,211,0.1);
+      min-width: 220px;
+      z-index: 100;
+      padding: 8px 0;
+    }
+    .mega-menu:hover .mega-menu-content { display: block; }
+    .has-submenu { position: relative; }
+    .has-submenu > .dropdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .has-submenu > .dropdown-item::after {
+      content: "›";
+      font-size: 16px;
+      color: #C0C7D3;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background: #0A1628;
+      border: 1px solid rgba(192,199,211,0.1);
+      min-width: 220px;
+      padding: 8px 0;
+      z-index: 101;
+    }
+    .has-submenu:hover .submenu { display: block; }
+    .submenu-section-label {
+      display: block;
+      padding: 6px 20px 2px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #F2A900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0A1628;
+      border: 1px solid rgba(192, 199, 211, 0.1);
+      min-width: 200px;
+      z-index: 100;
+      padding: 8px 0;
+    }
+    .nav-dropdown:hover .nav-dropdown-content { display: block; }
+    .dropdown-item {
+      display: block;
+      padding: 10px 20px;
+      color: #C0C7D3;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .dropdown-item:hover { background: rgba(192, 199, 211, 0.1); color: white; }
+
+    /* CLIP PATH */
+    .clip-path-angled { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+
+    /* LANG TOGGLE */
+    .lang-toggle-btn { color: rgba(192, 199, 211, 0.6); cursor: pointer; border: none; background: none; }
+    .lang-toggle-btn.active { background: #0084C8; color: white; }
+
+    /* ===== PRODUCT PAGE STYLES ===== */
+    .page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      font-size: 12px;
+      color: var(--ys-mist);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .breadcrumb a { color: var(--ys-mist); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--ys-amber); }
+    .breadcrumb span { color: var(--white); }
+
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .card-label {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--insee-blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .card-label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--insee-blue);
+    }
+
+    /* CARD 1: HERO */
+    .card-hero {
+      background: linear-gradient(135deg, var(--ys-dorian) 0%, var(--insee-deep) 60%, #0a2a4a 100%);
+      border-radius: 24px;
+      padding: 56px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(79, 195, 247, 0.12);
+    }
+    .card-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(242, 169, 0, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .card-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px; left: -50px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(79, 195, 247, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badges { display: flex; gap: 12px; margin-bottom: 32px; position: relative; z-index: 1; flex-wrap: wrap; }
+    .badge { padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
+    .badge-ndaa { background: rgba(79,195,247,0.15); color: var(--insee-blue); border: 1px solid rgba(79,195,247,0.3); }
+    .badge-new { background: rgba(242,169,0,0.15); color: var(--ys-amber); border: 1px solid rgba(242,169,0,0.3); }
+    .badge-survey { background: rgba(255,255,255,0.08); color: var(--ys-soft); border: 1px solid rgba(255,255,255,0.15); }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-pretitle { font-size: 13px; font-weight: 500; color: var(--ys-mist); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+    .hero-title { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
+    .hero-title .yellow { color: var(--ys-amber); }
+    .hero-product { font-size: 52px; font-weight: 700; color: var(--insee-blue); line-height: 1.1; margin-bottom: 20px; }
+    .hero-separator { width: 60px; height: 4px; background: var(--ys-amber); border-radius: 2px; margin-bottom: 24px; }
+    .hero-tagline { font-size: 22px; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 16px; }
+    .hero-desc { font-size: 15px; color: var(--ys-mist); line-height: 1.7; max-width: 600px; }
+    .hero-footer { margin-top: 40px; display: flex; align-items: center; gap: 24px; position: relative; z-index: 1; flex-wrap: wrap; }
+    .hero-tech { display: flex; align-items: center; gap: 16px; padding: 12px 20px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+    .hero-tech span { font-size: 13px; color: var(--ys-mist); font-weight: 500; }
+    .tech-brand { font-size: 14px; font-weight: 700; color: var(--white); }
+
+    /* CARD 2: FEATURES */
+    .card-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .card-features { grid-template-columns: 1fr; } }
+    .feature-card {
+      background: linear-gradient(145deg, var(--ys-raisin) 0%, var(--ys-dorian) 100%);
+      border-radius: 20px; padding: 36px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-4px); border-color: rgba(242,169,0,0.2); }
+    .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
+    .icon-blue { background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(13,71,161,0.2)); border: 1px solid rgba(79,195,247,0.2); }
+    .icon-amber { background: linear-gradient(135deg, rgba(242,169,0,0.15), rgba(242,169,0,0.05)); border: 1px solid rgba(242,169,0,0.2); }
+    .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .feature-card p { font-size: 14px; color: var(--ys-mist); line-height: 1.65; }
+    .feature-highlight { color: var(--ys-amber); font-weight: 600; }
+
+    /* CARD 3: SPECS */
+    .card-specs {
+      background: linear-gradient(160deg, var(--ys-raisin) 0%, #0a1628 100%);
+      border-radius: 24px; padding: 48px;
+      border: 1px solid rgba(79,195,247,0.1);
+      position: relative; overflow: hidden;
+    }
+    .card-specs::before { content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(79,195,247,0.05) 0%, transparent 70%); }
+    .specs-header { margin-bottom: 36px; position: relative; z-index: 1; }
+    .specs-header h2 { font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .specs-header h2 span { color: var(--ys-amber); }
+    .specs-header .separator { width: 50px; height: 3px; background: var(--ys-amber); border-radius: 2px; margin-top: 12px; }
+    .specs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; z-index: 1; }
+    @media (max-width: 768px) { .specs-grid { grid-template-columns: repeat(2, 1fr); } }
+    .spec-item { padding: 20px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.06); }
+    .spec-item:nth-child(3n) { border-right: none; }
+    .spec-value { font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .spec-value .unit { font-size: 14px; font-weight: 500; color: var(--ys-mist); margin-left: 2px; }
+    .spec-value .accent { color: var(--ys-amber); }
+    .spec-value .blue { color: var(--insee-blue); }
+    .spec-label { font-size: 12px; color: var(--ys-mist); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* CARD 4: LASER */
+    .card-laser {
+      background: linear-gradient(135deg, #0a1628 0%, var(--ys-dorian) 100%);
+      border-radius: 24px; padding: 48px;
+      border: 1px solid rgba(242,169,0,0.1);
+      position: relative; overflow: hidden;
+    }
+    .card-laser::before { content: ''; position: absolute; bottom: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(242,169,0,0.06) 0%, transparent 70%); }
+    .laser-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; position: relative; z-index: 1; }
+    @media (max-width: 768px) { .laser-grid { grid-template-columns: 1fr; } }
+    .laser-section h3 { font-size: 16px; font-weight: 600; color: var(--insee-blue); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .laser-row { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .laser-row:last-child { border-bottom: none; }
+    .laser-key { font-size: 14px; color: var(--ys-mist); font-weight: 400; }
+    .laser-val { font-size: 14px; color: var(--white); font-weight: 600; text-align: right; }
+    .laser-val.highlight { color: var(--ys-amber); }
+
+    /* CARD 5: MISSION */
+    .card-mission { background: var(--ys-raisin); border-radius: 24px; padding: 48px; border: 1px solid rgba(255,255,255,0.06); }
+    .mission-table-wrap { overflow-x: auto; }
+    .mission-table { width: 100%; border-collapse: collapse; min-width: 400px; }
+    .mission-table thead th { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 14px 20px; text-align: center; color: var(--ys-mist); border-bottom: 2px solid rgba(79,195,247,0.2); }
+    .mission-table thead th:first-child { text-align: left; color: var(--insee-blue); }
+    .mission-table tbody td { padding: 16px 20px; text-align: center; font-size: 15px; font-weight: 500; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .mission-table tbody td:first-child { text-align: left; color: var(--ys-amber); font-weight: 700; }
+    .mission-table tbody tr:hover td { background: rgba(242,169,0,0.04); }
+    .mission-note { margin-top: 20px; font-size: 12px; color: var(--ys-mist); font-style: italic; }
+
+    /* CARD 6: PHYSICAL */
+    .card-physical {
+      background: linear-gradient(135deg, var(--ys-raisin), var(--ys-dorian));
+      border-radius: 24px; padding: 48px;
+      border: 1px solid rgba(255,255,255,0.06);
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    }
+    @media (max-width: 768px) { .card-physical { grid-template-columns: repeat(2, 1fr); } }
+    .phys-item { text-align: center; padding: 24px 16px; border-right: 1px solid rgba(255,255,255,0.05); }
+    .phys-item:last-child { border-right: none; }
+    .phys-icon { font-size: 28px; margin-bottom: 12px; }
+    .phys-val { font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .phys-val .small { font-size: 14px; font-weight: 400; color: var(--ys-mist); }
+    .phys-label { font-size: 12px; color: var(--ys-mist); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
+
+    /* CARD 7: PACKAGE */
+    .card-package { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .card-package { grid-template-columns: 1fr; } }
+    .package-item { border-radius: 20px; padding: 36px; }
+    .package-hw { background: linear-gradient(145deg, var(--ys-raisin), #0a1628); border: 1px solid rgba(79,195,247,0.15); }
+    .package-svc { background: linear-gradient(145deg, var(--ys-raisin), var(--ys-dorian)); border: 1px solid rgba(242,169,0,0.15); }
+    .package-sw { background: linear-gradient(145deg, #0a1628, var(--ys-raisin)); border: 1px solid rgba(79,195,247,0.1); }
+    .package-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
+    .pkg-icon-blue { background: rgba(79,195,247,0.12); border: 1px solid rgba(79,195,247,0.2); }
+    .pkg-icon-amber { background: rgba(242,169,0,0.12); border: 1px solid rgba(242,169,0,0.2); }
+    .package-item h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .package-list { list-style: none; padding: 0; }
+    .package-list li { font-size: 13px; color: var(--ys-mist); padding: 7px 0 7px 18px; position: relative; line-height: 1.5; }
+    .package-list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; border-radius: 50%; }
+    .package-hw .package-list li::before { background: var(--insee-blue); }
+    .package-svc .package-list li::before { background: var(--ys-amber); }
+    .package-sw .package-list li::before { background: var(--insee-blue); }
+
+    /* CARD 8: SOFTWARE */
+    .card-software { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .card-software { grid-template-columns: 1fr; } }
+    .sw-tier { border-radius: 20px; padding: 36px; text-align: center; transition: transform 0.3s; }
+    .sw-tier:hover { transform: translateY(-4px); }
+    .sw-essential { background: linear-gradient(160deg, var(--ys-raisin), var(--ys-dorian)); border: 1px solid rgba(255,255,255,0.08); }
+    .sw-pro { background: linear-gradient(160deg, #0a1628, var(--ys-raisin)); border: 1px solid rgba(79,195,247,0.2); }
+    .sw-ultimate { background: linear-gradient(160deg, #1a1200, var(--ys-dorian)); border: 1px solid rgba(242,169,0,0.25); }
+    .sw-badge { display: inline-block; padding: 4px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .sw-essential .sw-badge { background: rgba(255,255,255,0.08); color: var(--ys-mist); }
+    .sw-pro .sw-badge { background: rgba(79,195,247,0.12); color: var(--insee-blue); }
+    .sw-ultimate .sw-badge { background: rgba(242,169,0,0.12); color: var(--ys-amber); }
+    .sw-tier h3 { font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .sw-tier .sw-sub { font-size: 12px; font-weight: 600; margin-bottom: 20px; }
+    .sw-essential .sw-sub { color: var(--ys-mist); }
+    .sw-pro .sw-sub { color: var(--insee-blue); }
+    .sw-ultimate .sw-sub { color: var(--ys-amber); }
+    .sw-tier p { font-size: 13px; color: var(--ys-mist); line-height: 1.65; }
+
+    /* CARD 9: CTA */
+    .card-cta {
+      background: linear-gradient(135deg, var(--insee-navy) 0%, #0a1628 50%, var(--ys-dorian) 100%);
+      border-radius: 24px; padding: 56px; text-align: center;
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(79,195,247,0.15);
+    }
+    .card-cta::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 200px; background: radial-gradient(ellipse, rgba(242,169,0,0.08) 0%, transparent 70%); }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-logos { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 28px; }
+    .cta-logo-text { font-size: 20px; font-weight: 700; }
+    .cta-logo-ys .ys-y { color: var(--ys-amber); }
+    .cta-logo-ys .ys-s { color: var(--white); }
+    .cta-logo-insee { color: var(--insee-blue); }
+    .cta-x { color: var(--ys-mist); font-size: 16px; }
+    .card-cta h2 { font-size: 30px; font-weight: 700; color: var(--white); margin-bottom: 12px; line-height: 1.3; }
+    .card-cta h2 span { color: var(--ys-amber); }
+    .card-cta .cta-desc { font-size: 15px; color: var(--ys-mist); max-width: 550px; margin: 0 auto 32px; line-height: 1.65; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn { padding: 14px 32px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: 'Inter', 'Kanit', system-ui, sans-serif; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
+    .btn-primary { background: linear-gradient(135deg, var(--ys-amber), #e09800); color: var(--ys-dorian); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(242,169,0,0.25); }
+    .btn-outline { background: transparent; color: var(--insee-blue); border: 1.5px solid rgba(79,195,247,0.4); }
+    .btn-outline:hover { border-color: var(--insee-blue); background: rgba(79,195,247,0.05); }
+    .cta-contact { font-size: 13px; color: var(--ys-mist); }
+    .cta-hashtags { margin-top: 20px; font-size: 12px; color: var(--ys-metal); letter-spacing: 0.3px; }
+
+    .section-label { margin-bottom: 16px; }
+  
+    /* REFERENCE SHOWCASE */
+    .ref-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    @media (max-width: 768px) { .ref-gallery { grid-template-columns: repeat(2, 1fr); } }
+    .ref-gallery .ref-tile { position: relative; aspect-ratio: 1/1; overflow: hidden; border-radius: 10px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid rgba(255,255,255,0.06); }
+    .ref-gallery .ref-tile:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(242,169,0,0.2); border-color: rgba(242,169,0,0.3); }
+    .ref-gallery .ref-tile img { width: 100%; height: 100%; object-fit: cover; }
+    .ref-gallery .ref-tile .ref-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(10,22,40,0.95), transparent); padding: 14px 12px 10px; }
+    .ref-gallery .ref-tile .ref-title { font-size: 11px; font-weight: 700; color: var(--white); margin-bottom: 2px; line-height: 1.2; }
+    .ref-gallery .ref-tile .ref-sub { font-size: 9px; font-weight: 600; color: var(--ys-amber); text-transform: uppercase; letter-spacing: 1px; }
+    .ref-disclaimer { font-size: 12px; color: var(--ys-mist); font-style: italic; margin-top: 14px; padding: 10px 14px; background: rgba(255,255,255,0.03); border-left: 3px solid var(--ys-amber); border-radius: 4px; }
+    /* LIGHTBOX */
+    #lightbox { position: fixed; inset: 0; background: rgba(10,22,40,0.94); backdrop-filter: blur(8px); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
+    #lightbox .close-btn { position: absolute; top: 24px; right: 32px; color: white; font-size: 36px; cursor: pointer; background: none; border: none; line-height: 1; opacity: 0.7; transition: opacity 0.2s; }
+    #lightbox .close-btn:hover { opacity: 1; }
+
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- ==================== NAVBAR (mega-menu) ==================== -->
+<style>
+.mega-menu { position: relative; }
+.mega-menu-content {
+  display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%);
+  background: #0A1628;
+  border: 1px solid rgba(192,199,211,0.1);
+  z-index: 100;
+  padding: 24px;
+  gap: 32px;
+  min-width: 780px;
+  max-width: calc(100vw - 32px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
+    .mega-menu:hover .mega-menu-content { display: flex; }
+.mega-col { min-width: 160px; }
+.mega-col-title {
+  font-size: 9px; font-weight: 700; color: #F2A900;
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 12px; padding-bottom: 8px;
+  border-bottom: 1px solid rgba(242,169,0,0.2);
+}
+.mega-col-title.blue { color: #4FC3F7; border-color: rgba(79,195,247,0.2); }
+.mega-link {
+  display: block; padding: 6px 0; font-size: 12px;
+  font-weight: 600; color: #C0C7D3; text-decoration: none;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  transition: color 0.2s; white-space: nowrap;
+}
+.mega-link:hover { color: white; }
+.mega-link.ys { color: #F2A900; }
+.mega-link.ys:hover { color: #F7CB66; }
+.mega-link.current { color: #F2A900; }
+.mega-divider { width: 1px; background: rgba(192,199,211,0.08); align-self: stretch; }
+.mega-sub-title {
+  font-size: 8px; font-weight: 700; color: #4FC3F7;
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-top: 14px; margin-bottom: 6px;
+}
+.nav-dropdown { position: relative; }
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0A1628;
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  min-width: 180px;
+  z-index: 100;
+  padding: 8px 0;
+}
+.nav-dropdown:hover .nav-dropdown-content { display: block; }
+.dropdown-item {
+  color: white;
+  padding: 8px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.dropdown-item:hover {
+  color: #00B4FF;
+  background-color: rgba(0, 180, 255, 0.05);
+}
+</style>
+<header class="fixed top-0 w-full z-50 bg-[#0A1628]/80 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<a class="flex items-center" href="/en/">
+<img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest" href="/en/">Home</a>
+<div class="mega-menu">
+<button class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Products <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="mega-menu-content">
+  <div class="mega-col">
+    <div class="mega-col-title blue">INSEE Platforms</div>
+    <a class="mega-link" href="/en/products/insee-250/">INSEE-250</a>
+    <a class="mega-link" href="/en/products/insee-350/">INSEE-350</a>
+              <a class="mega-link" href="/en/products/gcs/">INSEE-GCS-01</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan LiDAR</div>
+    <a class="mega-link current" href="/en/products/yellowscan/explorer/">Explorer</a>
+    <a class="mega-link " href="/en/products/yellowscan/mapper-plus/">Mapper+</a>
+    <a class="mega-link" href="/en/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+    <a class="mega-link " href="/en/products/yellowscan/voyager/">Voyager</a>
+    <a class="mega-link " href="/en/products/yellowscan/navigator/">Navigator</a>
+    <a class="mega-link " href="/en/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+            <a class="mega-link" href="/en/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+  </div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan Accessories</div>
+    <a class="mega-link " href="/en/products/yellowscan/camera-modules/">Camera Modules</a>
+    <div class="mega-sub-title">Software</div>
+    <a class="mega-link " href="/en/products/yellowscan/software/cloudstation/">CloudStation</a>
+    <a class="mega-link " href="/en/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+    <a class="mega-link " href="/en/products/yellowscan/software/livestation/">LiveStation</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title blue">Other Payloads</div>
+    <div class="mega-sub-title">Riebo</div>
+    <a class="mega-link" href="/en/products/riebo/d2m/">D2M Oblique</a>
+    <div class="mega-sub-title">GVI</div>
+    <a class="mega-link" href="/en/products/gvi/h600/">LiAir H600</a>
+    <a class="mega-link" href="/en/products/gvi/h800/">LiAir H800</a>
+    <div class="mega-sub-title">CHCNav</div>
+    <a class="mega-link" href="/en/products/chcnav/aa10/">AlphaAir 10</a>
+    <div class="mega-sub-title">Sony</div>
+    <a class="mega-link" href="/en/products/sony/ilx-lr1/">ILX-LR1</a>
+    <div class="mega-sub-title">INSEE</div>
+    <a class="mega-link" href="/en/products/insee/is-tr-50/">IS-TR-50</a>
+  </div>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#solutions">Applications</a>
+<a class="dropdown-item" href="/en/works/">References / Our Work</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">Event <span class="material-symbols-outlined text-xs">expand_more</span></button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/en/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+<a class="dropdown-item" href="/en/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+<a class="dropdown-item" href="/en/events/intergeo-2024/">INTERGEO 2024</a>
+              <a class="dropdown-item" href="/en/events/malaysia-2024/">Malaysia Presentation 2024</a>
+              <a class="dropdown-item" href="/en/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  About <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#milestones">Our Story</a>
+</div>
+</div>
+<a class="text-[#C0C7D3] hover:text-white transition-colors uppercase text-xs font-bold tracking-widest" href="/#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/en/products/yellowscan/explorer/" id="lang-en">EN</a>
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/products/yellowscan/explorer/" id="lang-th">TH</a>
+</div>
+<button onclick="openDemoModal()" class="bg-[#0084C8] text-white px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all">
+Request Demo
+</button>
+</div>
+</div>
+</header>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<main class="pt-20">
+<!-- TSV Official Distributor Banner -->
+<div class="bg-[#F2A900] text-[#0A1628] py-2 text-center text-[11px] font-bold tracking-widest uppercase">
+  <span class="material-symbols-outlined align-middle text-sm mr-1" style="vertical-align:-3px;">verified</span>
+  Official YellowScan Distributor in Thailand · Operated by Thai Sky Vision
+</div>
+  <div class="page-content">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/en/">Home</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="/#payloads">Products</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <a href="#">YellowScan</a>
+      <span class="material-symbols-outlined text-sm">chevron_right</span>
+      <span>Explorer</span>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- CARD 1: HERO -->
+      <div class="card-hero" style="padding: 0; overflow: hidden;">
+        <!-- Background: Point Cloud -->
+        <div style="position: absolute; inset: 0; z-index: 0;">
+          <img src="/images/payloads/yellowscan/explorer-pointcloud.jpg"
+               style="width:100%; height:100%; object-fit:cover; opacity:0.25; filter: saturate(1.2);" alt=""/>
+          <div style="position:absolute; inset:0; background: linear-gradient(135deg, rgba(27,24,28,0.95) 0%, rgba(10,22,40,0.85) 50%, rgba(10,22,40,0.4) 100%);"></div>
+        </div>
+
+        <!-- Content Grid -->
+        <div style="position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 500px;">
+
+          <!-- Left: Text -->
+          <div style="padding: 56px;">
+            <div class="hero-badges">
+              <span class="badge badge-new">NEW 2026</span>
+              <span class="badge badge-ndaa">360° SCANNING</span>
+              <span class="badge badge-survey">Survey-Grade LiDAR</span>
+            </div>
+            <div class="hero-content">
+              <div class="hero-pretitle">YellowScan</div>
+              <div class="hero-title">
+                <span class="yellow">Yellow</span><span style="color:white">Scan</span>
+              </div>
+              <div class="hero-product">Explorer<span style="color: var(--ys-amber);">.</span></div>
+              <div class="hero-separator"></div>
+              <div class="hero-tagline">Confidence when it matters most</div>
+              <p class="hero-desc">
+                YellowScan Explorer is a Survey-Grade LiDAR system that combines a long-range 360° laser scanner with the
+                SBG Quanta Micro GNSS-Inertial solution and an integrated 2MP camera for colorization — covering large areas
+                in a single flight. 300 m laser range, compatible with Multirotor, VTOL, Light Crewed Aircraft, and Fly &amp; Drive.
+              </p>
+            </div>
+            <div class="hero-footer">
+              <div class="hero-tech">
+                <span>Technologies inside</span>
+                <span class="tech-brand" style="color: var(--ys-amber);">YellowScan</span>
+                <span class="tech-brand" style="color: var(--insee-blue);">SBG</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Product Image -->
+          <div style="display: flex; align-items: center; justify-content: center; padding: 40px; position: relative;">
+            <!-- Glow effect -->
+            <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(242,169,0,0.12) 0%, transparent 70%);"></div>
+            <img src="/images/payloads/yellowscan/explorer-product.png"
+                 style="max-width: 100%; max-height: 380px; object-fit: contain; position: relative; z-index: 1; filter: drop-shadow(0 20px 60px rgba(242,169,0,0.2));"
+                 alt="YellowScan Explorer"/>
+          </div>
+
+        </div>
+      </div>
+
+      
+      <!-- CARD 2: KEY DIFFERENTIATORS -->
+      <div class="section-label">
+        <div class="card-label">Key Differentiators</div>
+      </div>
+      <div class="card-features">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">360</span></div>
+          <h3>360° Surveying<br>&amp; Mapping</h3>
+          <p>Long-range 360° laser scanner captures data in every direction — covering wide areas in a single flight. Ideal for corridor mapping, powerlines, and mining surveys.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-amber"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">bolt</span></div>
+          <h3>Powerful<br>&amp; Lightweight</h3>
+          <p>1.80 kg without batteries — compatible with Multirotor, VTOL and single-rotor UAVs, as well as Light Crewed Aircraft and Fly &amp; Drive operations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">my_location</span></div>
+          <h3>Long Operational Range</h3>
+          <p>Laser range up to <span class="feature-highlight">300 m</span> with recommended 120 m AGL — Precision 2 cm and Accuracy 2 cm, powered by the SBG Quanta Micro GNSS-Inertial solution.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon icon-amber"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">battery_charging_full</span></div>
+          <h3>Hotswappable Batteries</h3>
+          <p>Two pairs of hotswappable batteries (2 × 2) — keep missions running without powering down. Includes integrated 2MP global shutter camera for colorization.</p>
+        </div>
+      </div>
+
+      <!-- CARD 3: CORE SPECS -->
+      <div class="section-label">
+        <div class="card-label">Technical Specifications</div>
+      </div>
+      <div class="card-specs">
+        <div class="specs-header">
+          <h2>Technical Specifications<span>.</span></h2>
+          <div class="separator"></div>
+        </div>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <div class="spec-value"><span class="accent">2</span><span class="unit"> cm</span></div>
+            <div class="spec-label">Precision</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value"><span class="accent">2</span><span class="unit"> cm</span></div>
+            <div class="spec-label">Accuracy</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value"><span class="blue">360</span><span class="unit">°</span></div>
+            <div class="spec-label">Scanner Field of View</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">500<span class="unit">K</span></div>
+            <div class="spec-label">Shots per Second</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value"><span class="blue">5</span></div>
+            <div class="spec-label">Echoes per Shot</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value"><span class="accent">1556</span><span class="unit"> nm</span></div>
+            <div class="spec-label">Laser Wavelength</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">300<span class="unit"> m</span></div>
+            <div class="spec-label">Laser Range</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">120<span class="unit"> m AGL</span></div>
+            <div class="spec-label">Recommended Altitude</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">2.5<span class="unit">M pts/sec</span></div>
+            <div class="spec-label">Max Data Generated</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: SYSTEM COMPONENTS -->
+      <div class="section-label">
+        <div class="card-label">Laser Scanner &amp; Navigation</div>
+      </div>
+      <div class="card-laser">
+        <div class="specs-header">
+          <h2>System Components<span>.</span></h2>
+          <div class="separator"></div>
+        </div>
+        <div class="laser-grid">
+          <div class="laser-section">
+            <h3>Laser Scanner</h3>
+            <div class="laser-row"><span class="laser-key">Scanner</span><span class="laser-val highlight">YellowScan Explorer</span></div>
+            <div class="laser-row"><span class="laser-key">Wavelength</span><span class="laser-val">1556 nm</span></div>
+            <div class="laser-row"><span class="laser-key">Field of View</span><span class="laser-val">360°</span></div>
+            <div class="laser-row"><span class="laser-key">Laser Range</span><span class="laser-val">300 m</span></div>
+            <div class="laser-row"><span class="laser-key">Shots/sec</span><span class="laser-val">Up to 500,000</span></div>
+            <div class="laser-row"><span class="laser-key">Echoes/shot</span><span class="laser-val">Up to 5</span></div>
+            <div class="laser-row"><span class="laser-key">Max Data Generated</span><span class="laser-val">2,500,000 pts/sec</span></div>
+            <div class="laser-row"><span class="laser-key">Precision / Accuracy</span><span class="laser-val">2 cm / 2 cm</span></div>
+          </div>
+          <div class="laser-section">
+            <h3>GNSS-Inertial &amp; Camera</h3>
+            <div class="laser-row"><span class="laser-key">GNSS Solution</span><span class="laser-val highlight">SBG Quanta Micro</span></div>
+            <div class="laser-row"><span class="laser-key">Integrated Camera</span><span class="laser-val">Global Shutter 2MP</span></div>
+            <div class="laser-row"><span class="laser-key">Camera Purpose</span><span class="laser-val">Colorization</span></div>
+            <div class="laser-row"><span class="laser-key">Recommended AGL</span><span class="laser-val">120 m</span></div>
+            <div class="laser-row"><span class="laser-key">Power Range</span><span class="laser-val">12 – 24 Vdc</span></div>
+            <div class="laser-row"><span class="laser-key">Batteries</span><span class="laser-val">2 × 2 Hotswappable</span></div>
+            <div class="laser-row"><span class="laser-key">Post-Processing</span><span class="laser-val">SBG Qinertia</span></div>
+            <div class="laser-row"><span class="laser-key">Point Cloud Software</span><span class="laser-val">YellowScan CloudStation</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5: PHYSICAL SPECS -->
+      <div class="section-label">
+        <div class="card-label">Size &amp; Power</div>
+      </div>
+      <div class="card-physical">
+        <div class="phys-item">
+          <div class="phys-icon"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">scale</span></div>
+          <div class="phys-val">1.80<span class="small"> kg</span></div>
+          <div class="phys-label">Weight (w/o batt.)</div>
+        </div>
+        <div class="phys-item">
+          <div class="phys-icon"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">square_foot</span></div>
+          <div class="phys-val" style="font-size: 20px;">270 × 118 × 135<span class="small"> mm</span></div>
+          <div class="phys-label">Dimensions (L×W×H)</div>
+        </div>
+        <div class="phys-item">
+          <div class="phys-icon"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">battery_charging_full</span></div>
+          <div class="phys-val" style="color: var(--ys-amber); font-size: 22px;">2 × 2<span class="small"> Hotswap</span></div>
+          <div class="phys-label">Battery Pairs</div>
+        </div>
+        <div class="phys-item">
+          <div class="phys-icon"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">bolt</span></div>
+          <div class="phys-val">12 – 24<span class="small"> Vdc</span></div>
+          <div class="phys-label">Power Range</div>
+        </div>
+      </div>
+
+      <!-- CARD 6: PACKAGE -->
+      <div class="section-label">
+        <div class="card-label">Package Includes</div>
+      </div>
+      <div class="card-package">
+        <div class="package-item package-hw">
+          <div class="package-icon pkg-icon-blue"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">inventory_2</span></div>
+          <h3>Hardware</h3>
+          <ul class="package-list">
+            <li>YellowScan Explorer unit</li>
+            <li>2 × 2 Batteries (Hotswappable)</li>
+            <li>UAV GNSS Antenna and Cable</li>
+            <li>2 × USB Flash Drives</li>
+            <li>Rugged Pelicase</li>
+            <li>Documentation</li>
+            <li>Compatible Platform: <strong style="color:var(--white);">INSEE-250</strong></li>
+          </ul>
+        </div>
+        <div class="package-item package-svc">
+          <div class="package-icon pkg-icon-amber"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">handshake</span></div>
+          <h3>Services</h3>
+          <ul class="package-list">
+            <li>1-Year Warranty + Unlimited Technical Support</li>
+            <li>In-person or Online Training</li>
+            <li>Boresight Calibration Certificate</li>
+            <li>Local Support by Thai Sky Vision — Official Distributor in Thailand</li>
+          </ul>
+        </div>
+        <div class="package-item package-sw">
+          <div class="package-icon pkg-icon-blue"><span class="material-symbols-outlined" style="font-size: 26px; vertical-align: middle; margin-right: 4px;">laptop_chromebook</span></div>
+          <h3>Software</h3>
+          <ul class="package-list">
+            <li>YellowScan CloudStation — Generate, Visualize, Adjust Strips, Classify, Colorize and Export Point Cloud</li>
+            <li>SBG Qinertia — Post-process GNSS-Inertial data</li>
+            <li>Optional: LiveStation, CloudStation Strip Adjustment / Terrain / Colorization Modules</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CARD 7: SOFTWARE TIERS -->
+      <div class="section-label">
+        <div class="card-label">CloudStation Software</div>
+      </div>
+      <div class="card-software">
+        <div class="sw-tier sw-essential">
+          <div class="sw-badge">Included</div>
+          <h3>CloudStation</h3>
+          <div class="sw-sub">Essential</div>
+          <p>Visualize, Inspect, Colorize from Orthophotos and Export ready-to-use deliverables — included in the package.</p>
+        </div>
+        <div class="sw-tier sw-pro">
+          <div class="sw-badge">Upgrade</div>
+          <h3>CloudStation</h3>
+          <div class="sw-sub">Pro</div>
+          <p>Adds Data Quality Refinement, Classification, Color Enrichment, and advanced Export Features.</p>
+        </div>
+        <div class="sw-tier sw-ultimate">
+          <div class="sw-badge">Full Power</div>
+          <h3>CloudStation</h3>
+          <div class="sw-sub">Ultimate</div>
+          <p>Every feature — including Orthophoto Generation and the Command Line (ytk) for Automation &amp; Batch Processing.</p>
+        </div>
+      </div>
+
+            <!-- VENDOR SAMPLE GALLERY -->
+      <div class="section-label">
+        <div class="card-label">Sample Gallery · YellowScan Reference Imagery</div>
+      </div>
+      <div class="card-specs">
+        <div class="ref-gallery">
+          <div class="ref-tile" onclick="openLightbox('/images/vendor-samples/yellowscan/explorer/%20sample-1.png')">
+            <img src="/images/vendor-samples/yellowscan/explorer/%20sample-1.png" alt=" sample 1" loading="lazy"/>
+            <div class="ref-label"><div class="ref-title"> sample 1</div><div class="ref-sub">YellowScan Explorer Point Cloud</div></div>
+          </div>
+          <div class="ref-tile" onclick="openLightbox('/images/vendor-samples/yellowscan/explorer/%20sample-2.png')">
+            <img src="/images/vendor-samples/yellowscan/explorer/%20sample-2.png" alt=" sample 2" loading="lazy"/>
+            <div class="ref-label"><div class="ref-title"> sample 2</div><div class="ref-sub">YellowScan Explorer Point Cloud</div></div>
+          </div>
+          <div class="ref-tile" onclick="openLightbox('/images/vendor-samples/yellowscan/explorer/%20sample-3.png')">
+            <img src="/images/vendor-samples/yellowscan/explorer/%20sample-3.png" alt=" sample 3" loading="lazy"/>
+            <div class="ref-label"><div class="ref-title"> sample 3</div><div class="ref-sub">YellowScan Explorer Point Cloud</div></div>
+          </div>
+          <div class="ref-tile" onclick="openLightbox('/images/vendor-samples/yellowscan/explorer/%20sample-4.png')">
+            <img src="/images/vendor-samples/yellowscan/explorer/%20sample-4.png" alt=" sample 4" loading="lazy"/>
+            <div class="ref-label"><div class="ref-title"> sample 4</div><div class="ref-sub">YellowScan Explorer Point Cloud</div></div>
+          </div>
+          <div class="ref-tile" onclick="openLightbox('/images/vendor-samples/yellowscan/explorer/%20sample-5.png')">
+            <img src="/images/vendor-samples/yellowscan/explorer/%20sample-5.png" alt=" sample 5" loading="lazy"/>
+            <div class="ref-label"><div class="ref-title"> sample 5</div><div class="ref-sub">YellowScan Explorer Point Cloud</div></div>
+          </div>
+          <div class="ref-tile" onclick="openLightbox('/images/vendor-samples/yellowscan/explorer/%20sample-6.png')">
+            <img src="/images/vendor-samples/yellowscan/explorer/%20sample-6.png" alt=" sample 6" loading="lazy"/>
+            <div class="ref-label"><div class="ref-title"> sample 6</div><div class="ref-sub">YellowScan Explorer Point Cloud</div></div>
+          </div>
+        </div>
+        <p class="ref-disclaimer" style="font-size:11px; color:var(--ys-mist); margin-top:14px; font-style:italic;"><strong style="color:var(--white);">Note:</strong> These reference images are from YellowScan global portfolio — not from INSEE UAV missions — shown to demonstrate sensor capability.</p>
+      </div>
+
+<!-- CARD 8: CTA -->
+      <div class="card-cta">
+        <div class="cta-content">
+          <div class="cta-logos">
+            <span class="cta-logo-text cta-logo-ys"><span class="ys-y">Yellow</span><span class="ys-s">Scan</span></span>
+            <span class="cta-x">×</span>
+            <span class="cta-logo-text cta-logo-insee">INSEE UAV</span>
+          </div>
+          <h2>Ready to expand your survey capability<br>with <span>Explorer</span>?</h2>
+          <p class="cta-desc">
+            Contact Thai Sky Vision, Official YellowScan Distributor in Thailand — for INSEE-250 integration consultation and full After-Sales Support.
+          </p>
+          <div class="cta-buttons">
+            <button onclick="openDemoModal()" class="btn btn-primary">Contact Us Now</button>
+            <a href="/en/" class="btn btn-outline">www.inseeuav.com</a>
+          </div>
+          <p class="cta-contact">Thai Sky Vision Co., Ltd. — Official YellowScan Distributor in Thailand</p>
+          <p class="cta-hashtags">#INSEEUAV #YellowScan #Explorer #LiDAR #DroneMapping #ThaiSkyVision #UAVSurvey #360LiDAR #LongRange</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-[#071120] border-t border-white/10 py-12">
+<div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<img alt="INSEE UAV Logo" class="h-8 opacity-50" src="/images/logo-insee.png"/>
+<div class="text-center space-y-1">
+<p class="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INSEE UAV CO., LTD. ALL RIGHTS RESERVED. ENGINEERED IN THAILAND.</p>
+<p class="text-[10px] text-[#4FC3F7]/70 uppercase tracking-widest">Operated by Thai Sky Vision Co., Ltd. — Official YellowScan Distributor in Thailand</p>
+</div>
+<div class="flex gap-6 items-center">
+<a class="text-white/60 hover:text-white transition-colors" href="https://www.facebook.com/profile.php?id=61581020016653" target="_blank" rel="noopener" aria-label="Facebook">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+</a>
+<a class="text-white/60 hover:text-white transition-colors" href="https://www.linkedin.com/company/insee-uav/" target="_blank" rel="noopener" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+</a>
+</div>
+</div>
+</footer>
+
+<!-- ==================== REQUEST DEMO MODAL ==================== -->
+<div id="demo-modal" class="fixed inset-0 z-[999] hidden items-center justify-center p-4">
+  <div class="absolute inset-0 bg-[#0A1628]/90 backdrop-blur-sm" onclick="closeDemoModal()"></div>
+  <div class="relative bg-[#0C1E30] border border-white/20 w-full max-w-lg p-8 z-10 rounded-2xl">
+    <button onclick="closeDemoModal()" class="absolute top-4 right-4 text-white/40 hover:text-white transition-colors">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <p class="text-[#4FC3F7] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">// REQUEST</p>
+    <h3 class="text-2xl font-bold text-white uppercase tracking-tighter mb-2">Request a Demo</h3>
+    <p class="text-sm text-white/40 mb-6">YellowScan Explorer — INSEE UAV</p>
+    <form name="request-demo" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleDemoSubmit(event)" class="space-y-4">
+      <input type="hidden" name="form-name" value="request-demo"/>
+      <p class="hidden"><input name="bot-field"/></p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="text-[10px] text-white/40 uppercase font-bold">Name *</label>
+          <input name="name" type="text" placeholder="Your name" required class="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-white focus:border-[#4FC3F7] outline-none transition-colors text-sm rounded-lg"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] text-white/40 uppercase font-bold">Company</label>
+          <input name="company" type="text" placeholder="Company name" class="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-white focus:border-[#4FC3F7] outline-none transition-colors text-sm rounded-lg"/>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="text-[10px] text-white/40 uppercase font-bold">Email *</label>
+          <input name="email" type="email" placeholder="your@email.com" required class="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-white focus:border-[#4FC3F7] outline-none transition-colors text-sm rounded-lg"/>
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] text-white/40 uppercase font-bold">Phone</label>
+          <input name="phone" type="tel" placeholder="0XX-XXX-XXXX" class="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-white focus:border-[#4FC3F7] outline-none transition-colors text-sm rounded-lg"/>
+        </div>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] text-white/40 uppercase font-bold">Interest</label>
+        <select name="interest" class="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-white focus:border-[#4FC3F7] outline-none transition-colors text-sm rounded-lg">
+          <option>YellowScan Explorer Demo</option>
+          <option>LiDAR Survey Inquiry</option>
+          <option>Platform Demo (INSEE-250 + Explorer)</option>
+          <option>Pricing & Purchase</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="space-y-1">
+        <label class="text-[10px] text-white/40 uppercase font-bold">Message</label>
+        <textarea name="message" placeholder="Tell us more..." class="w-full bg-[#0A1628] border border-white/10 px-4 py-3 text-white focus:border-[#4FC3F7] outline-none transition-colors text-sm h-24 rounded-lg"></textarea>
+      </div>
+      <button type="submit" class="w-full py-4 font-bold uppercase text-sm rounded-lg hover:brightness-110 transition-all mt-2" style="background: linear-gradient(135deg, #F2A900, #e09800); color: #1B181C;">
+        Send Request →
+      </button>
+      <div id="demo-success" class="hidden text-center py-4">
+        <span class="material-symbols-outlined text-4xl text-[#4FC3F7] mb-2 block">check_circle</span>
+        <p class="text-white font-bold">Your request has been sent!</p>
+        <p class="text-white/40 text-sm mt-1">Our team will get back to you within 24 hours.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openDemoModal() {
+  const modal = document.getElementById('demo-modal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+function closeDemoModal() {
+  const modal = document.getElementById('demo-modal');
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemoModal(); });
+
+function handleDemoSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    form.reset();
+    form.style.display = 'none';
+    document.getElementById('demo-success').classList.remove('hidden');
+    setTimeout(() => closeDemoModal(), 3000);
+  })
+  .catch(() => alert('Something went wrong. Please try again.'));
+}
+
+// Netlify Identity
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+</script>
+
+
+<!-- LIGHTBOX OVERLAY -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="close-btn" onclick="event.stopPropagation(); closeLightbox()" aria-label="Close">×</button>
+  <img id="lightbox-img" src="" alt="Expanded view" onclick="event.stopPropagation()"/>
+</div>
+<script>
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

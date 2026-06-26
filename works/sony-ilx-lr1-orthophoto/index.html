@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>High-Res Orthophoto Production · INSEE-250 + Sony ILX-LR1 Full-Frame | INSEE UAV</title>
+<link rel="alternate" hreflang="th" href="https://www.inseeuav.com/works/sony-ilx-lr1-orthophoto/"/>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/works/sony-ilx-lr1-orthophoto/"/>
+<meta name="description" content="ภารกิจ Orthophoto ความละเอียดสูง ด้วยกล้อง Sony Full-Frame 61MP"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+:root { --blue:#0084C8;--sky:#4FC3F7;--navy:#0A1628;--cloud:#EBF5FF;--light:#F5FAFF;--text:#1E3A4F;--muted:#4A6B80;--border:#CCE5F5;--ys-amber:#F2A900;--white:#FFFFFF; }
+* { margin:0;padding:0;box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter','Kanit',system-ui,sans-serif; background:var(--light); color:var(--text); min-height:100vh; }
+.container { max-width:1200px; margin:0 auto; padding:40px 32px 80px; }
+.breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:24px; font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb .current { color:var(--navy); font-weight:600; }
+.hero { position:relative; aspect-ratio:21/9; border-radius:24px; overflow:hidden; margin-bottom:40px; box-shadow:0 12px 40px rgba(0,132,200,0.15); }
+.hero img { width:100%; height:100%; object-fit:cover; }
+.hero::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,22,40,0.1) 0%,rgba(10,22,40,0.88) 100%); }
+.hero-content { position:absolute; bottom:40px; left:40px; right:40px; z-index:2; color:white; }
+.badge-row { display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap; }
+.badge { padding:6px 14px; border-radius:100px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+.badge-cat { background:#0084C8; color:white; }
+.badge-platform { background:rgba(255,255,255,0.18); color:white; border:1px solid rgba(255,255,255,0.25); }
+.hero-kicker { font-size:13px; font-weight:700; color:#4FC3F7; letter-spacing:3px; text-transform:uppercase; margin-bottom:8px; }
+.hero-title { font-size:clamp(32px,4vw,52px); font-weight:800; letter-spacing:-1px; line-height:1.05; margin-bottom:12px; }
+.hero-desc { font-size:15px; color:rgba(255,255,255,0.85); max-width:720px; line-height:1.7; }
+.section-label { font-size:18px; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:2px; margin:40px 0 16px; display:flex; align-items:center; gap:12px; }
+.section-label::before { content:''; width:24px; height:2px; background:var(--blue); }
+.specs-card { background:var(--white); border-radius:24px; padding:40px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,132,200,0.06); }
+.specs-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px 24px; }
+@media (max-width:768px) { .specs-grid { grid-template-columns:1fr; } }
+.spec { display:flex; align-items:center; gap:12px; }
+.spec-icon { width:40px; height:40px; border-radius:10px; background:var(--cloud); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--blue); }
+.spec-label { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
+.spec-value { font-size:15px; font-weight:700; color:var(--navy); }
+.gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+@media (max-width:768px) { .gallery { grid-template-columns:repeat(2,1fr); } }
+.cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:40px; }
+.btn { display:inline-flex; align-items:center; gap:8px; padding:14px 24px; border-radius:8px; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; text-decoration:none; transition:transform 0.2s; }
+.btn:hover { transform:translateY(-2px); }
+.btn-primary { background:var(--blue); color:white; }
+.btn-outline { background:white; color:var(--blue); border:1px solid var(--blue); }
+nav.top { background:white; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; }
+nav.top .inner { max-width:1440px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; }
+nav.top img { height:32px; }
+#lightbox { display:none; position:fixed; inset:0; background:rgba(10,22,40,0.94); z-index:9999; align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
+#lightbox.open { display:flex; }
+#lightbox img { max-width:95vw; max-height:90vh; object-fit:contain; border-radius:8px; }
+    /* MEGA-MENU NAV */
+    .clip-path-angled { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+    .mega-menu { position: relative; }
+    .mega-menu-content { display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #CCE5F5; z-index: 100; padding: 24px; gap: 32px; min-width: 780px; max-width: calc(100vw - 32px); box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 12px; }
+    .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
+    .mega-menu:hover .mega-menu-content { display: flex; }
+    .mega-col { min-width: 160px; }
+    .mega-col-title { font-size: 9px; font-weight: 700; color: #F2A900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(242,169,0,0.2); }
+    .mega-col-title.blue { color: #0084C8; border-color: rgba(0,132,200,0.2); }
+    .mega-link { display: block; padding: 6px 0; font-size: 12px; font-weight: 600; color: #1E3A4F; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; white-space: nowrap; }
+    .mega-link:hover { color: #0084C8; }
+    .mega-link.current { color: #0084C8; }
+    .mega-link.ys { color: #F2A900; }
+    .mega-divider { width: 1px; background: #CCE5F5; align-self: stretch; }
+    .mega-sub-title { font-size: 8px; font-weight: 700; color: #0084C8; text-transform: uppercase; letter-spacing: 2px; margin-top: 14px; margin-bottom: 6px; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #CCE5F5; min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 8px; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
+    .nav-dropdown:hover .nav-dropdown-content { display: block; }
+    .dropdown-item { color: #1E3A4F; padding: 8px 20px; text-decoration: none; display: block; font-size: 13px; transition: all 0.2s; }
+    .dropdown-item:hover { color: #0084C8; background: #F5FAFF; }
+    .dropdown-item.current { color: #0084C8; font-weight: 700; }
+    .lang-toggle-btn { color: rgba(10,22,40,0.5); cursor: pointer; border: none; background: none; }
+    .lang-toggle-btn.active { background: #0084C8; color: white; }
+
+</style>
+</head>
+<body>
+<!-- ==================== NAVBAR ==================== -->
+<header class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-[#CCE5F5]">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<a class="flex items-center" href="/">
+<img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/">Home</a>
+<div class="mega-menu">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Products <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="mega-menu-content">
+  <div class="mega-col">
+    <div class="mega-col-title blue">INSEE Platforms</div>
+    <a class="mega-link" href="/products/insee-250/">INSEE-250</a>
+    <a class="mega-link" href="/products/insee-350/">INSEE-350</a>
+    <a class="mega-link" href="/products/gcs/">INSEE-GCS-01</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan LiDAR</div>
+    <a class="mega-link ys" href="/products/yellowscan/venturer/">Venturer</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-plus/">Mapper+</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+    <a class="mega-link" href="/products/yellowscan/voyager/">Voyager</a>
+    <a class="mega-link" href="/products/yellowscan/navigator/">Navigator</a>
+    <a class="mega-link" href="/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+    <a class="mega-link" href="/products/yellowscan/explorer/">Explorer</a>
+    <a class="mega-link" href="/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+  </div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan Accessories</div>
+    <a class="mega-link" href="/products/yellowscan/camera-modules/">Camera Modules</a>
+    <div class="mega-sub-title">Software</div>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation/">CloudStation</a>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+    <a class="mega-link" href="/products/yellowscan/software/livestation/">LiveStation</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title blue">Other Payloads</div>
+    <div class="mega-sub-title">Riebo</div>
+    <a class="mega-link" href="/products/riebo/d2m/">D2M Oblique</a>
+    <div class="mega-sub-title">GVI</div>
+    <a class="mega-link" href="/products/gvi/h600/">LiAir H600</a>
+    <a class="mega-link" href="/products/gvi/h800/">LiAir H800</a>
+    <div class="mega-sub-title">CHCNav</div>
+    <a class="mega-link" href="/products/chcnav/aa10/">AlphaAir 10</a>
+    <div class="mega-sub-title">Sony</div>
+    <a class="mega-link" href="/products/sony/ilx-lr1/">ILX-LR1</a>
+  </div>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#solutions">Applications</a>
+<a class="dropdown-item current" href="/works/">References / Our Work</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">Event <span class="material-symbols-outlined text-xs">expand_more</span></button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+<a class="dropdown-item" href="/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+<a class="dropdown-item" href="/events/intergeo-2024/">INTERGEO 2024</a>
+<a class="dropdown-item" href="/events/malaysia-2024/">Malaysia Presentation 2024</a>
+<a class="dropdown-item" href="/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  About <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#milestones">Our Story</a>
+</div>
+</div>
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/en/works/sony-ilx-lr1-orthophoto/" id="lang-en">EN</a>
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/works/sony-ilx-lr1-orthophoto/" id="lang-th">TH</a>
+</div>
+<button onclick="alert('Demo modal — coming soon')" class="bg-[#0084C8] text-white px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all">
+Request Demo
+</button>
+</div>
+</div>
+</header>
+
+<main class="container" style="padding-top: 100px;">
+<div class="breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/works/">Works</a> <span>&rsaquo;</span> <span class="current">High-Res Orthophoto Production</span></div>
+<div class="hero">
+<img src="/images/work/Insee250%2BSonyILX-LR1/Insee250%2BSonyILX-LR1-1.jpg" alt="High-Res Orthophoto Production"/>
+<div class="hero-content">
+<div class="badge-row"><span class="badge badge-cat">MAPPING</span><span class="badge badge-platform">INSEE-250</span></div>
+<p class="hero-kicker">Sony ILX-LR1 Full-Frame</p>
+<h1 class="hero-title">High-Res Orthophoto Production</h1>
+<p class="hero-desc">ภารกิจ Orthophoto ความละเอียดสูง ด้วยกล้อง Sony Full-Frame 61MP</p>
+</div>
+</div>
+<div class="section-label">Project Specifications · ข้อมูลภารกิจ</div>
+<div class="specs-card">
+<div style="display:inline-flex; align-items:center; gap:8px; background:rgba(242,169,0,0.12); border:1px solid rgba(242,169,0,0.3); color:#B07900; padding:8px 16px; border-radius:100px; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:24px;">
+<span class="material-symbols-outlined" style="font-size:16px;">hourglass_top</span>
+Coming Soon · รอข้อมูลจากทีม
+</div>
+<div class="specs-grid">
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">filter_drama</span></div><div><p class="spec-label">ALTITUDE</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">photo_camera</span></div><div><p class="spec-label">CAMERA</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">hourglass_top</span></div><div><p class="spec-label">FLIGHT TIME</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">crop_free</span></div><div><p class="spec-label">AREA SURVEYED</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">flight</span></div><div><p class="spec-label">DRONE</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">air</span></div><div><p class="spec-label">WIND SPEED</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">device_thermostat</span></div><div><p class="spec-label">TEMPERATURE</p><p class="spec-value">—</p></div></div>
+      <div class="spec"><div class="spec-icon"><span class="material-symbols-outlined">location_on</span></div><div><p class="spec-label">LOCATION</p><p class="spec-value">—</p></div></div>
+</div>
+</div>
+<div class="section-label">Mission Gallery</div>
+<div class="gallery">
+    <div onclick="openLightbox('/images/work/Insee250%2BSonyILX-LR1/Insee250%2BSonyILX-LR1-2.png')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/work/Insee250%2BSonyILX-LR1/Insee250%2BSonyILX-LR1-2.png" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt=""/></div>
+</div>
+<div class="cta-row">
+<a href="/products/sony/ilx-lr1/" class="btn btn-primary">ดู Payload ที่ใช้ <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span></a>
+<a href="/" class="btn btn-outline">กลับหน้าหลัก</a>
+</div>
+</main>
+<div id="lightbox" onclick="this.classList.remove('open')"><img id="lightbox-img" src=""/></div>
+<script>
+function openLightbox(src) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').classList.add('open'); }
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lightbox').classList.remove('open');});
+</script>
+</body>
+</html>

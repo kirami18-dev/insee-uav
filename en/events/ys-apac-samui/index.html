@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INSEE UAV at YS APAC · Koh Samui | INSEE UAV</title>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/events/ys-apac-samui/"/>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/events/ys-apac-samui/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.inseeuav.com/events/ys-apac-samui/"/>
+  <meta name="description" content="INSEE UAV at YS APAC · Koh Samui in Koh Samui, Thailand — YellowScan APAC meet — Mapping & LiDAR demonstrations at Koh Samui."/>
+  <meta name="keywords" content="INSEE UAV, DronTech Asia 2024, Bangkok, UAV Mapping, YellowScan LiDAR, Thai Sky Vision"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --blue: #0084C8; --sky: #4FC3F7; --navy: #0A1628;
+      --cloud: #EBF5FF; --light: #F5FAFF;
+      --text: #1E3A4F; --muted: #4A6B80; --border: #CCE5F5;
+      --ys-amber: #F2A900;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', 'Kanit', system-ui, sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
+
+    /* NAV */
+    .mega-menu { position: relative; }
+    .mega-menu-content { display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--border); z-index: 100; padding: 24px; gap: 32px; min-width: 780px; max-width: calc(100vw - 32px); box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 12px; margin-top: 0; }
+    .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
+    .mega-menu:hover .mega-menu-content { display: flex; }
+    .mega-col { min-width: 160px; }
+    .mega-col-title { font-size: 9px; font-weight: 700; color: var(--ys-amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(242,169,0,0.2); }
+    .mega-col-title.blue { color: var(--blue); border-color: rgba(0,132,200,0.2); }
+    .mega-link { display: block; padding: 6px 0; font-size: 12px; font-weight: 600; color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; white-space: nowrap; }
+    .mega-link:hover { color: var(--blue); }
+    .mega-link.current { color: var(--blue); }
+    .mega-link.ys { color: var(--ys-amber); }
+    .mega-divider { width: 1px; background: var(--border); align-self: stretch; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--border); min-width: 220px; z-index: 100; padding: 8px 0; border-radius: 8px; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
+    .nav-dropdown:hover .nav-dropdown-content { display: block; }
+    .dropdown-item { color: var(--text); padding: 8px 20px; text-decoration: none; display: block; font-size: 13px; transition: all 0.2s; }
+    .dropdown-item:hover { color: var(--blue); background: var(--light); }
+    .dropdown-item.current { color: var(--blue); font-weight: 700; }
+    .lang-toggle-btn { color: rgba(10,22,40,0.5); cursor: pointer; border: none; background: none; }
+    .lang-toggle-btn.active { background: var(--blue); color: white; }
+
+    /* LAYOUT */
+    .page-content { max-width: 1080px !important; width: 100%; margin: 0 auto !important; padding: 48px 48px 80px !important; box-sizing: border-box; }
+    @media (max-width: 768px) { .page-content { padding: 32px 20px 60px; } }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 32px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span.current { color: var(--navy); font-weight: 600; }
+
+    .card-label { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    .card-label::before { content: ''; width: 24px; height: 2px; background: var(--blue); }
+    .section-label { margin-bottom: 16px; margin-top: 40px; }
+
+    /* HERO */
+    .hero-banner { position: relative; border-radius: 24px; overflow: hidden; margin-bottom: 32px; height: 460px; box-shadow: 0 12px 40px rgba(0,132,200,0.15); }
+    .hero-banner img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,22,40,0.10) 0%, rgba(10,22,40,0.85) 100%); }
+    .hero-content { position: absolute; bottom: 40px; left: 40px; right: 40px; z-index: 2; color: white; }
+    .hero-badge { display: inline-block; background: rgba(0,132,200,0.95); color: white; padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero-badge.past { background: rgba(74,107,128,0.95); }
+    .hero-title { font-size: 48px; font-weight: 700; line-height: 1.1; margin-bottom: 12px; letter-spacing: -1px; }
+    .hero-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 16px; }
+    .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; opacity: 0.95; }
+    @media (max-width: 768px) { .hero-title { font-size: 32px; } .hero-banner { height: 360px; } .hero-content { left: 24px; right: 24px; bottom: 24px; } }
+
+    /* Recap Card */
+    .recap-card { background: var(--white); border-radius: 24px; padding: 48px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,132,200,0.06); }
+    .recap-card h2 { font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.5px; }
+    .recap-card .separator { width: 50px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 24px; }
+    .recap-card p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+    .recap-card strong { color: var(--navy); }
+
+    /* Highlights */
+    .highlight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .highlight-grid { grid-template-columns: 1fr; } }
+    .highlight-card { background: var(--white); border-radius: 20px; padding: 28px; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; box-shadow: 0 4px 16px rgba(0,132,200,0.04); }
+    .highlight-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,132,200,0.12); border-color: var(--sky); }
+    .highlight-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; background: var(--cloud); color: var(--blue); }
+    .highlight-card h4 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .highlight-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* Gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: var(--light); cursor: pointer; transition: transform 0.3s; }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* CTA */
+    .cta-card { background: linear-gradient(135deg, var(--blue) 0%, #006fb0 100%); border-radius: 24px; padding: 48px; color: white; text-align: center; }
+    .cta-card h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .cta-card p { font-size: 15px; opacity: 0.9; margin-bottom: 28px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .btn-cta { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--blue); padding: 14px 32px; border-radius: 100px; font-weight: 700; text-decoration: none; transition: transform 0.3s; }
+    .btn-cta:hover { transform: translateY(-2px); }
+
+    /* Lightbox */
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(10,22,40,0.92); z-index: 9999; cursor: zoom-out; align-items: center; justify-content: center; padding: 40px; }
+    #lightbox.active { display: flex; }
+    #lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+    #lightbox .close { position: absolute; top: 24px; right: 32px; color: white; font-size: 36px; cursor: pointer; }
+
+    /* Footer */
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 40px 32px; text-align: center; font-size: 12px; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<!-- ==================== NAVBAR ==================== -->
+<header class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-[#CCE5F5]">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<a class="flex items-center" href="/en/">
+<img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/en/">Home</a>
+<div class="mega-menu">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Products <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="mega-menu-content">
+  <div class="mega-col">
+    <div class="mega-col-title blue">INSEE Platforms</div>
+    <a class="mega-link" href="/en/products/insee-250/">INSEE-250</a>
+    <a class="mega-link" href="/en/products/insee-350/">INSEE-350</a>
+    <a class="mega-link" href="/en/products/gcs/">INSEE-GCS-01</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan LiDAR</div>
+    <a class="mega-link ys" href="/en/products/yellowscan/venturer/">Venturer</a>
+    <a class="mega-link" href="/en/products/yellowscan/mapper-plus/">Mapper+</a>
+    <a class="mega-link" href="/en/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+    <a class="mega-link" href="/en/products/yellowscan/voyager/">Voyager</a>
+    <a class="mega-link" href="/en/products/yellowscan/navigator/">Navigator</a>
+    <a class="mega-link" href="/en/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+    <a class="mega-link" href="/en/products/yellowscan/explorer/">Explorer</a>
+    <a class="mega-link" href="/en/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+  </div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan Accessories</div>
+    <a class="mega-link" href="/en/products/yellowscan/camera-modules/">Camera Modules</a>
+    <div class="mega-sub-title">Software</div>
+    <a class="mega-link" href="/en/products/yellowscan/software/cloudstation/">CloudStation</a>
+    <a class="mega-link" href="/en/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+    <a class="mega-link" href="/en/products/yellowscan/software/livestation/">LiveStation</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title blue">Other Payloads</div>
+    <div class="mega-sub-title">Riebo</div>
+    <a class="mega-link" href="/en/products/riebo/d2m/">D2M Oblique</a>
+    <div class="mega-sub-title">GVI</div>
+    <a class="mega-link" href="/en/products/gvi/h600/">LiAir H600</a>
+    <a class="mega-link" href="/en/products/gvi/h800/">LiAir H800</a>
+    <div class="mega-sub-title">CHCNav</div>
+    <a class="mega-link" href="/en/products/chcnav/aa10/">AlphaAir 10</a>
+    <div class="mega-sub-title">Sony</div>
+    <a class="mega-link" href="/en/products/sony/ilx-lr1/">ILX-LR1</a>
+  </div>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/en/#solutions">Applications</a>
+<a class="dropdown-item" href="/en/works/">References / Our Work</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">Event <span class="material-symbols-outlined text-xs">expand_more</span></button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/en/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+<a class="dropdown-item" href="/en/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+<a class="dropdown-item" href="/en/events/intergeo-2024/">INTERGEO 2024</a>
+<a class="dropdown-item" href="/en/events/malaysia-2024/">Malaysia Presentation 2024</a>
+<a class="dropdown-item" href="/en/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  About <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/en/#milestones">Our Story</a>
+</div>
+</div>
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/en/#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/en/events/ys-apac-samui/" id="lang-en">EN</a>
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/events/ys-apac-samui/" id="lang-th">TH</a>
+</div>
+<button onclick="alert('Demo modal — coming soon')" class="bg-[#0084C8] text-white px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all">
+Request Demo
+</button>
+</div>
+</div>
+</header>
+
+
+<!-- ==================== MAIN ==================== -->
+<main style="padding-top: 80px; background: var(--light); min-height: calc(100vh - 80px);">
+  <div class="page-content" style="max-width: 1080px; width: 100%; margin: 0 auto; padding: 48px 48px 80px; box-sizing: border-box;">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a> <span>›</span> <a href="#">Events</a> <span>›</span> <span class="current">YS APAC · Koh Samui</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-banner">
+      <img src="/images/events/ys-apac-samui/hero.jpg" alt="2024 YellowScan APAC Dealers Meeting · Koh Samui"/>
+      <div class="hero-content">
+        <span class="hero-badge past">Past Event · Recap</span>
+        <h1 class="hero-title">2024 YellowScan APAC Dealers Meeting</h1>
+        <p style="font-size: 16px; opacity: 0.92; max-width: 720px;">Regional dealers meeting for YellowScan APAC — INSEE UAV joined as flight demonstration partner, capturing real survey data with Mapper+ and Surveyor Ultra III OEM.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="material-symbols-outlined" style="font-size: 18px;">location_on</span>
+            Meliá Koh Samui, Thailand
+          </div>
+          <div class="hero-meta-item">
+            <span class="material-symbols-outlined" style="font-size: 18px;">calendar_month</span>
+            19 - 21 March 2024
+          </div>
+          <div class="hero-meta-item">
+            <span class="material-symbols-outlined" style="font-size: 18px;">groups</span>
+            YellowScan APAC Dealers
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- RECAP -->
+    <div style="margin-top: 32px; background: var(--white); border-radius: 24px; padding: 48px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,132,200,0.06);">
+      <h2 style="font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.5px;">Showcasing INSEE UAV to APAC Partners</h2>
+      <div style="width: 50px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 24px;"></div>
+      <p style="font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 16px;">
+        As the <strong style="color: var(--navy);">Official YellowScan Distributor in Thailand</strong>, Thai Sky Vision joined the 2024 YellowScan APAC Dealers Meeting from <strong style="color: var(--navy);">19 - 21 March 2024</strong> at Meliá Koh Samui — a regional gathering of Asia-Pacific dealers for knowledge sharing, technology updates, and joint go-to-market planning.
+      </p>
+      <p style="font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 16px;">
+        Within the event, INSEE UAV performed <strong style="color: var(--navy);">live flight demonstrations and real data acquisition with our E-VTOL Fixed-Wing UAV</strong> — using <strong style="color: var(--ys-amber);">YellowScan Mapper+</strong> and <strong style="color: var(--ys-amber);">YellowScan Surveyor Ultra III OEM</strong> mounted on INSEE-250, showcasing the performance and stability of our Fixed-Wing platform paired with YellowScan LiDAR payloads to APAC partners.
+      </p>
+      <p style="font-size: 15px; color: var(--muted); line-height: 1.8;">
+        The flight results from this event became a <strong style="color: var(--navy);">Reference Mission</strong> that elevated INSEE UAV's credibility across the region — opening new collaboration opportunities with dealers from across Asia-Pacific.
+      </p>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <h3 style="font-size: 22px; font-weight: 700; color: var(--navy); margin: 48px 0 20px;">Key Highlights</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+      <div style="background: white; border-radius: 20px; padding: 28px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,132,200,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(242,169,0,0.12); color: var(--ys-amber); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;"><span class="material-symbols-outlined">groups</span></div>
+        <h4 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">APAC Dealers Network</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">Brought together YellowScan dealers from across the Asia-Pacific region — knowledge sharing and joint go-to-market planning.</p>
+      </div>
+      <div style="background: white; border-radius: 20px; padding: 28px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,132,200,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(242,169,0,0.12); color: var(--ys-amber); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;"><span class="material-symbols-outlined">flight_takeoff</span></div>
+        <h4 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Live Flight Demonstration</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">INSEE-250 performed live demo flights and captured real survey data with YellowScan Mapper+ and Surveyor Ultra III OEM.</p>
+      </div>
+      <div style="background: white; border-radius: 20px; padding: 28px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,132,200,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(242,169,0,0.12); color: var(--ys-amber); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;"><span class="material-symbols-outlined">verified</span></div>
+        <h4 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Reference Mission</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">Real flight results from this event are now featured as Reference Showcase across our website and regional presentations.</p>
+      </div>
+      <div style="background: white; border-radius: 20px; padding: 28px; border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,132,200,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(242,169,0,0.12); color: var(--ys-amber); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px;"><span class="material-symbols-outlined">trending_up</span></div>
+        <h4 style="font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Regional Brand Lift</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">Lifted INSEE UAV brand awareness across APAC — strongly positive reception from regional dealers.</p>
+      </div>
+    </div>
+
+    <!-- LINKED MISSIONS -->
+    <h3 style="font-size: 22px; font-weight: 700; color: var(--navy); margin: 48px 0 20px;">Mission Results</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <a href="/en/works/mapper-plus-nakhon-nayok-golf/" style="display: block; background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%); color: white; border-radius: 20px; padding: 32px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(242,169,0,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <p style="font-size: 11px; font-weight: 700; color: var(--ys-amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">YellowScan Mapper+ × INSEE-250</p>
+        <h4 style="font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px;">Golf Course LiDAR Survey</h4>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 16px;">Golf course LiDAR survey — high-density Point Cloud at 38–75 pts/m²</p>
+        <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--ys-amber); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">See Full Mission <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span></span>
+      </a>
+      <a href="/en/works/surveyor-ultra-iii-nakhon-nayok-golf/" style="display: block; background: linear-gradient(135deg, #0A1628 0%, #1a3a5c 100%); color: white; border-radius: 20px; padding: 32px; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(242,169,0,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <p style="font-size: 11px; font-weight: 700; color: var(--ys-amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">YellowScan Surveyor Ultra III OEM × INSEE-250</p>
+        <h4 style="font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px;">Long-Range LiDAR Mapping</h4>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 16px;">Long-range LiDAR — Hesai XT32M2X · 640k shots/sec · 14-27 pts/m²</p>
+        <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--ys-amber); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">See Full Mission <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span></span>
+      </a>
+    </div>
+
+    <!-- GALLERY -->
+    <h3 style="font-size: 22px; font-weight: 700; color: var(--navy); margin: 48px 0 20px;">Event Gallery</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+      <div onclick="openLightbox('/images/events/ys-apac-samui/IMG_7204.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/IMG_7204.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/IMG_7211.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/IMG_7211.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/IMG_7232.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/IMG_7232.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/IMG_7234.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/IMG_7234.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/IMG_7240.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/IMG_7240.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_6.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_6.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_54.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_54.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_64.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_64.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+      <div onclick="openLightbox('/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_67.jpg')" style="border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; border: 1px solid var(--border);"><img src="/images/events/ys-apac-samui/LINE_ALBUM_YellowScan%40%E0%B8%AA%E0%B8%A1%E0%B8%B8%E0%B8%A2_240320_67.jpg" alt="YS APAC Samui" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"/></div>
+    </div>
+
+<!-- CTA -->
+    <div style="margin-top: 40px;">
+      <div class="cta-card">
+        <h2>Interested in INSEE-250 and LiDAR Systems?</h2>
+        <p>Contact the INSEE UAV / Thai Sky Vision team — for consultation, live flight demos, and end-to-end solutions for Mapping, LiDAR Survey, and Industrial Applications.</p>
+        <a href="/#contact" class="btn-cta">
+          Contact Us
+          <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<footer>
+  <div>© 2026 INSEE UAV. Operated by Thai Sky Vision Co., Ltd.</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/products/insee-250/">INSEE-250</a>
+    <a href="/products/insee-350/">INSEE-350</a>
+    <a href="/events/ys-demo-day-2026/">Upcoming Event</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.parentElement.addEventListener('click', () => {
+      document.getElementById('lightbox-img').src = img.src.replace(/w_\d+,h_\d+/, 'w_1920,h_1280');
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+  document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

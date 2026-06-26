@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Our Work · ผลงานทั้งหมด · INSEE UAV</title>
+<link rel="alternate" hreflang="th" href="https://www.inseeuav.com/works/"/>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/works/"/>
+<meta name="description" content="รวมผลงานการบินสำรวจ Mapping & LiDAR ของ INSEE UAV ทั่วประเทศ"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter','Kanit',system-ui,sans-serif; background:#F5FAFF; color:#1E3A4F; min-height:100vh; }
+    /* MEGA-MENU NAV */
+    .clip-path-angled { clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
+    .mega-menu { position: relative; }
+    .mega-menu-content { display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #CCE5F5; z-index: 100; padding: 24px; gap: 32px; min-width: 780px; max-width: calc(100vw - 32px); box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 12px; }
+    .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
+    .mega-menu:hover .mega-menu-content { display: flex; }
+    .mega-col { min-width: 160px; }
+    .mega-col-title { font-size: 9px; font-weight: 700; color: #F2A900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(242,169,0,0.2); }
+    .mega-col-title.blue { color: #0084C8; border-color: rgba(0,132,200,0.2); }
+    .mega-link { display: block; padding: 6px 0; font-size: 12px; font-weight: 600; color: #1E3A4F; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; white-space: nowrap; }
+    .mega-link:hover { color: #0084C8; }
+    .mega-link.current { color: #0084C8; }
+    .mega-link.ys { color: #F2A900; }
+    .mega-divider { width: 1px; background: #CCE5F5; align-self: stretch; }
+    .mega-sub-title { font-size: 8px; font-weight: 700; color: #0084C8; text-transform: uppercase; letter-spacing: 2px; margin-top: 14px; margin-bottom: 6px; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #CCE5F5; min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 8px; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
+    .nav-dropdown:hover .nav-dropdown-content { display: block; }
+    .dropdown-item { color: #1E3A4F; padding: 8px 20px; text-decoration: none; display: block; font-size: 13px; transition: all 0.2s; }
+    .dropdown-item:hover { color: #0084C8; background: #F5FAFF; }
+    .dropdown-item.current { color: #0084C8; font-weight: 700; }
+    .lang-toggle-btn { color: rgba(10,22,40,0.5); cursor: pointer; border: none; background: none; }
+    .lang-toggle-btn.active { background: #0084C8; color: white; }
+
+.work-card { transition: transform 0.3s, box-shadow 0.3s; }
+.work-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,132,200,0.18); }
+.filter-row { margin-bottom: 18px; }
+.filter-row-label { font-size: 11px; font-weight: 700; color: #4A6B80; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; display: block; }
+.filter-btn { padding: 9px 18px; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing: 1px; cursor: pointer; transition: all 0.2s; background:white; border:1px solid #CCE5F5; color:#1E3A4F; margin-right: 8px; margin-bottom: 8px; }
+.filter-btn.active { background:#0084C8; color:white; border-color:#0084C8; }
+.filter-btn:hover { border-color:#0084C8; }
+.result-counter { font-size: 13px; color: #4A6B80; margin-bottom: 24px; }
+.result-counter strong { color: #0A1628; font-weight: 700; }
+
+@keyframes fadeSlide { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+#filter-toggle.open { border-color:#0084C8 !important; background:#EBF5FF; }
+#filter-toggle.open #filter-chevron { transform:rotate(180deg); }
+#filter-toggle.has-filters #filter-count { display:inline-flex !important; }
+</style>
+</head>
+<body>
+<!-- ==================== NAVBAR ==================== -->
+<header class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-[#CCE5F5]">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<a class="flex items-center" href="/">
+<img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/">Home</a>
+<div class="mega-menu">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Products <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="mega-menu-content">
+  <div class="mega-col">
+    <div class="mega-col-title blue">INSEE Platforms</div>
+    <a class="mega-link" href="/products/insee-250/">INSEE-250</a>
+    <a class="mega-link" href="/products/insee-350/">INSEE-350</a>
+    <a class="mega-link" href="/products/gcs/">INSEE-GCS-01</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan LiDAR</div>
+    <a class="mega-link ys" href="/products/yellowscan/venturer/">Venturer</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-plus/">Mapper+</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+    <a class="mega-link" href="/products/yellowscan/voyager/">Voyager</a>
+    <a class="mega-link" href="/products/yellowscan/navigator/">Navigator</a>
+    <a class="mega-link" href="/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+    <a class="mega-link" href="/products/yellowscan/explorer/">Explorer</a>
+    <a class="mega-link" href="/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+  </div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan Accessories</div>
+    <a class="mega-link" href="/products/yellowscan/camera-modules/">Camera Modules</a>
+    <div class="mega-sub-title">Software</div>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation/">CloudStation</a>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+    <a class="mega-link" href="/products/yellowscan/software/livestation/">LiveStation</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title blue">Other Payloads</div>
+    <div class="mega-sub-title">Riebo</div>
+    <a class="mega-link" href="/products/riebo/d2m/">D2M Oblique</a>
+    <div class="mega-sub-title">GVI</div>
+    <a class="mega-link" href="/products/gvi/h600/">LiAir H600</a>
+    <a class="mega-link" href="/products/gvi/h800/">LiAir H800</a>
+    <div class="mega-sub-title">CHCNav</div>
+    <a class="mega-link" href="/products/chcnav/aa10/">AlphaAir 10</a>
+    <div class="mega-sub-title">Sony</div>
+    <a class="mega-link" href="/products/sony/ilx-lr1/">ILX-LR1</a>
+  </div>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#solutions">Applications</a>
+<a class="dropdown-item current" href="/works/">References / Our Work</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">Event <span class="material-symbols-outlined text-xs">expand_more</span></button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+<a class="dropdown-item" href="/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+<a class="dropdown-item" href="/events/intergeo-2024/">INTERGEO 2024</a>
+<a class="dropdown-item" href="/events/malaysia-2024/">Malaysia Presentation 2024</a>
+<a class="dropdown-item" href="/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  About <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#milestones">Our Story</a>
+</div>
+</div>
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/en/works/" id="lang-en">EN</a>
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/works/" id="lang-th">TH</a>
+</div>
+<button onclick="alert('Demo modal — coming soon')" class="bg-[#0084C8] text-white px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all">
+Request Demo
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<section class="py-20 px-8 bg-[#EBF5FF]">
+<div class="max-w-[1440px] mx-auto">
+<nav style="margin-bottom:24px; font-size:12px; color:#4A6B80; text-transform:uppercase; letter-spacing:1px;">
+<a href="/" style="color:#4A6B80; text-decoration:none;">Home</a>
+<span style="margin:0 8px;">&rsaquo;</span>
+<span style="color:#0A1628; font-weight:600;">Works · ผลงานทั้งหมด</span>
+</nav>
+<p class="text-[#0084C8] font-bold text-xs mb-2 tracking-[0.2em] uppercase">// REFERENCES</p>
+<h1 class="text-5xl md:text-6xl font-bold text-[#0A1628] uppercase tracking-tighter mb-4">Our Work · ผลงานทั้งหมด</h1>
+<p class="text-lg text-[#4A6B80] mb-12">ผลงานจริงจากภารกิจสำรวจทั่วประเทศ</p>
+
+<div class="filter-bar" style="display:flex; align-items:center; gap:12px; margin-bottom:24px; flex-wrap:wrap;">
+  <button id="filter-toggle" type="button" onclick="toggleFilterPanel()" style="display:inline-flex; align-items:center; gap:10px; padding:10px 20px; background:white; border:1px solid #CCE5F5; border-radius:100px; font-size:13px; font-weight:700; color:#1E3A4F; cursor:pointer; transition:all 0.2s; letter-spacing:0.5px; box-shadow:0 2px 8px rgba(0,132,200,0.04);" onmouseover="this.style.borderColor='#0084C8'" onmouseout="this.style.borderColor=this.classList.contains('open')?'#0084C8':'#CCE5F5'">
+    <span class="material-symbols-outlined" style="font-size:18px;">tune</span>
+    <span>ตัวกรอง</span>
+    <span id="filter-count" style="display:none; min-width:22px; height:22px; padding:0 6px; background:#F2A900; color:#0A1628; border-radius:100px; font-size:11px; font-weight:800; align-items:center; justify-content:center;">0</span>
+    <span class="material-symbols-outlined" id="filter-chevron" style="font-size:18px; transition:transform 0.2s;">expand_more</span>
+  </button>
+  <button id="filter-reset" type="button" onclick="resetFilters()" style="display:none; padding:8px 16px; background:transparent; border:1px solid #CCE5F5; border-radius:100px; font-size:12px; font-weight:600; color:#4A6B80; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.color='#0084C8'; this.style.borderColor='#0084C8'" onmouseout="this.style.color='#4A6B80'; this.style.borderColor='#CCE5F5'">
+    <span class="material-symbols-outlined" style="font-size:14px; vertical-align:-2px; margin-right:4px;">close</span>ล้างทั้งหมด
+  </button>
+</div>
+
+<div id="filter-panel" style="display:none; background:white; border:1px solid #CCE5F5; border-radius:16px; padding:24px; margin-bottom:24px; box-shadow:0 4px 16px rgba(0,132,200,0.06); animation:fadeSlide 0.25s ease-out;">
+<div class="filter-row">
+    <span class="filter-row-label">ประเภทงาน · CATEGORY</span>
+    <div class="flex flex-wrap"><button class="filter-btn active" data-filter-cat="all">ALL</button><button class="filter-btn" data-filter-cat="mapping">MAPPING</button><button class="filter-btn" data-filter-cat="lidar">LIDAR</button><button class="filter-btn" data-filter-cat="agriculture">AGRICULTURE</button><button class="filter-btn" data-filter-cat="defense">DEFENSE</button><button class="filter-btn" data-filter-cat="inspection">INSPECTION</button></div>
+  </div>
+  <div class="filter-row">
+    <span class="filter-row-label">โดรน · DRONE</span>
+    <div class="flex flex-wrap"><button class="filter-btn active" data-filter-drone="all">All Drones</button><button class="filter-btn" data-filter-drone="insee-250">INSEE-250</button><button class="filter-btn" data-filter-drone="insee-350">INSEE-350</button><button class="filter-btn" data-filter-drone="dji-m400">DJI Matrice 400</button></div>
+  </div>
+  <div class="filter-row" style="margin-bottom:0;">
+    <span class="filter-row-label">อุปกรณ์ · PAYLOAD</span>
+    <div class="flex flex-wrap"><button class="filter-btn active" data-filter-payload="all">All Payloads</button><button class="filter-btn" data-filter-payload="ys-mapper-plus">YS Mapper+</button><button class="filter-btn" data-filter-payload="ys-surveyor-ultra-iii">YS Surveyor Ultra III</button><button class="filter-btn" data-filter-payload="ys-voyager">YS Voyager</button><button class="filter-btn" data-filter-payload="gvi-h600">GVI LiAir H600</button><button class="filter-btn" data-filter-payload="gvi-h800">GVI LiAir H800</button><button class="filter-btn" data-filter-payload="riebo-d2m">Riebo D2M</button><button class="filter-btn" data-filter-payload="sony-ilx-lr1">Sony ILX-LR1</button><button class="filter-btn" data-filter-payload="chcnav-aa10">CHCNav AA10</button></div>
+  </div>
+</div>
+
+<p class="result-counter" id="result-counter"></p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="work-grid">
+<a href="/works/mapper-plus-nakhon-nayok-golf/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="lidar" data-drone="insee-250" data-payload="ys-mapper-plus">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250%2BMapper%2B/Insee250%2BMapper%2B-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Golf Course LiDAR Survey"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #FFF8E5; color: #F2A900; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #F2A900;"></span>
+YellowScan Mapper+
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Golf Course LiDAR Survey</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> นครนายก, ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/surveyor-ultra-iii-nakhon-nayok-golf/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="lidar" data-drone="insee-250" data-payload="ys-surveyor-ultra-iii">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250%2BSurveyorUltra3/Insee250%2BSurveyorUltra3-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Long-Range LiDAR Mapping"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #FFF8E5; color: #F2A900; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #F2A900;"></span>
+YellowScan Surveyor Ultra III OEM
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Long-Range LiDAR Mapping</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> นครนายก, ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/gvi-h600-terrain-survey/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="lidar" data-drone="insee-250" data-payload="gvi-h600">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250%2BH600/Insee250%2BH600-1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Terrain & Topographic Survey"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #E8F5E9; color: #2E7D32; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #2E7D32;"></span>
+GVI LiAir H600
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Terrain & Topographic Survey</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/riebo-d2m-oblique-mapping/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="mapping" data-drone="insee-250" data-payload="riebo-d2m">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250%2BRiebo-D2M/Insee250%2BRiebo-D2M-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="3D Oblique Photogrammetry"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">Mapping</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #E3F2FD; color: #1E88E5; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #1E88E5;"></span>
+Riebo D2M Oblique
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">3D Oblique Photogrammetry</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/sony-ilx-lr1-orthophoto/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="mapping" data-drone="insee-250" data-payload="sony-ilx-lr1">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250%2BSonyILX-LR1/Insee250%2BSonyILX-LR1-1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="High-Res Orthophoto Production"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">Mapping</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #F1F1F1; color: #1A1A1A; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #1A1A1A;"></span>
+Sony ILX-LR1 Full-Frame
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">High-Res Orthophoto Production</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/chcnav-aa10-corridor/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="lidar" data-drone="insee-250" data-payload="chcnav-aa10">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee250-AA10/Insee250-AA10-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="LiDAR + RGB Corridor Mapping"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-250</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #FFF0E5; color: #F37021; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #F37021;"></span>
+CHCNav AlphaAir 10
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">LiDAR + RGB Corridor Mapping</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/gvi-h800-large-scale-terrain/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="lidar" data-drone="insee-350" data-payload="gvi-h800">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee350%2BH800/Insee350%2BH800-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Large-Scale LiDAR Terrain Mapping"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-350</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #E8F5E9; color: #2E7D32; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #2E7D32;"></span>
+GVI LiAir H800
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Large-Scale LiDAR Terrain Mapping</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> ประเทศไทย
+</div>
+</div>
+</a>
+
+<a href="/works/voyager-forest-survey/" class="work-card block bg-[#0C1E30] rounded-[12px] overflow-hidden group cursor-pointer no-underline relative" data-category="lidar" data-drone="insee-350" data-payload="ys-voyager">
+<div class="h-[220px] overflow-hidden relative">
+<img src="/images/work/Insee350%2BVoyager/Insee350%2BVoyager-1.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Forest & Complex Terrain Survey"/>
+<div class="absolute top-3 left-3 flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-[#0084C8] text-white text-[9px] font-bold uppercase rounded">LiDAR</span>
+<span class="px-2 py-1 bg-[#0A1628]/85 text-white text-[9px] font-bold uppercase rounded">INSEE-350</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3">
+<div style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: #FFF8E5; color: #F2A900; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #F2A900;"></span>
+YellowScan Voyager
+</div>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-bold text-white mb-3 uppercase leading-tight">Forest & Complex Terrain Survey</h4>
+<div class="flex items-center gap-2 text-white/70 text-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> ประเทศไทย
+</div>
+</div>
+</a>
+</div>
+
+<div id="no-results" style="display:none; text-align:center; padding:60px 20px; color:#4A6B80;">
+<span class="material-symbols-outlined" style="font-size:48px; color:#CCE5F5;">search_off</span>
+<p style="margin-top:12px; font-size:15px;">ไม่พบผลงานที่ตรงกับ filter ที่เลือก</p>
+</div>
+
+</div>
+</section>
+</main>
+<footer class="bg-[#071120] py-12">
+<div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<img alt="INSEE UAV Logo" class="h-8 opacity-50" src="/images/logo-insee.png"/>
+<div class="text-center space-y-1">
+<p class="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INSEE UAV CO., LTD. ALL RIGHTS RESERVED. ENGINEERED IN THAILAND.</p>
+<p class="text-[10px] text-[#4FC3F7]/70 uppercase tracking-widest">Operated by Thai Sky Vision Co., Ltd. — Official YellowScan Distributor in Thailand</p>
+</div>
+</div>
+</footer>
+<script>
+const state = { cat: 'all', drone: 'all', payload: 'all' };
+const cards = document.querySelectorAll('.work-card');
+const counter = document.getElementById('result-counter');
+const noRes = document.getElementById('no-results');
+const labelOf = { all: 'ทั้งหมด' };
+
+function applyFilter() {
+  let n = 0;
+  cards.forEach(c => {
+    const ok = (state.cat === 'all' || c.dataset.category === state.cat)
+      && (state.drone === 'all' || c.dataset.drone === state.drone)
+      && (state.payload === 'all' || c.dataset.payload === state.payload);
+    c.style.display = ok ? '' : 'none';
+    if (ok) n++;
+  });
+  counter.innerHTML = 'แสดง <strong>' + n + '</strong> / ' + cards.length + ' ผลงาน';
+  noRes.style.display = n === 0 ? '' : 'none';
+}
+
+
+function toggleFilterPanel() {
+  const panel = document.getElementById('filter-panel');
+  const btn = document.getElementById('filter-toggle');
+  const isOpen = panel.style.display === 'block';
+  panel.style.display = isOpen ? 'none' : 'block';
+  btn.classList.toggle('open', !isOpen);
+}
+function resetFilters() {
+  state.cat = 'all'; state.drone = 'all'; state.payload = 'all';
+  document.querySelectorAll('[data-filter-cat], [data-filter-drone], [data-filter-payload]').forEach(b => {
+    const isAll = b.dataset.filterCat === 'all' || b.dataset.filterDrone === 'all' || b.dataset.filterPayload === 'all';
+    b.classList.toggle('active', isAll);
+  });
+  applyFilter();
+  updateFilterCount();
+}
+function updateFilterCount() {
+  let n = 0;
+  if (state.cat !== 'all') n++;
+  if (state.drone !== 'all') n++;
+  if (state.payload !== 'all') n++;
+  const btn = document.getElementById('filter-toggle');
+  const count = document.getElementById('filter-count');
+  const reset = document.getElementById('filter-reset');
+  count.textContent = n;
+  btn.classList.toggle('has-filters', n > 0);
+  reset.style.display = n > 0 ? 'inline-flex' : 'none';
+}
+
+document.querySelectorAll('[data-filter-cat]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter-cat]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.cat = b.dataset.filterCat;
+    applyFilter();
+    updateFilterCount();
+  });
+});
+document.querySelectorAll('[data-filter-drone]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter-drone]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.drone = b.dataset.filterDrone;
+    applyFilter();
+    updateFilterCount();
+  });
+});
+document.querySelectorAll('[data-filter-payload]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter-payload]').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.payload = b.dataset.filterPayload;
+    applyFilter();
+    updateFilterCount();
+  });
+});
+applyFilter();
+updateFilterCount();
+</script>
+</body>
+</html>

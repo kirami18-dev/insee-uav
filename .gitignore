@@ -1,0 +1,7 @@
+
+# Added pre-publish
+.DS_Store
+**/.DS_Store
+node_modules/
+*.log
+.netlify/
