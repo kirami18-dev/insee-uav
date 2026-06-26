@@ -164,6 +164,128 @@ nav.top img { height:32px; }
       .cta-logo-text { font-size: 16px !important; }
     }
 
+
+    /* === MOBILE HAMBURGER MENU === */
+    .mobile-menu-btn { display: none; }
+    .mobile-drawer { display: none; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 1px solid rgba(0,132,200,0.3);
+        border-radius: 8px;
+        cursor: pointer;
+        color: #0084C8;
+        z-index: 1000;
+      }
+      .mobile-menu-btn .material-symbols-outlined { font-size: 24px; }
+      .mobile-drawer {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background: #0A1628;
+        z-index: 9999;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        box-shadow: -8px 0 24px rgba(0,0,0,0.3);
+      }
+      .mobile-drawer.open { transform: translateX(0); }
+      .mobile-drawer-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 9998;
+      }
+      .mobile-drawer-overlay.open { display: block; }
+      .mobile-drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .mobile-drawer-header img { height: 28px; }
+      .mobile-drawer-close {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobile-drawer-close .material-symbols-outlined { font-size: 22px; }
+      .mobile-drawer-content { padding: 20px; }
+      .mobile-drawer-section { margin-bottom: 24px; }
+      .mobile-drawer-section-title {
+        font-size: 10px;
+        font-weight: 700;
+        color: #F2A900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(242,169,0,0.2);
+      }
+      .mobile-drawer-link {
+        display: block;
+        padding: 10px 0;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .mobile-drawer-link:active { color: #4FC3F7; }
+      .mobile-drawer-link.amber { color: #F2A900; }
+      .mobile-drawer-lang {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .mobile-drawer-lang a {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .mobile-drawer-lang a.active { background: #0084C8; border-color: #0084C8; }
+      .mobile-drawer-cta {
+        display: block;
+        text-align: center;
+        background: #0084C8;
+        color: white;
+        padding: 14px;
+        border-radius: 8px;
+        margin-top: 16px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -250,7 +372,7 @@ nav.top img { height:32px; }
 </div>
 <a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/#contact">Contact</a>
 </nav>
-<div class="flex items-center gap-4">
+<button class="mobile-menu-btn" onclick="openMobileDrawer()" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button><div class="flex items-center gap-4">
 <div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
 <a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/en/works/mapper-plus-nakhon-nayok-golf/" id="lang-en">EN</a>
 <a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/works/mapper-plus-nakhon-nayok-golf/" id="lang-th">TH</a>
@@ -330,5 +452,76 @@ Request Demo
 function openLightbox(src) { document.getElementById('lightbox-img').src=src; document.getElementById('lightbox').classList.add('open'); }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lightbox').classList.remove('open');});
 </script>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
+<aside class="mobile-drawer" id="mobile-drawer">
+  <div class="mobile-drawer-header">
+    <img alt="INSEE UAV" src="/images/logo-insee.png"/>
+    <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="mobile-drawer-content">
+    <a class="mobile-drawer-link" href="/">Home</a>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">INSEE Platforms</div>
+      <a class="mobile-drawer-link" href="/products/insee-250/">INSEE-250</a>
+      <a class="mobile-drawer-link" href="/products/insee-350/">INSEE-350</a>
+      <a class="mobile-drawer-link" href="/products/gcs/">INSEE-GCS-01</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">YellowScan LiDAR</div>
+      <a class="mobile-drawer-link amber" href="/products/yellowscan/venturer/">Venturer</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/mapper-plus/">Mapper+</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/voyager/">Voyager</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/navigator/">Navigator</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/explorer/">Explorer</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">YellowScan Accessories &amp; Software</div>
+      <a class="mobile-drawer-link" href="/products/yellowscan/camera-modules/">Camera Modules</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/software/cloudstation/">CloudStation</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/software/livestation/">LiveStation</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">Other Payloads</div>
+      <a class="mobile-drawer-link" href="/products/riebo/d2m/">Riebo D2M</a>
+      <a class="mobile-drawer-link" href="/products/gvi/h600/">GVI LiAir H600</a>
+      <a class="mobile-drawer-link" href="/products/gvi/h800/">GVI LiAir H800</a>
+      <a class="mobile-drawer-link" href="/products/chcnav/aa10/">CHCNav AlphaAir 10</a>
+      <a class="mobile-drawer-link" href="/products/sony/ilx-lr1/">Sony ILX-LR1</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">Solutions</div>
+      <a class="mobile-drawer-link" href="/#solutions">Applications</a>
+      <a class="mobile-drawer-link" href="/works/">References / Our Work</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">Event</div>
+      <a class="mobile-drawer-link" href="/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+      <a class="mobile-drawer-link" href="/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+      <a class="mobile-drawer-link" href="/events/intergeo-2024/">INTERGEO 2024</a>
+      <a class="mobile-drawer-link" href="/events/malaysia-2024/">Malaysia Presentation 2024</a>
+      <a class="mobile-drawer-link" href="/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+    </div>
+    <a class="mobile-drawer-link" href="/#milestones">About / Our Story</a>
+    <a class="mobile-drawer-link" href="/#contact">Contact</a>
+    <div class="mobile-drawer-lang">
+      <a class="" href="/en/">EN</a>
+      <a class=" active" href="/">TH</a>
+    </div>
+    <a class="mobile-drawer-cta" href="/#contact" onclick="closeMobileDrawer()">Request Demo</a>
+  </div>
+</aside>
+<script>
+function openMobileDrawer() { document.querySelector('.mobile-drawer').classList.add('open'); document.querySelector('.mobile-drawer-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobileDrawer() { document.querySelector('.mobile-drawer').classList.remove('open'); document.querySelector('.mobile-drawer-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+</script>
+
 </body>
 </html>
