@@ -57,6 +57,81 @@ body { font-family:'Inter','Kanit',system-ui,sans-serif; background:#F5FAFF; col
 #filter-toggle.open { border-color:#0084C8 !important; background:#EBF5FF; }
 #filter-toggle.open #filter-chevron { transform:rotate(180deg); }
 #filter-toggle.has-filters #filter-count { display:inline-flex !important; }
+
+    /* === GLOBAL MOBILE RESPONSIVE === */
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden !important; }
+      /* Hero titles in payload/work pages */
+      .hero-title { font-size: 32px !important; line-height: 1.1 !important; }
+      .hero-product { font-size: 32px !important; line-height: 1.1 !important; }
+      .hero-pretitle { font-size: 11px !important; letter-spacing: 2px !important; }
+      .hero-tagline { font-size: 16px !important; }
+      .hero-desc { font-size: 13px !important; line-height: 1.6 !important; }
+      .hero-content { padding: 24px !important; }
+      .hero-badges { gap: 6px !important; }
+      .badge { padding: 4px 10px !important; font-size: 10px !important; }
+      /* Card grids — 1 col on mobile */
+      .card-features, .features-grid, .specs-grid, .work-image-grid, .quick-stats { grid-template-columns: 1fr !important; }
+      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 16px !important; }
+      .specs-header h2 { font-size: 22px !important; }
+      .card-label { font-size: 14px !important; }
+      /* Tables — horizontal scroll */
+      .mission-table, .flight-table { font-size: 11px !important; }
+      table { font-size: 12px !important; }
+      div[style*="overflow-x"] { -webkit-overflow-scrolling: touch; }
+      /* Buttons — wrap properly */
+      .btn, .btn-primary, .btn-outline { padding: 12px 18px !important; font-size: 12px !important; }
+      .cta-buttons { flex-direction: column !important; gap: 12px !important; }
+      .cta-buttons .btn { width: 100% !important; text-align: center !important; justify-content: center !important; }
+      /* Page content */
+      .page-content { padding: 24px 16px !important; }
+      /* Hide elements that don't fit */
+      .hero-tech, .hero-footer { font-size: 11px !important; }
+      /* Spec grids */
+      .spec-value { font-size: 20px !important; }
+      .spec-label { font-size: 10px !important; }
+      .phys-val { font-size: 20px !important; }
+      /* INSEE-350 / INSEE-250 hero titles */
+      h1.hero-title, .platform-hero h1 { font-size: 36px !important; }
+      /* Generic 2-col grids → 1 col */
+      div[style*="grid-template-columns: 1fr 1fr"], 
+      div[style*="grid-template-columns: 1fr 1.2fr"],
+      div[style*="grid-template-columns: 1fr 1.5fr"],
+      div[style*="grid-template-columns: 2fr 1fr"],
+      div[style*="grid-template-columns: 1.2fr 1fr"] { 
+        grid-template-columns: 1fr !important; 
+      }
+      /* Configurator 3-col → stack */
+      div[style*="grid-template-columns: repeat(3, 1fr)"] { 
+        grid-template-columns: repeat(2, 1fr) !important; 
+      }
+      /* Section labels */
+      .section-label { margin-top: 32px !important; margin-bottom: 12px !important; }
+      /* Reduce padding inside cards */
+      div[style*="padding: 48px"] { padding: 24px !important; }
+      div[style*="padding: 56px"] { padding: 24px !important; }
+      div[style*="padding: 40px"] { padding: 20px !important; }
+      /* Hero strip/banner */
+      .hero-banner { height: 280px !important; }
+      .hero-banner .hero-title { font-size: 24px !important; }
+      .hero-meta { gap: 12px !important; font-size: 11px !important; }
+      /* Mega-menu hide on mobile (use hamburger later) */
+      .mega-menu-content, .nav-dropdown-content { display: none !important; }
+      /* Carousel arrows smaller */
+      .sc-arrow { width: 36px !important; height: 36px !important; }
+      .sc-arrow .material-symbols-outlined { font-size: 20px !important; }
+      .sc-thumb { flex: 0 0 60px !important; height: 45px !important; }
+      /* Filter button on works */
+      .filter-btn { padding: 7px 14px !important; font-size: 11px !important; }
+      /* Image grids */
+      .ref-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+      /* CTA card */
+      .card-cta h2 { font-size: 22px !important; }
+      .cta-content { padding: 0 !important; }
+      .cta-logos { flex-wrap: wrap !important; gap: 12px !important; }
+      .cta-logo-text { font-size: 16px !important; }
+    }
+
 </style>
 </head>
 <body>
