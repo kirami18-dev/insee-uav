@@ -1,5 +1,19 @@
 <html class="dark" lang="en"><head>
-<style>html { scroll-behavior: smooth; }</style>
+<style>
+      html, body { overflow-x: hidden; }html { scroll-behavior: smooth; }
+@media (max-width: 768px) {
+  .insee-action-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(5, 180px) !important;
+    height: auto !important;
+  }
+  .insee-action-grid > a:first-child {
+    grid-row: auto !important;
+    height: 240px !important;
+  }
+}
+
+</style>
 <meta charset="utf-8"/>
 <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
@@ -118,7 +132,7 @@
 </head>
 <body class="selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
 <header class="fixed top-0 w-full z-50 bg-[#0A1628]/80 backdrop-blur-xl border-b border-outline-variant/10">
-<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-4 md:px-8 py-3 md:py-4">
 <a class="flex items-center" href="#">
 <img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
 </a>
@@ -281,7 +295,7 @@
 <a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/en/" id="lang-en">EN</a>
 <a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/" id="lang-th">TH</a>
 </div>
-<button onclick="openDemoModal()" class="bg-primary-container text-on-primary-container px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all active:scale-95">
+<button onclick="openDemoModal()" class="bg-primary-container text-on-primary-container px-3 md:px-6 py-1.5 md:py-2 font-bold uppercase text-[10px] md:text-sm clip-path-angled hover:brightness-110 transition-all active:scale-95">
                 Request Demo
             </button>
 </div>
@@ -290,7 +304,7 @@
 <main>
 <!-- Hero Section -->
 <section class="relative flex flex-col bg-[#0A1628] grid-overlay pt-20">
-<div class="max-w-[1440px] mx-auto px-8 w-full grid md:grid-cols-2 gap-12 items-center relative z-10 py-24">
+<div class="max-w-[1440px] mx-auto px-4 md:px-8 w-full grid md:grid-cols-2 gap-6 md:gap-12 items-center relative z-10 py-12 md:py-24">
 <div class="space-y-6">
 <div class="flex items-center gap-4">
 <span class="bg-primary-container/10 border border-primary-container/20 text-primary-container px-3 py-1 text-[10px] font-bold tracking-tighter uppercase">
@@ -299,7 +313,7 @@
 <div class="h-[1px] w-12 bg-outline-variant"></div>
 <span class="text-on-surface-variant text-[10px] uppercase tracking-widest">VTOL FIXED-WING PLATFORM</span>
 </div>
-<h1 class="text-6xl md:text-8xl font-bold leading-none tracking-tighter text-white uppercase">
+<h1 class="text-[40px] sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tighter text-white uppercase">
                     PROFESSIONAL VTOL <br/>
 <span class="text-primary-container">MAPPING &amp; SURVEY</span>
 </h1>
@@ -307,29 +321,29 @@
                     E-VTOL Fixed-Wing UAV built for Mapping, LiDAR Survey and specialized aerial missions — long range, long endurance, wide-area coverage in a single flight. Field-proven across real survey operations in Thailand.
                 </p>
 <div class="flex flex-wrap gap-4 pt-4">
-<button class="bg-primary-container text-on-primary-container px-8 py-4 font-bold uppercase clip-path-angled flex items-center gap-2 group">
+<button class="bg-primary-container text-on-primary-container px-5 md:px-8 py-3 md:py-4 text-sm md:text-base font-bold uppercase clip-path-angled flex items-center gap-2 group">
                         <a href="#platforms">Explore Products 
                         <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
-<button onclick="openDemoModal()" class="border border-primary-container text-primary-container px-8 py-4 font-bold uppercase clip-path-angled hover:bg-primary-container/10 transition-all">
+<button onclick="openDemoModal()" class="border border-primary-container text-primary-container px-5 md:px-8 py-3 md:py-4 text-sm md:text-base font-bold uppercase clip-path-angled hover:bg-primary-container/10 transition-all">
                         Request Demo
                     </button>
 </div>
 </div>
 <div class="relative">
 <div class="absolute -inset-20 bg-primary-container/5 blur-[120px] rounded-full"></div>
-<div class="relative border border-outline-variant/20 p-4" style="min-height:500px;">
+<div class="relative border border-outline-variant/20 p-2 md:p-4 min-h-[280px] md:min-h-[500px]">
 <div class="hud-bracket-tl"></div>
 <div class="hud-bracket-br"></div>
-<canvas id="uav-canvas" style="width:100%;height:500px;display:block;"></canvas>
-<div class="absolute top-8 right-8 space-y-2">
-<div class="bg-[#0A1628]/80 backdrop-blur-md px-3 py-1 border-r-2 border-primary-container">
+<canvas id="uav-canvas" style="width:100%;height:300px;display:block;" class="md:!h-[500px]"></canvas>
+<div class="absolute top-4 right-4 md:top-8 md:right-8 space-y-2">
+<div class="bg-[#0A1628]/80 backdrop-blur-md px-2 md:px-3 py-1 border-r-2 border-primary-container">
 <p class="text-[10px] text-on-surface-variant uppercase">FLIGHT TIME</p>
-<p class="text-xl font-bold text-white">240<span class="text-xs ml-1 text-primary-container">MIN</span></p>
+<p class="text-base md:text-xl font-bold text-white">240<span class="text-[10px] md:text-xs ml-1 text-primary-container">MIN</span></p>
 </div>
-<div class="bg-[#0A1628]/80 backdrop-blur-md px-3 py-1 border-r-2 border-tertiary">
+<div class="bg-[#0A1628]/80 backdrop-blur-md px-2 md:px-3 py-1 border-r-2 border-tertiary">
 <p class="text-[10px] text-on-surface-variant uppercase">MAX RANGE</p>
-<p class="text-xl font-bold text-white">180<span class="text-xs ml-1 text-tertiary">KM</span></p>
+<p class="text-base md:text-xl font-bold text-white">180<span class="text-[10px] md:text-xs ml-1 text-tertiary">KM</span></p>
 </div>
 </div>
 </div>
@@ -337,7 +351,7 @@
 </div>
 <!-- Stats Bar -->
 <div class="w-full border-t border-outline-variant/10 bg-[#101c2e]/50 backdrop-blur-sm py-8">
-<div class="max-w-[1440px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="max-w-[1440px] mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
 <div>
 <p class="text-[10px] text-primary-container uppercase tracking-widest mb-1">// PAYLOAD CAPACITY</p>
 <p class="text-2xl font-light text-white uppercase tracking-tighter">UP TO 5 KG</p>
@@ -362,7 +376,7 @@
 <!-- ====== FULL-BLEED STRIP 1: IMAGE GALLERY (INSEE in Action) ====== -->
 <section style="background: linear-gradient(180deg, #0A1628 0%, #101c2e 100%); padding: 80px 0; position: relative; overflow: hidden;">
   <div style="position: absolute; inset: 0; background-image: radial-gradient(circle at 50% 0%, rgba(79,195,247,0.08) 0%, transparent 50%); pointer-events: none;"></div>
-  <div class="max-w-[1440px] mx-auto px-8 relative z-10">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 relative z-10">
     <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px; margin-bottom: 40px;">
       <div>
         <p style="font-size: 11px; font-weight: 700; color: #4FC3F7; letter-spacing: 3px; margin-bottom: 8px;">// FIELD OPERATIONS</p>
@@ -371,7 +385,7 @@
       </div>
       <div style="font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 600; letter-spacing: 2px;">— LIVE FIELD CAPTURE —</div>
     </div>
-    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 560px;">
+    <div class="insee-action-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 560px;">
       <!-- Big left -->
       <a href="/images/hero-gallery/hero-featured.jpg" target="_blank" style="grid-row: 1 / 3; position: relative; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); display: block; cursor: pointer; group">
         <img src="/images/hero-gallery/hero-featured.jpg" alt="INSEE UAV in flight" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''"/>
