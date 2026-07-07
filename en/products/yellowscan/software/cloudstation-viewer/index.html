@@ -1380,6 +1380,9 @@ function handleDemoSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const data = new FormData(form);
+  const isDownloadForm = form.getAttribute('name') === 'request-demo-cloudstation-viewer';
+  const downloadUrl = 'https://software.yellowscan.com/cloudstationviewer/latest/win64';
+  
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -1388,8 +1391,28 @@ function handleDemoSubmit(e) {
   .then(() => {
     form.reset();
     form.style.display = 'none';
-    document.getElementById('demo-success').classList.remove('hidden');
-    setTimeout(() => closeDemoModal(), 3000);
+    const successEl = document.getElementById('demo-success');
+    successEl.classList.remove('hidden');
+    
+    if (isDownloadForm) {
+      successEl.innerHTML = '<span class="material-symbols-outlined text-4xl text-[#4FC3F7] mb-2 block">download</span>' +
+                           '<p class="text-white font-bold">Request submitted successfully!</p>' +
+                           '<p class="text-white/60 text-sm mt-1">Starting CloudStation Viewer download...</p>' +
+                           '<p class="text-white/40 text-xs mt-3">If the download does not start, <a href="' + downloadUrl + '" style="color:#4FC3F7; text-decoration:underline;" target="_blank" rel="noopener">click here</a></p>';
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = '';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 800);
+      setTimeout(() => closeDemoModal(), 6000);
+    } else {
+      setTimeout(() => closeDemoModal(), 3000);
+    }
   })
   .catch(() => alert('Something went wrong. Please try again.'));
 }

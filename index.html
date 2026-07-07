@@ -1979,8 +1979,8 @@ function handleDemoSubmit(e) {
 </script>
 <script type="module">
 import * as THREE from 'three';
-import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
-import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
@@ -2021,25 +2021,23 @@ if (canvas) {
   dirLight.position.set(5, 10, 5);
   scene.add(dirLight);
 
-  // Load MTL + OBJ
-  const mtlLoader = new MTLLoader();
-  mtlLoader.setPath('/images/models/insee-006/');
-  mtlLoader.load('006.mtl', (materials) => {
-    materials.preload();
-    const objLoader = new OBJLoader();
-    objLoader.setMaterials(materials);
-    objLoader.setPath('/images/models/insee-006/');
-    objLoader.load('006.obj', (object) => {
-      // Center & scale model
-      const box = new THREE.Box3().setFromObject(object);
-      const center = box.getCenter(new THREE.Vector3());
-      const size = box.getSize(new THREE.Vector3());
-      const maxDim = Math.max(size.x, size.y, size.z);
-      const scale = 6 / maxDim;
-      object.scale.setScalar(scale);
-      object.position.sub(center.multiplyScalar(scale));
-      scene.add(object);
-    });
+  // Load GLTF (Draco compressed) - fast + small
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.setDRACOLoader(dracoLoader);
+  gltfLoader.setPath('/images/models/insee-006/');
+  gltfLoader.load('006.draco.glb', (gltf) => {
+    const object = gltf.scene;
+    // Center & scale model
+    const box = new THREE.Box3().setFromObject(object);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+    const maxDim = Math.max(size.x, size.y, size.z);
+    const scale = 6 / maxDim;
+    object.scale.setScalar(scale);
+    object.position.sub(center.multiplyScalar(scale));
+    scene.add(object);
   });
 
   // Resize handler

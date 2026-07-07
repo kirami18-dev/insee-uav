@@ -1380,6 +1380,9 @@ function handleDemoSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const data = new FormData(form);
+  const isDownloadForm = form.getAttribute('name') === 'request-demo-cloudstation-viewer';
+  const downloadUrl = 'https://software.yellowscan.com/cloudstationviewer/latest/win64';
+  
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -1388,8 +1391,32 @@ function handleDemoSubmit(e) {
   .then(() => {
     form.reset();
     form.style.display = 'none';
-    document.getElementById('demo-success').classList.remove('hidden');
-    setTimeout(() => closeDemoModal(), 3000);
+    const successEl = document.getElementById('demo-success');
+    successEl.classList.remove('hidden');
+    
+    // If this is CloudStation Viewer form → trigger auto-download
+    if (isDownloadForm) {
+      // Update success message
+      successEl.innerHTML = '<span class="material-symbols-outlined text-4xl text-[#4FC3F7] mb-2 block">download</span>' +
+                           '<p class="text-white font-bold">ส่งข้อความเรียบร้อยแล้ว!</p>' +
+                           '<p class="text-white/60 text-sm mt-1">กำลังเริ่มดาวน์โหลด CloudStation Viewer...</p>' +
+                           '<p class="text-white/40 text-xs mt-3">หากไม่เริ่มดาวน์โหลดอัตโนมัติ <a href="' + downloadUrl + '" style="color:#4FC3F7; text-decoration:underline;" target="_blank" rel="noopener">คลิกที่นี่</a></p>';
+      // Trigger download after brief delay
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = '';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 800);
+      // Keep modal open longer for user to see download starting
+      setTimeout(() => closeDemoModal(), 6000);
+    } else {
+      setTimeout(() => closeDemoModal(), 3000);
+    }
   })
   .catch(() => alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง'));
 }
