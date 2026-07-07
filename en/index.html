@@ -1990,7 +1990,7 @@ if (canvas) {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(canvas.clientWidth, canvas.clientHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = 0.75;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   const scene = new THREE.Scene();
@@ -2013,11 +2013,12 @@ if (canvas) {
     .load('3 point beige.hdr', (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
+      scene.environmentIntensity = 0.5;
     });
 
   // Ambient light fallback
-  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-  const dirLight = new THREE.DirectionalLight(0x4fc3f7, 2);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+  const dirLight = new THREE.DirectionalLight(0x4fc3f7, 0.8);
   dirLight.position.set(5, 10, 5);
   scene.add(dirLight);
 
