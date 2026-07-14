@@ -1,4 +1,11 @@
 <html class="dark" lang="th"><head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNMXFC3B');</script>
+<!-- End Google Tag Manager -->
 <style>
       html, body { overflow-x: hidden; }html { scroll-behavior: smooth; }
 @media (max-width: 768px) {
@@ -674,6 +681,10 @@
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNMXFC3B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <header class="fixed top-0 w-full z-50 bg-[#0A1628]/80 backdrop-blur-xl border-b border-outline-variant/10">
 <div class="flex justify-between items-center max-w-[1440px] mx-auto px-4 md:px-8 py-3 md:py-4">
 <a class="flex items-center" href="#">
@@ -1945,7 +1956,7 @@ function handleDemoSubmit(e) {
     body: new URLSearchParams(data).toString()
   })
   .then(() => {
-    form.reset();
+    window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'form_submit_success',form_name:form.getAttribute('name')}); form.reset();
     form.style.display = 'none';
     document.getElementById('demo-success').classList.remove('hidden');
     setTimeout(() => closeDemoModal(), 3000);
