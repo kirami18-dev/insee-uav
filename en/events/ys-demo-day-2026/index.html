@@ -736,6 +736,16 @@
       }
     }
 
+    /* EVENT GALLERY */
+    .gallery-note { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+    .event-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    @media (max-width: 768px) { .event-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
+    .event-gallery .eg-tile { aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid var(--border); }
+    .event-gallery .eg-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+    .event-gallery .eg-tile:hover img { transform: scale(1.05); }
+    #lightbox { position: fixed; inset: 0; background: rgba(10,22,40,0.94); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
 </style>
 </head>
 
@@ -850,6 +860,7 @@
             <span class="badge badge-ys">YellowScan</span>
             <span class="badge badge-insee">× INSEE UAV</span>
             <span class="badge badge-date">3 July 2026</span>
+            <span class="badge badge-insee">Event Completed</span>
           </div>
           <p class="hero-pretitle">Official Demo Day · Thailand 2026</p>
           <h1 class="hero-title">YellowScan <span class="amber">Demo Day</span><br/>Thailand <span class="sky">2026</span></h1>
@@ -880,9 +891,9 @@
           </div>
 
           <div class="hero-cta">
-            <a href="#register" class="btn-register">
-              <span class="material-symbols-outlined">how_to_reg</span>
-              Register Now · Free Entry
+            <a href="#gallery" class="btn-register">
+              <span class="material-symbols-outlined">photo_library</span>
+              View Event Gallery
             </a>
             <a href="#agenda" class="btn-agenda">View Agenda</a>
           </div>
@@ -1025,82 +1036,35 @@
         </div>
       </div>
 
-      <!-- REGISTRATION FORM -->
-      <div id="register" class="section-label">
-        <div class="card-label">Register</div>
+      <!-- EVENT GALLERY -->
+      <div id="gallery" class="section-label">
+        <div class="card-label">Event Gallery</div>
       </div>
-      <div class="form-card">
-        <div class="form-header">
-          <h2>Reserve Your <span>Seat</span>.</h2>
-          <p>Free registration · Limited seats · Confirmation will be sent by email</p>
-        </div>
-        <form name="register-demo-day-2026" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleRegisterSubmit(event)">
-          <input type="hidden" name="form-name" value="register-demo-day-2026"/>
-          <input type="hidden" name="event" value="YellowScan Demo Day Thailand 2026"/>
-          <p class="hidden"><input name="bot-field"/></p>
-          <div class="form-fields">
-            <div class="form-field">
-              <label>Full Name *</label>
-              <input name="name" type="text" required/>
-            </div>
-            <div class="form-field">
-              <label>Company *</label>
-              <input name="company" type="text" required/>
-            </div>
-            <div class="form-field">
-              <label>Position *</label>
-              <input name="position" type="text" required/>
-            </div>
-            <div class="form-field">
-              <label>Email *</label>
-              <input name="email" type="email" required/>
-            </div>
-            <div class="form-field">
-              <label>Phone *</label>
-              <input name="phone" type="tel" required/>
-            </div>
-            <div class="form-field">
-              <label>Number of Attendees</label>
-              <input name="attendees" type="number" min="1" max="10" value="1"/>
-            </div>
-            <div class="form-field full">
-              <label>Choose Session *</label>
-              <select name="session" required>
-                <option value="">— Select Session —</option>
-                <option>Morning Session (Navigator focus)</option>
-                <option>Afternoon Session (Venturer &amp; Mapper Ultra launch)</option>
-                <option>Both Sessions (Full Day)</option>
-              </select>
-            </div>
-            <div class="form-field full">
-              <label>Topic of Interest</label>
-              <select name="interest">
-                <option>Navigator – Bathymetric LiDAR</option>
-                <option>Venturer – Survey-Grade LiDAR</option>
-                <option>Mapper Ultra – Long-Range LiDAR</option>
-                <option>CloudStation Software Workflow</option>
-                <option>Drone Platform (INSEE-250 / INSEE-350)</option>
-                <option>Open to all</option>
-              </select>
-            </div>
-            <div class="form-field full">
-              <label>Questions (Optional)</label>
-              <textarea name="message" placeholder="Any questions or additional requests?"></textarea>
-            </div>
-          </div>
-          <div class="form-submit">
-            <button type="submit" class="btn-submit">
-              <span class="material-symbols-outlined">how_to_reg</span>
-              Confirm Registration
-            </button>
-            <p class="form-notice">By submitting, you agree that INSEE UAV / Thai Sky Vision may contact you about this event and related products.</p>
-          </div>
-          <div id="register-success">
-            <span class="material-symbols-outlined">mark_email_read</span>
-            <h3 style="font-size: 24px; font-weight: 700; color: white; margin-bottom: 6px;">Registration Complete!</h3>
-            <p style="color: rgba(255,255,255,0.7);">Our team will send you a confirmation email with event details within 24 hours.</p>
-          </div>
-        </form>
+      <div class="gallery-note">Thank you to everyone who joined YellowScan Demo Day Thailand 2026 on 3 July 2026 at Impact Forum Hall, Muang Thong Thani — see you at the next event!</div>
+      <div class="event-gallery">
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022621.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022621.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022643.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022643.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022644.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022644.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022650.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022650.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022664.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022664.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022665.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022665.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022858.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022858.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022863.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022863.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022937.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022937.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022997.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022997.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0022998.jpg')"><img src="/images/events/ys-demoday-th-2026/B0022998.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0023002.jpg')"><img src="/images/events/ys-demoday-th-2026/B0023002.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0023013.jpg')"><img src="/images/events/ys-demoday-th-2026/B0023013.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/B0023101.jpg')"><img src="/images/events/ys-demoday-th-2026/B0023101.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02607.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02607.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02608.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02608.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02612.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02612.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02623.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02623.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02624.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02624.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02633.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02633.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02653.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02653.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02658.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02658.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
+        <div class="eg-tile" onclick="openLightbox('/images/events/ys-demoday-th-2026/DSC02673.jpg')"><img src="/images/events/ys-demoday-th-2026/DSC02673.jpg" loading="lazy" alt="YellowScan Demo Day Thailand 2026"/></div>
       </div>
 
     </div>
@@ -1196,6 +1160,7 @@ if (window.netlifyIdentity) {
     </div>
     <div class="mobile-drawer-section">
       <div class="mobile-drawer-section-title">Event</div>
+      <a class="mobile-drawer-link" href="/en/events/drontech-asia-2026/">DronTech Asia 2026</a>
       <a class="mobile-drawer-link" href="/en/events/ys-demo-day-2026/">YS Demo Day 2026</a>
       <a class="mobile-drawer-link" href="/en/events/dronetech-asia-2024/">DronTech Asia 2024</a>
       <a class="mobile-drawer-link" href="/en/events/intergeo-2024/">INTERGEO 2024</a>
@@ -1234,5 +1199,10 @@ function closeMobileDrawer() { document.querySelector('.mobile-drawer').classLis
 })();
 </script>
 
+<div id="lightbox" onclick="this.classList.remove('open')"><img src="" alt=""/></div>
+<script>
+function openLightbox(src) { const lb = document.getElementById('lightbox'); lb.querySelector('img').src = src; lb.classList.add('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open'); });
+</script>
 </body>
 </html>

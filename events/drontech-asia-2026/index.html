@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/images/favicon/favicon-192.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INSEE UAV at DronTech Asia 2026 — Bangkok | INSEE UAV</title>
+<link rel="alternate" hreflang="th" href="https://www.inseeuav.com/events/drontech-asia-2026/"/>
+<link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/events/drontech-asia-2026/"/>
+<link rel="alternate" hreflang="x-default" href="https://www.inseeuav.com/events/drontech-asia-2026/"/>
+  <meta name="description" content="พบ INSEE UAV ที่งาน DronTech Asia 2026 วันที่ 11-13 พฤศจิกายน 2026 ณ IMPACT เมืองทองธานี — โชว์ INSEE-250, INSEE-350 และ YellowScan LiDAR ครบไลน์"/>
+  <meta name="keywords" content="INSEE UAV, DronTech Asia 2026, Bangkok, UAV Mapping, YellowScan LiDAR, Thai Sky Vision"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --blue: #0084C8; --sky: #4FC3F7; --navy: #0A1628;
+      --cloud: #EBF5FF; --light: #F5FAFF;
+      --text: #1E3A4F; --muted: #4A6B80; --border: #CCE5F5;
+      --ys-amber: #F2A900;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', 'Kanit', system-ui, sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
+
+    /* NAV */
+    .mega-menu { position: relative; }
+    .mega-menu-content { display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--border); z-index: 100; padding: 24px; gap: 32px; min-width: 780px; max-width: calc(100vw - 32px); box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 12px; margin-top: 0; }
+    .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
+    .mega-menu:hover .mega-menu-content { display: flex; }
+    .mega-col { min-width: 160px; }
+    .mega-col-title { font-size: 9px; font-weight: 700; color: var(--ys-amber); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(242,169,0,0.2); }
+    .mega-col-title.blue { color: var(--blue); border-color: rgba(0,132,200,0.2); }
+    .mega-link { display: block; padding: 6px 0; font-size: 12px; font-weight: 600; color: var(--text); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; white-space: nowrap; }
+    .mega-link:hover { color: var(--blue); }
+    .mega-link.current { color: var(--blue); }
+    .mega-link.ys { color: var(--ys-amber); }
+    .mega-divider { width: 1px; background: var(--border); align-self: stretch; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--border); min-width: 220px; z-index: 100; padding: 8px 0; border-radius: 8px; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
+    .nav-dropdown:hover .nav-dropdown-content { display: block; }
+    .dropdown-item { color: var(--text); padding: 8px 20px; text-decoration: none; display: block; font-size: 13px; transition: all 0.2s; }
+    .dropdown-item:hover { color: var(--blue); background: var(--light); }
+    .dropdown-item.current { color: var(--blue); font-weight: 700; }
+    .lang-toggle-btn { color: rgba(10,22,40,0.5); cursor: pointer; border: none; background: none; }
+    .lang-toggle-btn.active { background: var(--blue); color: white; }
+
+    /* LAYOUT */
+    .page-content { max-width: 1200px; margin: 0 auto; padding: 60px 32px 80px; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 32px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span.current { color: var(--navy); font-weight: 600; }
+
+    .card-label { font-size: 18px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    .card-label::before { content: ''; width: 24px; height: 2px; background: var(--blue); }
+    .section-label { margin-bottom: 16px; margin-top: 40px; }
+
+    /* HERO */
+    .hero-banner { position: relative; border-radius: 24px; overflow: hidden; margin-bottom: 32px; height: 460px; box-shadow: 0 12px 40px rgba(0,132,200,0.15); }
+    .hero-banner img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,22,40,0.10) 0%, rgba(10,22,40,0.85) 100%); }
+    .hero-content { position: absolute; bottom: 40px; left: 40px; right: 40px; z-index: 2; color: white; }
+    .hero-badge { display: inline-block; background: rgba(0,132,200,0.95); color: white; padding: 6px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero-badge.past { background: rgba(74,107,128,0.95); }
+    .hero-title { font-size: 48px; font-weight: 700; line-height: 1.1; margin-bottom: 12px; letter-spacing: -1px; }
+    .hero-meta { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 16px; }
+    .hero-meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; opacity: 0.95; }
+    @media (max-width: 768px) { .hero-title { font-size: 32px; } .hero-banner { height: 360px; } .hero-content { left: 24px; right: 24px; bottom: 24px; } }
+
+    /* Recap Card */
+    .recap-card { background: var(--white); border-radius: 24px; padding: 48px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,132,200,0.06); }
+    .recap-card h2 { font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.5px; }
+    .recap-card .separator { width: 50px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 24px; }
+    .recap-card p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+    .recap-card strong { color: var(--navy); }
+
+    /* Highlights */
+    .highlight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 768px) { .highlight-grid { grid-template-columns: 1fr; } }
+    .highlight-card { background: var(--white); border-radius: 20px; padding: 28px; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; box-shadow: 0 4px 16px rgba(0,132,200,0.04); }
+    .highlight-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,132,200,0.12); border-color: var(--sky); }
+    .highlight-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; background: var(--cloud); color: var(--blue); }
+    .highlight-card h4 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .highlight-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* Gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: var(--light); cursor: pointer; transition: transform 0.3s; }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* CTA */
+    .cta-card { background: linear-gradient(135deg, var(--blue) 0%, #006fb0 100%); border-radius: 24px; padding: 48px; color: white; text-align: center; }
+    .cta-card h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+    .cta-card p { font-size: 15px; opacity: 0.9; margin-bottom: 28px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .btn-cta { display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--blue); padding: 14px 32px; border-radius: 100px; font-weight: 700; text-decoration: none; transition: transform 0.3s; }
+    .btn-cta:hover { transform: translateY(-2px); }
+
+    /* Lightbox */
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(10,22,40,0.92); z-index: 9999; cursor: zoom-out; align-items: center; justify-content: center; padding: 40px; }
+    #lightbox.active { display: flex; }
+    #lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+    #lightbox .close { position: absolute; top: 24px; right: 32px; color: white; font-size: 36px; cursor: pointer; }
+
+    /* Footer */
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 40px 32px; text-align: center; font-size: 12px; }
+    footer .footer-links { display: flex; justify-content: center; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: white; }
+  
+    /* === GLOBAL MOBILE RESPONSIVE === */
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden !important; }
+      /* Hero titles in payload/work pages */
+      .hero-title { font-size: 32px !important; line-height: 1.1 !important; }
+      .hero-product { font-size: 32px !important; line-height: 1.1 !important; }
+      .hero-pretitle { font-size: 11px !important; letter-spacing: 2px !important; }
+      .hero-tagline { font-size: 16px !important; }
+      .hero-desc { font-size: 13px !important; line-height: 1.6 !important; }
+      .hero-content { padding: 24px !important; }
+      .hero-badges { gap: 6px !important; }
+      .badge { padding: 4px 10px !important; font-size: 10px !important; }
+      /* Card grids — 1 col on mobile */
+      .card-features, .features-grid, .specs-grid, .work-image-grid, .quick-stats { grid-template-columns: 1fr !important; }
+      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 16px !important; }
+      .specs-header h2 { font-size: 22px !important; }
+      .card-label { font-size: 14px !important; }
+      /* Tables — horizontal scroll */
+      .mission-table, .flight-table { font-size: 11px !important; }
+      table { font-size: 12px !important; }
+      div[style*="overflow-x"] { -webkit-overflow-scrolling: touch; }
+      /* Buttons — wrap properly */
+      .btn, .btn-primary, .btn-outline { padding: 12px 18px !important; font-size: 12px !important; }
+      .cta-buttons { flex-direction: column !important; gap: 12px !important; }
+      .cta-buttons .btn { width: 100% !important; text-align: center !important; justify-content: center !important; }
+      /* Page content */
+      .page-content { padding: 24px 16px !important; }
+      /* Hide elements that don't fit */
+      .hero-tech, .hero-footer { font-size: 11px !important; }
+      /* Spec grids */
+      .spec-value { font-size: 20px !important; }
+      .spec-label { font-size: 10px !important; }
+      .phys-val { font-size: 20px !important; }
+      /* INSEE-350 / INSEE-250 hero titles */
+      h1.hero-title, .platform-hero h1 { font-size: 36px !important; }
+      /* Generic 2-col grids → 1 col */
+      div[style*="grid-template-columns: 1fr 1fr"], 
+      div[style*="grid-template-columns: 1fr 1.2fr"],
+      div[style*="grid-template-columns: 1fr 1.5fr"],
+      div[style*="grid-template-columns: 2fr 1fr"],
+      div[style*="grid-template-columns: 1.2fr 1fr"] { 
+        grid-template-columns: 1fr !important; 
+      }
+      /* Configurator 3-col → stack */
+      div[style*="grid-template-columns: repeat(3, 1fr)"] { 
+        grid-template-columns: repeat(2, 1fr) !important; 
+      }
+      /* Section labels */
+      .section-label { margin-top: 32px !important; margin-bottom: 12px !important; }
+      /* Reduce padding inside cards */
+      div[style*="padding: 48px"] { padding: 24px !important; }
+      div[style*="padding: 56px"] { padding: 24px !important; }
+      div[style*="padding: 40px"] { padding: 20px !important; }
+      /* Hero strip/banner */
+      .hero-banner { height: 280px !important; }
+      .hero-banner .hero-title { font-size: 24px !important; }
+      .hero-meta { gap: 12px !important; font-size: 11px !important; }
+      /* Mega-menu hide on mobile (use hamburger later) */
+      .mega-menu-content, .nav-dropdown-content { display: none !important; }
+      /* Carousel arrows smaller */
+      .sc-arrow { width: 36px !important; height: 36px !important; }
+      .sc-arrow .material-symbols-outlined { font-size: 20px !important; }
+      .sc-thumb { flex: 0 0 60px !important; height: 45px !important; }
+      /* Filter button on works */
+      .filter-btn { padding: 7px 14px !important; font-size: 11px !important; }
+      /* Image grids */
+      .ref-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+      /* CTA card */
+      .card-cta h2 { font-size: 22px !important; }
+      .cta-content { padding: 0 !important; }
+      .cta-logos { flex-wrap: wrap !important; gap: 12px !important; }
+      .cta-logo-text { font-size: 16px !important; }
+    }
+
+
+    /* === MOBILE HAMBURGER MENU === */
+    .mobile-menu-btn { display: none; }
+    .mobile-drawer { display: none; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 1px solid rgba(0,132,200,0.3);
+        border-radius: 8px;
+        cursor: pointer;
+        color: #0084C8;
+        z-index: 1000;
+      }
+      .mobile-menu-btn .material-symbols-outlined { font-size: 24px; }
+      .mobile-drawer {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background: #0A1628;
+        z-index: 9999;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        box-shadow: -8px 0 24px rgba(0,0,0,0.3);
+      }
+      .mobile-drawer.open { transform: translateX(0); }
+      .mobile-drawer-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 9998;
+      }
+      .mobile-drawer-overlay.open { display: block; }
+      .mobile-drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .mobile-drawer-header img { height: 28px; }
+      .mobile-drawer-close {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobile-drawer-close .material-symbols-outlined { font-size: 22px; }
+      .mobile-drawer-content { padding: 20px; }
+      .mobile-drawer-section { margin-bottom: 24px; }
+      .mobile-drawer-section-title {
+        font-size: 10px;
+        font-weight: 700;
+        color: #F2A900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(242,169,0,0.2);
+      }
+      .mobile-drawer-link {
+        display: block;
+        padding: 10px 0;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .mobile-drawer-link:active { color: #4FC3F7; }
+      .mobile-drawer-link.amber { color: #F2A900; }
+      .mobile-drawer-lang {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .mobile-drawer-lang a {
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .mobile-drawer-lang a.active { background: #0084C8; border-color: #0084C8; }
+      .mobile-drawer-cta {
+        display: block;
+        text-align: center;
+        background: #0084C8;
+        color: white;
+        padding: 14px;
+        border-radius: 8px;
+        margin-top: 16px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+
+    /* === MOBILE NAV OVERRIDE (improved) === */
+    @media (max-width: 768px) {
+      /* Hide Request Demo button in nav on mobile — use FAB instead */
+      header button[onclick="openDemoModal()"],
+      nav button[onclick="openDemoModal()"],
+      header .clip-path-angled,
+      .clip-path-angled[onclick*="openDemo"] { display: none !important; }
+      
+      /* Lang toggle — show CURRENT language + click switches to opposite (Pattern A) */
+      .lang-toggle-btn:not(.active) { display: none !important; }
+      .lang-toggle-btn.active {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: transparent !important;
+        color: #0084C8 !important;
+        border: 1px solid #0084C8 !important;
+        border-radius: 100px !important;
+        padding: 6px 14px !important;
+        min-width: 40px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+      }
+      .lang-toggle-btn.active::before {
+        content: "\1F310";
+        margin-right: 4px;
+        font-size: 14px;
+      }
+      /* Dark-theme home nav lang toggle */
+      header.bg-\[\#0A1628\]\/80 .lang-toggle-btn.active {
+        color: #4FC3F7 !important;
+        border-color: #4FC3F7 !important;
+      }
+      /* Push lang toggle to RIGHT — next to hamburger */
+      header > div > .flex.items-center.gap-4,
+      nav > div > div[style*="display: flex"][style*="align-items: center"][style*="gap: 16px"] {
+        margin-left: auto !important;
+      }
+      /* Container around lang toggle — remove border */
+      header .flex.rounded-full,
+      header div[style*="border: 1px solid var(--blue)"],
+      div[style*="border: 1px solid var(--blue); border-radius: 100px"] {
+        border: none !important;
+        padding: 0 !important;
+      }
+      
+      /* Hamburger button — move to RIGHT (after lang) by ordering flex */
+      .mobile-menu-btn { order: 99 !important; margin-left: 4px !important; }
+      
+      /* Reduce nav padding */
+      header .flex.gap-4 { gap: 6px !important; }
+    }
+    
+    /* === FAB: Floating Action Button (Request Demo, bottom-right) === */
+    @media (max-width: 768px) {
+      .demo-fab {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 999 !important;
+        background: #0084C8 !important;
+        color: white !important;
+        padding: 14px 22px !important;
+        border-radius: 100px !important;
+        box-shadow: 0 8px 24px rgba(0,132,200,0.4) !important;
+        font-weight: 700 !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        text-decoration: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        animation: fabPulse 2s ease-in-out infinite;
+      }
+      @keyframes fabPulse {
+        0%, 100% { box-shadow: 0 8px 24px rgba(0,132,200,0.4); }
+        50% { box-shadow: 0 8px 32px rgba(0,132,200,0.6); }
+      }
+    }
+    .demo-fab { display: none; }
+    @media (max-width: 768px) { .demo-fab { display: inline-flex !important; } }
+    
+    /* === MOBILE SECTIONS — additional fixes === */
+    @media (max-width: 768px) {
+      /* By the Numbers — fix 4-col scroll/wrap */
+      div[class*="grid-cols-4"], .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+      }
+      
+      /* Featured Work image-grid — change from 2-col to 1-col stack */
+      .work-image-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+      .work-image-grid img:first-child { height: 200px !important; }
+      .work-image-grid img { height: 100px !important; object-fit: cover; }
+      
+      /* INSEE-250 Configurator — stack vertical */
+      .configurator-grid, 
+      div[style*="grid-template-columns: 1.4fr 1fr"],
+      div[style*="grid-template-columns: 1.5fr 1fr"],
+      div[style*="grid-template-columns: 2fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .configurator-viewer { 
+        min-height: 320px !important; 
+        max-height: 400px !important; 
+      }
+      .configurator-viewer canvas { 
+        max-height: 380px !important; 
+      }
+      
+      /* Brochure / PDF embed — full width responsive */
+      iframe, embed, object {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .brochure-container, .pdf-embed {
+        height: 480px !important;
+        overflow: auto !important;
+      }
+      
+      /* Event hero banner — text don't cover image */
+      .hero-banner {
+        height: auto !important;
+        min-height: 300px !important;
+      }
+      .hero-banner img { height: 200px !important; }
+      .hero-banner::after { background: linear-gradient(180deg, rgba(10,22,40,0.2), rgba(10,22,40,0.95)) !important; }
+      .hero-banner .hero-content {
+        position: relative !important;
+        background: rgba(10,22,40,0.95) !important;
+        padding: 20px !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin-top: -1px !important;
+      }
+      .hero-banner .hero-title { 
+        font-size: 22px !important;
+        line-height: 1.2 !important;
+        color: white !important;
+      }
+      .hero-banner p { color: rgba(255,255,255,0.9) !important; }
+      
+      /* Spec table borders */
+      .specs-grid > div, .feature-card, .laser-section {
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        padding-bottom: 16px !important;
+        margin-bottom: 16px !important;
+      }
+      
+      /* Hero stats overlay home — don't overlap canvas */
+      .absolute.top-4 { top: 8px !important; right: 8px !important; }
+    }
+
+
+    /* === iPad/Tablet (769px-1024px) === */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      /* Hero h1 — prevent overlap with 3D canvas */
+      .text-6xl.md\:text-8xl, h1.text-6xl, h1[class*="md:text-8xl"] {
+        font-size: 56px !important;
+        line-height: 1.05 !important;
+        position: relative !important;
+        z-index: 5 !important;
+      }
+      /* 3D canvas — clip behind title */
+      #uav-canvas { 
+        max-width: 100% !important; 
+      }
+      .grid.md\:grid-cols-2 { gap: 16px !important; }
+      
+      /* Brochure PDF — full width */
+      iframe[src*=".pdf"], embed[src*=".pdf"], object[data*=".pdf"] {
+        width: 100% !important;
+        min-height: 600px !important;
+      }
+      .brochure-container { padding: 16px !important; }
+      
+      /* Spec table compact */
+      .specs-grid { gap: 12px !important; }
+    }
+
+
+    /* === FIX: INSEE in Action gallery — Featured image height stack === */
+    @media (max-width: 768px) {
+      .insee-action-grid {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+        grid-auto-rows: 180px !important;
+        height: auto !important;
+        gap: 12px !important;
+      }
+      .insee-action-grid > a:first-child {
+        grid-row: auto !important;
+        height: 260px !important;
+      }
+      .insee-action-grid > div {
+        height: 180px !important;
+      }
+      .insee-action-grid > a:first-child img,
+      .insee-action-grid > div img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+    
+    /* === FIX: By the Numbers — force 2x2 on mobile + tablet + center align === */
+    @media (max-width: 1024px) {
+      div.grid.grid-cols-2.md\:grid-cols-4,
+      div.grid.grid-cols-4,
+      div[class*="grid-cols-2"][class*="md:grid-cols-4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        text-align: center !important;
+      }
+      div.grid.grid-cols-2.md\:grid-cols-4 > div,
+      div[class*="grid-cols-2"][class*="md:grid-cols-4"] > div {
+        text-align: center !important;
+        padding: 8px !important;
+      }
+      /* Center numbers text inside */
+      div.grid.grid-cols-2.md\:grid-cols-4 p,
+      div[class*="grid-cols-2"][class*="md:grid-cols-4"] p {
+        text-align: center !important;
+      }
+    }
+    @media (max-width: 768px) {
+      div.grid.grid-cols-2.md\:grid-cols-4 .text-5xl,
+      div[class*="grid-cols-2"][class*="md:grid-cols-4"] .text-5xl {
+        font-size: 40px !important;
+        line-height: 1.1 !important;
+      }
+    }
+
+
+    /* === FIX: Featured Work — portrait Featured (full row) + landscape Results (2 cols) === */
+    @media (max-width: 768px) {
+      .work-image-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto !important;
+        gap: 8px !important;
+        aspect-ratio: unset !important;
+        height: auto !important;
+      }
+      /* Featured Image — full row + portrait 3:4 */
+      .work-image-grid img:first-child { 
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3 / 4 !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        border-radius: 12px !important;
+      }
+      /* Results — 2 cols landscape 4:3 */
+      .work-image-grid img:not(:first-child) { 
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4 / 3 !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        border-radius: 8px !important;
+      }
+    }
+    /* Desktop featured image — safer center position */
+    @media (min-width: 769px) {
+      .work-image-grid img:first-child { 
+        object-position: center center !important;
+      }
+    }
+
+
+    /* === FIX: By the Numbers — inline style repeat(4, 1fr) → 2x2 on mobile === */
+    @media (max-width: 1024px) {
+      div[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px 0 !important;
+      }
+      div[style*="grid-template-columns: repeat(4, 1fr)"] > div {
+        padding: 16px 8px !important;
+        border-right: none !important;
+      }
+      /* Odd items add right border for divider */
+      div[style*="grid-template-columns: repeat(4, 1fr)"] > div:nth-child(odd) {
+        border-right: 1px solid rgba(255,255,255,0.08) !important;
+      }
+      /* Top row items add bottom border */
+      div[style*="grid-template-columns: repeat(4, 1fr)"] > div:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        padding-bottom: 24px !important;
+      }
+      div[style*="grid-template-columns: repeat(4, 1fr)"] > div:nth-child(n+3) {
+        padding-top: 24px !important;
+      }
+    }
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns: repeat(4, 1fr)"] p[style*="font-size: 64px"] {
+        font-size: 48px !important;
+        line-height: 1 !important;
+      }
+    }
+
+
+    /* === FIX: Quick stats (INSEE-250/350) → 2x2 grid instead of stacked === */
+    @media (max-width: 768px) {
+      .quick-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0 !important;
+      }
+      .quick-stats > div {
+        padding: 24px 12px !important;
+        text-align: center !important;
+        border-right: 1px solid var(--border) !important;
+      }
+      /* Right border only for odd (left col) */
+      .quick-stats > div:nth-child(even) {
+        border-right: none !important;
+      }
+      /* Bottom border for top row */
+      .quick-stats > div:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border) !important;
+      }
+      /* Numbers responsive */
+      .quick-stats .qs-value,
+      .quick-stats .qs-number,
+      .quick-stats [class*="text-4xl"],
+      .quick-stats [class*="text-5xl"] {
+        font-size: 32px !important;
+        line-height: 1.1 !important;
+      }
+      .quick-stats .qs-label,
+      .quick-stats [class*="text-xs"] {
+        font-size: 10px !important;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<!-- ==================== NAVBAR ==================== -->
+<!-- ==================== NAVBAR ==================== -->
+<header class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-[#CCE5F5]">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
+<a class="flex items-center" href="/">
+<img alt="INSEE UAV Logo" class="h-10 w-auto object-contain" src="/images/logo-insee.png"/>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/">Home</a>
+<div class="mega-menu">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Products <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="mega-menu-content">
+  <div class="mega-col">
+    <div class="mega-col-title blue">INSEE Platforms</div>
+    <a class="mega-link" href="/products/insee-250/">INSEE-250</a>
+    <a class="mega-link" href="/products/insee-350/">INSEE-350</a>
+    <a class="mega-link" href="/products/gcs/">INSEE-GCS-01</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan LiDAR</div>
+    <a class="mega-link ys" href="/products/yellowscan/venturer/">Venturer</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-plus/">Mapper+</a>
+    <a class="mega-link" href="/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+    <a class="mega-link" href="/products/yellowscan/voyager/">Voyager</a>
+    <a class="mega-link" href="/products/yellowscan/navigator/">Navigator</a>
+    <a class="mega-link" href="/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+    <a class="mega-link" href="/products/yellowscan/explorer/">Explorer</a>
+    <a class="mega-link" href="/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+  </div>
+  <div class="mega-col">
+    <div class="mega-col-title">YellowScan Accessories</div>
+    <a class="mega-link" href="/products/yellowscan/camera-modules/">Camera Modules</a>
+    <div class="mega-sub-title">Software</div>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation/">CloudStation</a>
+    <a class="mega-link" href="/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+    <a class="mega-link" href="/products/yellowscan/software/livestation/">LiveStation</a>
+  </div>
+  <div class="mega-divider"></div>
+  <div class="mega-col">
+    <div class="mega-col-title blue">Other Payloads</div>
+    <div class="mega-sub-title">Riebo</div>
+    <a class="mega-link" href="/products/riebo/d2m/">D2M Oblique</a>
+    <div class="mega-sub-title">GVI</div>
+    <a class="mega-link" href="/products/gvi/h600/">LiAir H600</a>
+    <a class="mega-link" href="/products/gvi/h800/">LiAir H800</a>
+    <div class="mega-sub-title">CHCNav</div>
+    <a class="mega-link" href="/products/chcnav/aa10/">AlphaAir 10</a>
+    <div class="mega-sub-title">Sony</div>
+    <a class="mega-link" href="/products/sony/ilx-lr1/">ILX-LR1</a>
+  </div>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  Solutions <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#solutions">Applications</a>
+<a class="dropdown-item" href="/works/">References / Our Work</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">Event <span class="material-symbols-outlined text-xs">expand_more</span></button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/events/drontech-asia-2026/">DronTech Asia 2026</a>
+<a class="dropdown-item" href="/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+<a class="dropdown-item" href="/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+<a class="dropdown-item" href="/events/intergeo-2024/">INTERGEO 2024</a>
+<a class="dropdown-item" href="/events/malaysia-2024/">Malaysia Presentation 2024</a>
+<a class="dropdown-item" href="/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest flex items-center gap-1">
+  About <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="nav-dropdown-content">
+<a class="dropdown-item" href="/#milestones">Our Story</a>
+</div>
+</div>
+<a class="text-[#1E3A4F] hover:text-[#0084C8] transition-colors uppercase text-xs font-bold tracking-widest" href="/#contact">Contact</a>
+</nav>
+<button class="mobile-menu-btn" onclick="openMobileDrawer()" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button><div class="flex items-center gap-4">
+<div class="flex rounded-full overflow-hidden p-1 border border-[#0084C8]">
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase" href="/en/events/drontech-asia-2026/" id="lang-en">EN</a>
+<a class="lang-toggle-btn px-3 py-1 text-[10px] font-bold rounded-full uppercase active" href="/events/drontech-asia-2026/" id="lang-th">TH</a>
+</div>
+<button onclick="alert('Demo modal — coming soon')" class="bg-[#0084C8] text-white px-6 py-2 font-bold uppercase text-sm clip-path-angled hover:brightness-110 transition-all">
+Request Demo
+</button>
+</div>
+</div>
+</header>
+
+<!-- ==================== MAIN ==================== -->
+<main style="padding-top: 80px;">
+  <div class="page-content">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="/">Home</a> <span>›</span> <a href="#">Events</a> <span>›</span> <span class="current">DronTech Asia 2026</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-banner">
+      <div style="position:absolute; inset:0; background: linear-gradient(135deg, #071630 0%, #0E4B9E 50%, #17A5DE 85%, #4FD1F5 100%);"></div>
+      <div style="position:absolute; inset:0; background: radial-gradient(circle at 82% 15%, rgba(79,209,245,0.4) 0%, transparent 45%), radial-gradient(ellipse at 10% 90%, rgba(7,22,48,0.55) 0%, transparent 60%);"></div>
+      <div class="hero-content">
+        <span class="hero-badge">Upcoming Event</span>
+        <h1 class="hero-title">INSEE UAV at DronTech Asia 2026</h1>
+        <p style="font-size: 16px; opacity: 0.92; max-width: 720px;">พบกับ INSEE-250, INSEE-350 และ YellowScan LiDAR ครบไลน์<br/>ที่งานแสดงโดรนชั้นนำของเอเชีย ครั้งที่ 3</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><span class="material-symbols-outlined" style="font-size: 18px;">location_on</span>IMPACT เมืองทองธานี, Bangkok</div>
+          <div class="hero-meta-item"><span class="material-symbols-outlined" style="font-size: 18px;">calendar_month</span>11–13 พฤศจิกายน 2026</div>
+          <div class="hero-meta-item"><span class="material-symbols-outlined" style="font-size: 18px;">storefront</span>Booth: รอประกาศ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="section-label"><div class="card-label">About the Event</div></div>
+    <div class="recap-card">
+      <h2>งานแสดงโดรนชั้นนำของเอเชีย — ครั้งที่ 3</h2>
+      <div class="separator"></div>
+      <p>
+        <strong>DronTech Asia 2026</strong> งานนิทรรศการเทคโนโลยีโดรนระดับภูมิภาค ครั้งที่ 3 จะจัดขึ้นวันที่
+        <strong>11–13 พฤศจิกายน 2026</strong> ณ <strong>IMPACT เมืองทองธานี กรุงเทพฯ</strong> —
+        จากความสำเร็จของครั้งที่ผ่านมาที่มีผู้ร่วมแสดงงานกว่า <strong>100 บริษัทจาก 15 ประเทศ</strong>,
+        Trade Visitors กว่า <strong>5,000 ราย</strong> บนพื้นที่จัดแสดงกว่า 5,500 ตร.ม.
+      </p>
+      <p>
+        <strong>INSEE UAV × Thai Sky Vision</strong> จะร่วมออกบูธนำเสนอ <strong>INSEE-250</strong> และ <strong>INSEE-350</strong>
+        E-VTOL Fixed-Wing UAV ที่ออกแบบและพัฒนาในประเทศไทย พร้อม <strong>YellowScan LiDAR</strong> ครบไลน์
+        สำหรับงาน Mapping &amp; Survey ทุกรูปแบบ — มาสัมผัสของจริง พูดคุยกับทีมงาน และชมตัวอย่างผลงานจากภารกิจจริงได้ที่บูธของเรา
+      </p>
+    </div>
+
+    <!-- Press Conference -->
+    <div class="section-label"><div class="card-label">Press Conference · งานแถลงข่าวเปิดตัว</div></div>
+    <div class="recap-card">
+      <h2>Thai Sky Vision — Official Partner ของ DronTech Asia 2026</h2>
+      <div class="separator"></div>
+      <p>
+        <strong>คุณสกรรจ์ อริยโชติมา</strong> CEO ของ <strong>Thai Sky Vision / INSEE UAV</strong>
+        เข้าร่วมงานแถลงข่าวเปิดตัว <strong>DronTech Asia 2026</strong> อย่างเป็นทางการ ณ IMPACT เมืองทองธานี
+        โดยในงานนี้ Thai Sky Vision ได้รับเกียรติประกาศเป็น <strong>Official Partner</strong> ของงาน
+        พร้อมรับมอบ Handover Contract จาก GML Exhibition ผู้จัดงาน ร่วมกับพันธมิตรชั้นนำในอุตสาหกรรมโดรนของไทย
+      </p>
+      <p>
+        การเป็น Official Partner ครั้งนี้ตอกย้ำบทบาทของ Thai Sky Vision / INSEE UAV
+        ในฐานะผู้นำด้านเทคโนโลยี UAV และ LiDAR Survey ของประเทศไทย — พบกับบูธของเราได้ในงาน 11–13 พฤศจิกายน 2026
+      </p>
+    </div>
+    <div class="gallery-grid" style="margin-top: 20px;">
+      <div class="gallery-item"><img src="/images/events/drontech-asia-2026/PATT1296.JPG" alt="คุณสกรรจ์ อริยโชติมา รับมอบ Official Partner Contract"/></div>
+      <div class="gallery-item"><img src="/images/events/drontech-asia-2026/PATT1314.JPG" alt="Official Partners ของ DronTech Asia 2026"/></div>
+      <div class="gallery-item"><img src="/images/events/drontech-asia-2026/PATT1112.JPG" alt="บรรยากาศงานแถลงข่าว DronTech Asia 2026"/></div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="section-label"><div class="card-label">What to Expect</div></div>
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon"><span class="material-symbols-outlined">flight_takeoff</span></div>
+        <h4>INSEE-250 &amp; INSEE-350</h4>
+        <p>ชมตัวจริงของ E-VTOL Fixed-Wing UAV ทั้งสองรุ่น — ครอบคลุมงานสำรวจตั้งแต่พื้นที่ขนาดกลางจนถึงภารกิจ Long-Range LiDAR</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><span class="material-symbols-outlined">visibility</span></div>
+        <h4>Payload Showcase</h4>
+        <p>Payload ที่ใช้งานจริงบน INSEE UAV — Riebo D2M, YellowScan Surveyor Ultra III OEM, Sony ILX-LR1 พร้อมไลน์ YellowScan LiDAR โดยตัวแทนจำหน่ายอย่างเป็นทางการในไทย</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><span class="material-symbols-outlined">monitoring</span></div>
+        <h4>ตัวอย่างผลงานจริง</h4>
+        <p>ชม Point Cloud และผลลัพธ์จากภารกิจจริงในประเทศไทย — งานสำรวจภูมิประเทศ ป่าไม้ สนามกอล์ฟ และ Corridor Mapping</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon"><span class="material-symbols-outlined">handshake</span></div>
+        <h4>ปรึกษาทีมงานตัวจริง</h4>
+        <p>คุยกับทีม INSEE UAV / Thai Sky Vision โดยตรง — วางแผน Solution ที่เหมาะกับงานของคุณ พร้อม Local Support เต็มรูปแบบ</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top: 40px;">
+      <div class="cta-card">
+        <h2>มาพบกันที่ DronTech Asia 2026</h2>
+        <p>ลงทะเบียนเข้าชมงานล่วงหน้าฟรีที่เว็บไซต์ทางการ หรือติดต่อทีมงานเพื่อนัดหมายพูดคุยที่บูธ INSEE UAV</p>
+        <a href="https://drontech.asia/" target="_blank" rel="noopener" class="btn-cta" style="margin-right: 12px;">
+          Pre-Register ฟรี
+          <span class="material-symbols-outlined" style="font-size: 18px;">open_in_new</span>
+        </a>
+        <a href="/#contact" class="btn-cta" style="background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.5);">
+          นัดหมายล่วงหน้า
+          <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<footer>
+  <div>© 2026 INSEE UAV. Operated by Thai Sky Vision Co., Ltd.</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/products/insee-250/">INSEE-250</a>
+    <a href="/products/insee-350/">INSEE-350</a>
+    <a href="/events/ys-demo-day-2026/">Upcoming Event</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.parentElement.addEventListener('click', () => {
+      document.getElementById('lightbox-img').src = img.src.replace(/w_\d+,h_\d+/, 'w_1920,h_1280');
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+  document.getElementById('lightbox').addEventListener('click', (e) => { if (e.target.id === 'lightbox') closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
+<aside class="mobile-drawer" id="mobile-drawer">
+  <div class="mobile-drawer-header">
+    <img alt="INSEE UAV" src="/images/logo-insee.png"/>
+    <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="mobile-drawer-content">
+    <a class="mobile-drawer-link" href="/">Home</a>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">INSEE Platforms</div>
+      <a class="mobile-drawer-link" href="/products/insee-250/">INSEE-250</a>
+      <a class="mobile-drawer-link" href="/products/insee-350/">INSEE-350</a>
+      <a class="mobile-drawer-link" href="/products/gcs/">INSEE-GCS-01</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">YellowScan LiDAR</div>
+      <a class="mobile-drawer-link amber" href="/products/yellowscan/venturer/">Venturer</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/mapper-plus/">Mapper+</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/mapper-ultra/">Mapper Ultra</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/voyager/">Voyager</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/navigator/">Navigator</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/surveyor-ultra-iii-oem/">Surveyor Ultra III OEM</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/explorer/">Explorer</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/fly-and-drive/">Fly&amp;Drive</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">YellowScan Accessories &amp; Software</div>
+      <a class="mobile-drawer-link" href="/products/yellowscan/camera-modules/">Camera Modules</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/software/cloudstation/">CloudStation</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/software/cloudstation-viewer/">CS Viewer</a>
+      <a class="mobile-drawer-link" href="/products/yellowscan/software/livestation/">LiveStation</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">Other Payloads</div>
+      <a class="mobile-drawer-link" href="/products/riebo/d2m/">Riebo D2M</a>
+      <a class="mobile-drawer-link" href="/products/gvi/h600/">GVI LiAir H600</a>
+      <a class="mobile-drawer-link" href="/products/gvi/h800/">GVI LiAir H800</a>
+      <a class="mobile-drawer-link" href="/products/chcnav/aa10/">CHCNav AlphaAir 10</a>
+      <a class="mobile-drawer-link" href="/products/sony/ilx-lr1/">Sony ILX-LR1</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">Solutions</div>
+      <a class="mobile-drawer-link" href="/#solutions">Applications</a>
+      <a class="mobile-drawer-link" href="/works/">References / Our Work</a>
+    </div>
+    <div class="mobile-drawer-section">
+      <div class="mobile-drawer-section-title">Event</div>
+      <a class="mobile-drawer-link" href="/events/drontech-asia-2026/">DronTech Asia 2026</a>
+      <a class="mobile-drawer-link" href="/events/ys-demo-day-2026/">YS Demo Day 2026</a>
+      <a class="mobile-drawer-link" href="/events/dronetech-asia-2024/">DronTech Asia 2024</a>
+      <a class="mobile-drawer-link" href="/events/intergeo-2024/">INTERGEO 2024</a>
+      <a class="mobile-drawer-link" href="/events/malaysia-2024/">Malaysia Presentation 2024</a>
+      <a class="mobile-drawer-link" href="/events/ys-apac-samui/">YS APAC · Koh Samui</a>
+    </div>
+    <a class="mobile-drawer-link" href="/#milestones">About / Our Story</a>
+    <a class="mobile-drawer-link" href="/#contact">Contact</a>
+    <div class="mobile-drawer-lang">
+      <a class="" href="/en/">EN</a>
+      <a class=" active" href="/">TH</a>
+    </div>
+    <a class="mobile-drawer-cta" href="/#contact" onclick="closeMobileDrawer()">Request Demo</a>
+  </div>
+</aside>
+<script>
+function openMobileDrawer() { document.querySelector('.mobile-drawer').classList.add('open'); document.querySelector('.mobile-drawer-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMobileDrawer() { document.querySelector('.mobile-drawer').classList.remove('open'); document.querySelector('.mobile-drawer-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+</script>
+
+<a href="#contact" onclick="if(window.openDemoModal){openDemoModal();return false;}" class="demo-fab"><span class="material-symbols-outlined" style="font-size:16px;">handshake</span>Request Demo</a>
+
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.lang-toggle-btn.active');
+    if(!btn) return;
+    // Find the OTHER lang toggle (not active) and redirect to its href
+    var container = btn.parentElement;
+    var other = container.querySelector('.lang-toggle-btn:not(.active)');
+    if(other && other.href){
+      e.preventDefault();
+      window.location.href = other.href;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

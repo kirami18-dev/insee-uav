@@ -3,3 +3,11 @@
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
+
+# --- Cache headers: browser เก็บรูป/3D model ไว้ 30 วัน ไม่โหลดซ้ำ = ประหยัด bandwidth ---
+# (HTML ใช้ default ของ Netlify อยู่แล้ว: เช็คของใหม่ทุกครั้ง เห็นเนื้อหาใหม่ทันทีหลัง deploy)
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
