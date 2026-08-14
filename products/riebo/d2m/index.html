@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+<script>
+/* EN-default: new visitors -> /en/ mirror; remembered TH choice stays TH */
+(function(){try{var l=localStorage.getItem('insee_lang');if(l==='th')return;var p=location.pathname;if(p.indexOf('/en/')===0)return;if(p.indexOf('/admin')===0)return;location.replace('/en'+(p==='/'?'/':p)+location.search+location.hash);}catch(e){}})();
+</script>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -50,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: none; position: fixed; top: 56px; left: 50%; transform: translateX(-50%);
       background: var(--white); border: 1px solid var(--border);
       z-index: 100; padding: 24px; gap: 32px; min-width: 780px;
-      box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(10,22,40,0.12); border-radius: 0;
     }
     .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
     .mega-menu:hover .mega-menu-content { display: flex; }
@@ -64,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .mega-divider { width: 1px; background: var(--border); align-self: stretch; }
     .mega-sub-title { font-size: 8px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 2px; margin-top: 14px; margin-bottom: 6px; }
     .nav-dropdown { position: relative; }
-    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--border); min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 8px; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
+    .nav-dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: var(--white); border: 1px solid var(--border); min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 0; box-shadow: 0 10px 30px rgba(10,22,40,0.1); }
     .nav-dropdown:hover .nav-dropdown-content { display: block; }
     .dropdown-item { color: var(--text); padding: 8px 20px; text-decoration: none; display: block; font-size: 13px; transition: all 0.2s; }
     .dropdown-item:hover { color: var(--blue); background: var(--light); }
@@ -82,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-label { margin-bottom: 16px; }
 
     /* HERO */
-    .card-hero { background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%); border-radius: 24px; padding: 56px; position: relative; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(30,136,229,0.08); }
+    .card-hero { background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%); border-radius: 0; padding: 56px; position: relative; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 40px rgba(30,136,229,0.08); }
     .card-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(79,195,247,0.18) 0%, transparent 70%); pointer-events: none; }
     .card-hero::after { content: ''; position: absolute; bottom: -50px; left: -50px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(30,136,229,0.08) 0%, transparent 70%); pointer-events: none; }
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 460px; }
@@ -99,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-separator { width: 60px; height: 4px; background: var(--blue); border-radius: 2px; margin: 20px 0 24px; }
     .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 540px; margin-bottom: 32px; }
     .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn { padding: 14px 28px; border-radius: 0; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary { background: linear-gradient(135deg, var(--blue), #0D47A1); color: white; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,136,229,0.3); }
     .btn-outline { background: white; color: var(--blue); border: 1.5px solid var(--blue); }
@@ -108,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-image-wrap img { max-width: 100%; max-height: 380px; object-fit: contain; filter: drop-shadow(0 25px 50px rgba(30,136,229,0.15)); position: relative; z-index: 1; }
 
     /* QUICK STATS */
-    .quick-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(30,136,229,0.06); }
+    .quick-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--white); border-radius: 0; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(30,136,229,0.06); }
     @media (max-width: 768px) { .quick-stats { grid-template-columns: repeat(2, 1fr); } }
     .qs-item { padding: 28px 20px; text-align: center; border-right: 1px solid var(--border); }
     .qs-item:last-child { border-right: none; }
@@ -120,15 +129,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* FEATURES */
     .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
-    .feature-card { background: var(--white); border-radius: 20px; padding: 32px; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; box-shadow: 0 4px 16px rgba(30,136,229,0.04); }
+    .feature-card { background: var(--white); border-radius: 0; padding: 32px; border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; box-shadow: 0 4px 16px rgba(30,136,229,0.04); }
     .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,136,229,0.12); border-color: var(--sky); }
-    .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
+    .feature-icon { width: 52px; height: 52px; border-radius: 0; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
     .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
     .feature-highlight { color: var(--blue); font-weight: 600; }
 
     /* SPECS */
-    .card-specs { background: var(--white); border-radius: 24px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(30,136,229,0.06); }
+    .card-specs { background: var(--white); border-radius: 0; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(30,136,229,0.06); }
     .specs-header { margin-bottom: 32px; }
     .specs-header h2 { font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 4px; letter-spacing: -1px; }
     .specs-header h2 span { color: var(--blue); }
@@ -141,32 +150,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* GALLERY */
     .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; aspect-ratio: 16/9; }
-    .gallery-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; transition: transform 0.3s; cursor: pointer; }
+    .gallery-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; transition: transform 0.3s; cursor: pointer; }
     .gallery-grid img:first-child { grid-row: 1 / 3; }
     .gallery-grid img:hover { transform: scale(1.02); }
 
     /* CTA */
-    .card-cta { background: linear-gradient(135deg, var(--blue) 0%, #0D47A1 100%); border-radius: 24px; padding: 56px; text-align: center; position: relative; overflow: hidden; color: white; }
+    .card-cta { background: linear-gradient(135deg, var(--blue) 0%, #0D47A1 100%); border-radius: 0; padding: 56px; text-align: center; position: relative; overflow: hidden; color: white; }
     .card-cta::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 200px; background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%); }
     .cta-content { position: relative; z-index: 1; }
     .card-cta h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
     .card-cta .cta-desc { font-size: 15px; opacity: 0.9; max-width: 550px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 0; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
     .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 0; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
     .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
     .cta-contact { font-size: 13px; margin-top: 28px; opacity: 0.85; }
   
     /* MISSION SHOWCASE GALLERY (big grid) */
     .gallery-big { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
     @media (max-width: 768px) { .gallery-big { grid-template-columns: repeat(2, 1fr); } }
-    .gallery-big img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+    .gallery-big img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 0; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
     .gallery-big img:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(30,136,229,0.18); }
     /* LIGHTBOX */
     #lightbox { position: fixed; inset: 0; background: rgba(10,22,40,0.92); backdrop-filter: blur(8px); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out; }
     #lightbox.open { display: flex; }
-    #lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 25px 60px rgba(0,0,0,0.5); }
+    #lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 0; box-shadow: 0 25px 60px rgba(0,0,0,0.5); }
     #lightbox .close-btn { position: absolute; top: 24px; right: 32px; color: white; font-size: 36px; cursor: pointer; background: none; border: none; line-height: 1; opacity: 0.7; transition: opacity 0.2s; }
     #lightbox .close-btn:hover { opacity: 1; }
 
@@ -185,7 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .badge { padding: 4px 10px !important; font-size: 10px !important; }
       /* Card grids — 1 col on mobile */
       .card-features, .features-grid, .specs-grid, .work-image-grid, .quick-stats { grid-template-columns: 1fr !important; }
-      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 16px !important; }
+      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 0 !important; }
       .specs-header h2 { font-size: 22px !important; }
       .card-label { font-size: 14px !important; }
       /* Tables — horizontal scroll */
@@ -258,7 +267,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         height: 40px;
         background: transparent;
         border: 1px solid rgba(0,132,200,0.3);
-        border-radius: 8px;
+        border-radius: 0;
         cursor: pointer;
         color: #0084C8;
         z-index: 1000;
@@ -299,7 +308,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .mobile-drawer-close {
         background: transparent;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         width: 36px;
         height: 36px;
         color: white;
@@ -344,7 +353,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-align: center;
         padding: 10px;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         color: white;
         text-decoration: none;
         font-size: 12px;
@@ -357,7 +366,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background: #0084C8;
         color: white;
         padding: 14px;
-        border-radius: 8px;
+        border-radius: 0;
         margin-top: 16px;
         text-decoration: none;
         font-size: 13px;
@@ -629,7 +638,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 3 / 4 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
       }
       /* Results — 2 cols landscape 4:3 */
       .work-image-grid img:not(:first-child) { 
@@ -638,7 +647,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 4 / 3 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 8px !important;
+        border-radius: 0 !important;
       }
     }
     /* Desktop featured image — safer center position */
@@ -713,6 +722,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     }
 
+
+/* ===== Quantum full-bleed strips redesign (2026-08) ===== */
+.card-hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border:none!important;box-shadow:none!important;}
+.hero-grid{max-width:1200px;margin-left:auto;margin-right:auto;}
+.quick-stats{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);margin-top:-40px;border-left:none!important;border-right:none!important;box-shadow:none!important;}
+.card-cta{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);}
+.btn-primary{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
 </style>
 </head>
 
@@ -964,7 +980,7 @@ Request Demo
           <img src="/images/products/Riebo-D2M-1-INSEE-250.jpg" alt="On INSEE-250"/>
           <img src="/images/products/Riebo-D2M-2-INSEE-250.jpg" alt="On INSEE-250"/>
         </div>
-        <div style="margin-top: 20px; padding: 16px; background: var(--light); border: 1px dashed var(--border); border-radius: 12px;">
+        <div style="margin-top: 20px; padding: 16px; background: var(--light); border: 1px dashed var(--border); border-radius: 0;">
           <p style="font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">Mission Results</p>
           <p style="font-size: 13px; color: var(--muted); font-style: italic;">รายละเอียดข้อมูลภารกิจ — Coverage Area, GSD, Accuracy และ Flight Parameters จะเผยแพร่ตามความคืบหน้าของเอกสารภารกิจ</p>
         </div>
@@ -989,44 +1005,28 @@ Request Demo
 
       <!-- COMPATIBLE PLATFORMS -->
       <div class="section-label"><div class="card-label">Compatible INSEE Platforms</div></div>
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
 
-        <a href="/products/insee-250/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 20px; padding: 28px; border: 1px solid rgba(79,195,247,0.2); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(30,136,229,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-          <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(30,136,229,0.06) 0%, transparent 70%); pointer-events: none;"></div>
-          <div style="position: relative; z-index: 1;">
-            <div style="height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-              <img src="/images/products/insee-250.png" alt="INSEE-250" style="max-width: 100%; max-height: 140px; object-fit: contain; filter: drop-shadow(0 10px 25px rgba(30,136,229,0.15));"/>
+        <a href="/products/insee-250/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 0; padding: 32px; border: 1px solid rgba(79,195,247,0.2); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,132,200,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+          <div style="position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(0,132,200,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+          <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; align-items: center; position: relative; z-index: 1;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <img src="/images/products/insee-250.png" alt="INSEE-250" style="max-width: 100%; max-height: 220px; object-fit: contain; filter: drop-shadow(0 12px 28px rgba(0,132,200,0.18));"/>
             </div>
-            <p style="font-size: 10px; font-weight: 700; color: #0084C8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">ISR / MAPPING / SURVEY</p>
-            <h3 style="font-size: 22px; font-weight: 700; color: #0A1628; margin-bottom: 12px; letter-spacing: -0.5px;">INSEE-250</h3>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 12px; border-top: 1px solid #CCE5F5; margin-bottom: 14px;">
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">PAYLOAD</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2 kg</p></div>
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2.5 hr</p></div>
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">SPEED</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">108 km/h</p></div>
-            </div>
-            <div style="display: inline-flex; align-items: center; gap: 6px; color: #0084C8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-              <span>ดูรายละเอียด</span>
-              <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="/products/insee-350/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 20px; padding: 28px; border: 1px solid rgba(242,169,0,0.25); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(242,169,0,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-          <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(242,169,0,0.08) 0%, transparent 70%); pointer-events: none;"></div>
-          <div style="position: relative; z-index: 1;">
-            <div style="height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-              <img src="/images/products/insee-350.png" alt="INSEE-350" style="max-width: 100%; max-height: 140px; object-fit: contain; filter: drop-shadow(0 10px 25px rgba(242,169,0,0.15));"/>
-            </div>
-            <p style="font-size: 10px; font-weight: 700; color: #F2A900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">HEAVY-LIFT / LONG-RANGE</p>
-            <h3 style="font-size: 22px; font-weight: 700; color: #0A1628; margin-bottom: 12px; letter-spacing: -0.5px;">INSEE-350</h3>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 12px; border-top: 1px solid #CCE5F5; margin-bottom: 14px;">
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">PAYLOAD</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">5 kg</p></div>
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2.5 hr</p></div>
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">SPEED</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">144 km/h</p></div>
-            </div>
-            <div style="display: inline-flex; align-items: center; gap: 6px; color: #0084C8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-              <span>ดูรายละเอียด</span>
-              <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+            <div>
+              <p style="font-size: 11px; font-weight: 700; color: #F2A900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">RECOMMENDED PLATFORM</p>
+              <h3 style="font-size: 30px; font-weight: 700; color: #0A1628; margin-bottom: 8px; letter-spacing: -1px;">INSEE-250</h3>
+              <p style="font-size: 14px; color: #4A6B80; line-height: 1.65; margin-bottom: 18px;">E-VTOL Fixed-Wing — payload 2 kg, บินได้ 2 ชม., 108 km/h ออกแบบสำหรับงาน Mapping และ LiDAR Survey ระดับมืออาชีพ</p>
+              <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px;">
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">WINGSPAN</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">2.5 m</p></div>
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">PAYLOAD</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">2 kg</p></div>
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">2 hr</p></div>
+                <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">SPEED</p><p style="font-size: 18px; font-weight: 700; color: #0084C8;">108 km/h</p></div>
+              </div>
+              <div style="display: inline-flex; align-items: center; gap: 6px; color: #0084C8; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                <span>ดูรายละเอียด INSEE-250</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </div>
             </div>
           </div>
         </a>

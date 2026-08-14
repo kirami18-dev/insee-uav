@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+<script>
+/* EN-default: new visitors -> /en/ mirror; remembered TH choice stays TH */
+(function(){try{var l=localStorage.getItem('insee_lang');if(l==='th')return;var p=location.pathname;if(p.indexOf('/en/')===0)return;if(p.indexOf('/admin')===0)return;location.replace('/en'+(p==='/'?'/':p)+location.search+location.hash);}catch(e){}})();
+</script>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -18,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="th" href="https://www.inseeuav.com/products/insee-350/"/>
 <link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/products/insee-350/"/>
 <link rel="alternate" hreflang="x-default" href="https://www.inseeuav.com/products/insee-350/"/>
-  <meta name="description" content="INSEE-350 Heavy-Lift E-VTOL Fixed-Wing UAV — 3.5m wingspan, 2.5hr flight time, 5kg payload. รองรับ YellowScan Voyager Long-Range LiDAR และกล้องระดับ professional"/>
+  <meta name="description" content="INSEE-350 Heavy-Lift E-VTOL Fixed-Wing UAV — 3.5m wingspan, 2hr flight time, 5kg payload. รองรับ YellowScan Voyager Long-Range LiDAR และกล้องระดับ professional"/>
   <meta name="keywords" content="INSEE-350, Heavy-Lift VTOL UAV, Long-Range Mapping Drone, YellowScan Voyager, LiDAR UAV, INSEE UAV, Thai Sky Vision"/>
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -77,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: var(--white); border: 1px solid var(--border);
       z-index: 100; padding: 24px; gap: 32px; min-width: 780px;
       box-shadow: 0 20px 60px rgba(10,22,40,0.12);
-      border-radius: 12px;
+      border-radius: 0;
     }
     .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
     .mega-menu:hover .mega-menu-content { display: flex; }
@@ -108,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-content {
       display: none; position: absolute; top: 100%; left: 0;
       background: var(--white); border: 1px solid var(--border);
-      min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 8px;
+      min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 0;
       box-shadow: 0 10px 30px rgba(10,22,40,0.1);
     }
     .nav-dropdown:hover .nav-dropdown-content { display: block; }
@@ -144,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* HERO */
     .card-hero {
       background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%);
-      border-radius: 24px; padding: 56px; position: relative; overflow: hidden;
+      border-radius: 0; padding: 56px; position: relative; overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: 0 8px 40px rgba(0,132,200,0.08);
     }
@@ -174,7 +183,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-separator { width: 60px; height: 4px; background: var(--blue); border-radius: 2px; margin: 20px 0 24px; }
     .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 540px; margin-bottom: 32px; }
     .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn { padding: 14px 28px; border-radius: 0; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
     .btn-primary { background: linear-gradient(135deg, var(--blue), #006fb0); color: white; }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,132,200,0.3); }
     .btn-outline { background: white; color: var(--blue); border: 1.5px solid var(--blue); }
@@ -185,7 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* QUICK STATS */
     .quick-stats {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-      background: var(--white); border-radius: 20px; overflow: hidden;
+      background: var(--white); border-radius: 0; overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: 0 4px 24px rgba(0,132,200,0.06);
     }
@@ -201,20 +210,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
     .feature-card {
-      background: var(--white); border-radius: 20px; padding: 32px;
+      background: var(--white); border-radius: 0; padding: 32px;
       border: 1px solid var(--border);
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       box-shadow: 0 4px 16px rgba(0,132,200,0.04);
     }
     .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,132,200,0.12); border-color: var(--sky); }
-    .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
+    .feature-icon { width: 52px; height: 52px; border-radius: 0; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
     .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
     .feature-highlight { color: var(--blue); font-weight: 600; }
 
     /* SPECS TABLE */
     .card-specs {
-      background: var(--white); border-radius: 24px; padding: 40px;
+      background: var(--white); border-radius: 0; padding: 40px;
       border: 1px solid var(--border);
       box-shadow: 0 4px 24px rgba(0,132,200,0.06);
     }
@@ -236,7 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     @media (max-width: 768px) { .work-grid { grid-template-columns: 1fr; } }
     .work-card {
-      background: var(--white); border-radius: 20px; overflow: hidden;
+      background: var(--white); border-radius: 0; overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 16px rgba(0,132,200,0.04);
@@ -249,7 +258,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-tag { font-size: 10px; color: var(--blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
     .work-title { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .work-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-    .work-results { background: var(--light); border: 1px dashed var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; }
+    .work-results { background: var(--light); border: 1px dashed var(--border); border-radius: 0; padding: 14px 16px; margin-bottom: 16px; }
     .work-results-label { font-size: 10px; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
     .work-result-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12px; }
     .work-result-row .k { color: var(--muted); }
@@ -259,20 +268,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-link:hover { gap: 10px; }
 
     /* GCS */
-    .card-gcs {
-      background: linear-gradient(135deg, var(--cloud) 0%, var(--white) 100%);
-      border-radius: 24px; padding: 40px;
-      border: 1px solid var(--border);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
-    }
-    @media (max-width: 768px) { .card-gcs { grid-template-columns: 1fr; } }
+    .card-gcs { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: linear-gradient(120deg, #071120 0%, #0a1c33 60%, #0e3a63 100%); overflow: hidden; }
+    .gcs-strip-in { max-width: 1200px; margin: 0 auto; padding: 72px 56px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    @media (max-width: 768px) { .gcs-strip-in { grid-template-columns: 1fr; gap: 24px; padding: 44px 24px; } .gcs-image-wrap img { max-height: 320px; } .gcs-h2 { font-size: 28px; } }
     .gcs-image-wrap { display: flex; justify-content: center; align-items: center; }
-    .gcs-image-wrap img { max-width: 100%; max-height: 320px; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,132,200,0.15); }
+    .gcs-image-wrap img { max-width: 100%; max-height: 460px; object-fit: contain; display: block; filter: drop-shadow(0 22px 44px rgba(0,0,0,0.45)); }
+    .gcs-pre { color: var(--sky); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+    .gcs-h2 { color: #fff; font-size: 40px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
+    .gcs-sep { width: 60px; height: 4px; background: var(--ys-amber); margin: 18px 0 22px; }
+    .gcs-desc { color: #a9c3d6; font-size: 15px; line-height: 1.75; margin-bottom: 24px; }
+    .card-gcs .chip { background: rgba(79,195,247,0.12); color: #bfe3f5; border: 1px solid rgba(79,195,247,0.3); }
 
     /* CTA */
     .card-cta {
       background: linear-gradient(135deg, var(--blue) 0%, #006fb0 100%);
-      border-radius: 24px; padding: 56px; text-align: center;
+      border-radius: 0; padding: 56px; text-align: center;
       position: relative; overflow: hidden; color: white;
     }
     .card-cta::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 200px; background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%); }
@@ -280,9 +290,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .card-cta h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
     .card-cta .cta-desc { font-size: 15px; opacity: 0.9; max-width: 550px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 0; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
     .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 0; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
     .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
     .cta-contact { font-size: 13px; margin-top: 28px; opacity: 0.85; }
   
@@ -300,7 +310,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .badge { padding: 4px 10px !important; font-size: 10px !important; }
       /* Card grids — 1 col on mobile */
       .card-features, .features-grid, .specs-grid, .work-image-grid, .quick-stats { grid-template-columns: 1fr !important; }
-      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 16px !important; }
+      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 0 !important; }
       .specs-header h2 { font-size: 22px !important; }
       .card-label { font-size: 14px !important; }
       /* Tables — horizontal scroll */
@@ -373,7 +383,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         height: 40px;
         background: transparent;
         border: 1px solid rgba(0,132,200,0.3);
-        border-radius: 8px;
+        border-radius: 0;
         cursor: pointer;
         color: #0084C8;
         z-index: 1000;
@@ -414,7 +424,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .mobile-drawer-close {
         background: transparent;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         width: 36px;
         height: 36px;
         color: white;
@@ -459,7 +469,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-align: center;
         padding: 10px;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         color: white;
         text-decoration: none;
         font-size: 12px;
@@ -472,7 +482,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background: #0084C8;
         color: white;
         padding: 14px;
-        border-radius: 8px;
+        border-radius: 0;
         margin-top: 16px;
         text-decoration: none;
         font-size: 13px;
@@ -744,7 +754,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 3 / 4 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
       }
       /* Results — 2 cols landscape 4:3 */
       .work-image-grid img:not(:first-child) { 
@@ -753,7 +763,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 4 / 3 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 8px !important;
+        border-radius: 0 !important;
       }
     }
     /* Desktop featured image — safer center position */
@@ -828,6 +838,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     }
 
+
+/* ===== Quantum full-bleed strips redesign (2026-08) ===== */
+.card-hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border:none!important;box-shadow:none!important;}
+.hero-grid{max-width:1200px;margin-left:auto;margin-right:auto;}
+.quick-stats{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);margin-top:-40px;border-left:none!important;border-right:none!important;box-shadow:none!important;}
+.card-cta{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);}
+.btn-primary{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
 </style>
 </head>
 
@@ -968,7 +985,7 @@ Request Demo
             <div class="hero-separator"></div>
             <p class="hero-desc">
               Heavy-Lift E-VTOL Fixed-Wing UAV ขนาด 3.5m wingspan — รองรับ payload สูงถึง <strong style="color:var(--blue)">5kg</strong>
-              บินได้ 2.5 ชั่วโมงต่อเที่ยว ความเร็วสูงสุด 144 km/h — เหมาะกับงาน Long-Range Survey, Heavy LiDAR Payload
+              บินได้ 2 ชั่วโมงต่อเที่ยว ความเร็วสูงสุด 144 km/h — เหมาะกับงาน Long-Range Survey, Heavy LiDAR Payload
               และภารกิจครอบคลุมพื้นที่กว้างที่ต้องการ endurance สูง
             </p>
             <div class="hero-cta">
@@ -989,7 +1006,7 @@ Request Demo
       <div class="quick-stats">
         <div class="qs-item">
           <div class="qs-icon"><span class="material-symbols-outlined">schedule</span></div>
-          <div class="qs-value">2.5<span class="unit">hrs</span></div>
+          <div class="qs-value">2<span class="unit">hrs</span></div>
           <div class="qs-label">Flight Time</div>
         </div>
         <div class="qs-item">
@@ -1053,7 +1070,7 @@ Request Demo
             <div class="spec-row"><span class="spec-key">Battery Bay</span><span class="spec-val">26 × 15 × 9 cm</span></div>
           </div>
           <div>
-            <div class="spec-row"><span class="spec-key">Flight Time</span><span class="spec-val">2.5 hrs @ 5kg / 3 hrs no payload</span></div>
+            <div class="spec-row"><span class="spec-key">Flight Time</span><span class="spec-val">2 hrs (with payload) / 2.5 hrs (no payload)</span></div>
             <div class="spec-row"><span class="spec-key">Flight Distance</span><span class="spec-val">180–270 km</span></div>
             <div class="spec-row"><span class="spec-key">Max Cruising Speed</span><span class="spec-val">144 km/h (40 m/s)</span></div>
             <div class="spec-row"><span class="spec-key">Min Cruising Speed</span><span class="spec-val">93.6 km/h (26 m/s)</span></div>
@@ -1126,21 +1143,21 @@ Request Demo
 
       </div>
 
-      <!-- CARD 6: GCS -->
-      <div class="section-label"><div class="card-label">Ground Control Station</div></div>
-      <div class="card-gcs">
-        <div class="gcs-image-wrap">
-          <img src="/images/products/gcs/GCS.png" alt="INSEE-GCS-01"/>
-        </div>
-        <div>
-          <p class="hero-pretitle">INSEE-GCS-01</p>
-          <h2 style="font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -1px;">INSEE Pilot Ground Station</h2>
-          <div class="hero-separator" style="margin: 16px 0 20px;"></div>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px;">
-            Ground Station ปรับแต่งได้ตามภารกิจ — รองรับ display 10–15 นิ้ว, Intel Core i5/i7, RAM ถึง 16GB, ใช้งานต่อเนื่องได้ถึง 10 ชั่วโมง
-            พร้อม <strong style="color:var(--blue)">INSEE Pilot software</strong> และ <strong style="color:var(--blue)">ADS-B</strong> สำหรับ situational awareness
-          </p>
-          <div class="payload-chips">
+      <!-- CARD 6: GCS (full-bleed strip) -->
+      <section class="card-gcs">
+        <div class="gcs-strip-in">
+          <div class="gcs-image-wrap">
+            <img src="/images/products/gcs/GCS.png" alt="INSEE-GCS-01"/>
+          </div>
+          <div>
+            <p class="gcs-pre">Ground Control Station · INSEE-GCS-01</p>
+            <h2 class="gcs-h2">INSEE Pilot Ground Station</h2>
+            <div class="gcs-sep"></div>
+            <p class="gcs-desc">
+              Ground Station ปรับแต่งได้ตามภารกิจ — รองรับ display 10–15 นิ้ว, Intel Core i5/i7, RAM ถึง 16GB, ใช้งานต่อเนื่องได้ถึง 10 ชั่วโมง
+              พร้อม <strong style="color:var(--sky)">INSEE Pilot software</strong> และ <strong style="color:var(--sky)">ADS-B</strong> สำหรับ situational awareness
+            </p>
+            <div class="payload-chips">
             <span class="chip">10–15" Display</span>
             <span class="chip">Intel i5/i7</span>
             <span class="chip">16GB RAM</span>
@@ -1148,9 +1165,10 @@ Request Demo
             <span class="chip">1000 nits</span>
             <span class="chip">IP55</span>
             <span class="chip">ADS-B</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- CARD 7: CTA -->
       <div class="card-cta">

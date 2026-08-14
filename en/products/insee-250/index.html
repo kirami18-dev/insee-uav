@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -18,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="th" href="https://www.inseeuav.com/products/insee-250/"/>
 <link rel="alternate" hreflang="en" href="https://www.inseeuav.com/en/products/insee-250/"/>
 <link rel="alternate" hreflang="x-default" href="https://www.inseeuav.com/products/insee-250/"/>
-  <meta name="description" content="INSEE-250 E-VTOL Fixed-Wing UAV — 2.5m wingspan, 2.5hr flight time, 2kg payload. Works with YellowScan, Riebo, CHC LiDAR and professional-grade camera payloads."/>
+  <meta name="description" content="INSEE-250 E-VTOL Fixed-Wing UAV — 2.5m wingspan, 2hr flight time, 2kg payload. Works with YellowScan, Riebo, CHC LiDAR and professional-grade camera payloads."/>
   <meta name="keywords" content="INSEE-250, VTOL UAV Thailand, Fixed-Wing Drone, Mapping UAV, LiDAR UAV, INSEE UAV, Thai Sky Vision"/>
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -77,7 +82,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: var(--white); border: 1px solid var(--border);
       z-index: 100; padding: 24px; gap: 32px; min-width: 780px;
       box-shadow: 0 20px 60px rgba(10,22,40,0.12);
-      border-radius: 12px;
+      border-radius: 0;
     }
     .mega-menu-content::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; background: transparent; }
     .mega-menu:hover .mega-menu-content { display: flex; }
@@ -108,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-dropdown-content {
       display: none; position: absolute; top: 100%; left: 0;
       background: var(--white); border: 1px solid var(--border);
-      min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 8px;
+      min-width: 200px; z-index: 100; padding: 8px 0; border-radius: 0;
       box-shadow: 0 10px 30px rgba(10,22,40,0.1);
     }
     .nav-dropdown:hover .nav-dropdown-content { display: block; }
@@ -121,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .lang-toggle-btn.active { background: var(--blue); color: white; }
 
     /* LAYOUT */
-    .page-content { max-width: 1200px; margin: 0 auto; padding: 60px 32px 80px; }
+    .page-content { max-width: 1200px; margin: 0 auto; padding: 60px 32px 0; }
     .breadcrumb {
       display: flex; align-items: center; gap: 8px;
       margin-bottom: 48px; font-size: 12px; color: var(--muted);
@@ -143,24 +148,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* HERO */
     .card-hero {
-      background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%);
-      border-radius: 24px; padding: 56px; position: relative; overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 40px rgba(0,132,200,0.08);
+      position: relative; overflow: hidden;
+      width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+      padding: 96px 56px 104px;
+      background: linear-gradient(160deg, #ffffff 0%, #f4faff 45%, #e7f3ff 100%);
     }
     .card-hero::before {
-      content: ''; position: absolute; top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(79,195,247,0.18) 0%, transparent 70%);
+      content: ''; position: absolute; top: -15%; right: -8%;
+      width: 65%; height: 90%;
+      background: radial-gradient(circle, rgba(79,195,247,0.14) 0%, transparent 62%);
       pointer-events: none;
     }
     .card-hero::after {
-      content: ''; position: absolute; bottom: -50px; left: -50px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(0,132,200,0.08) 0%, transparent 70%);
-      pointer-events: none;
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+      background-image: linear-gradient(rgba(0,132,200,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(0,132,200,.045) 1px, transparent 1px);
+      background-size: 54px 54px;
     }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; min-height: 480px; }
+    .hero-grid { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; min-height: 460px; }
     @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
     .hero-badges { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
     .badge { padding: 6px 16px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
@@ -168,28 +172,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .badge-sky { background: rgba(79,195,247,0.15); color: #0066A0; border: 1px solid rgba(79,195,247,0.3); }
     .badge-amber { background: rgba(242,169,0,0.12); color: #B07900; border: 1px solid rgba(242,169,0,0.3); }
     .hero-pretitle { font-size: 13px; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
-    .hero-title { font-size: 64px; font-weight: 700; line-height: 1; margin-bottom: 12px; color: var(--navy); letter-spacing: -2px; }
+    .hero-title { font-size: 92px; font-weight: 800; line-height: .95; margin-bottom: 12px; color: var(--navy); letter-spacing: -3px; }
     .hero-title .blue { color: var(--blue); }
     .hero-tagline { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 16px; letter-spacing: 0.5px; }
     .hero-separator { width: 60px; height: 4px; background: var(--blue); border-radius: 2px; margin: 20px 0 24px; }
     .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 540px; margin-bottom: 32px; }
     .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { padding: 14px 28px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary { background: linear-gradient(135deg, var(--blue), #006fb0); color: white; }
+    .btn { padding: 14px 28px; border-radius: 0; font-size: 14px; font-weight: 600; font-family: inherit; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), #006fb0); color: white; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,132,200,0.3); }
     .btn-outline { background: white; color: var(--blue); border: 1.5px solid var(--blue); }
     .btn-outline:hover { background: var(--cloud); }
     .hero-image-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
     .hero-image-wrap img { max-width: 100%; max-height: 420px; object-fit: contain; filter: drop-shadow(0 25px 50px rgba(0,132,200,0.15)); position: relative; z-index: 1; }
 
-    /* QUICK STATS */
+    /* QUICK STATS — full-bleed light band */
     .quick-stats {
+      width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); margin-top: -40px;
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-      background: var(--white); border-radius: 20px; overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 24px rgba(0,132,200,0.06);
+      background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
     @media (max-width: 768px) { .quick-stats { grid-template-columns: repeat(2, 1fr); } }
+
+    /* SECTION-BREAK STRIP (dark, point cloud) */
+    .section-break {
+      position: relative; overflow: hidden;
+      width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+      min-height: 320px; display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+    .section-break .sb-bg { position: absolute; inset: 0; background-size: cover; background-position: center 40%; }
+    .section-break .sb-ov { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,16,30,.92) 0%, rgba(5,16,30,.6) 50%, rgba(5,16,30,.92) 100%); }
+    .section-break .sb-in { position: relative; z-index: 2; padding: 56px 32px; max-width: 820px; }
+    .section-break .sb-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sky); margin-bottom: 14px; }
+    .section-break h2 { font-size: 46px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; color: #fff; }
+    .section-break h2 .y { color: var(--ys-amber); }
+    .section-break p { font-size: 16px; color: #b9d3e6; margin-top: 14px; }
+    @media (max-width: 768px) { .section-break h2 { font-size: 30px; } }
+
+    /* COMPATIBLE STRIP (dark, single long band) */
+    .compat-strip { position: relative; overflow: hidden; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: linear-gradient(100deg, #0a1c33, #0e3a63); }
+    .compat-strip .cs-pc { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: .15; mix-blend-mode: screen; }
+    .compat-strip .cs-in { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 46px 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .compat-strip .cs-l { display: flex; align-items: center; gap: 22px; }
+    .compat-strip .cs-ic { width: 60px; height: 60px; border-radius: 0; background: rgba(79,195,247,.15); border: 1px solid rgba(79,195,247,.35); display: flex; align-items: center; justify-content: center; }
+    .compat-strip .cs-ic .material-symbols-outlined { font-size: 32px; color: var(--sky); }
+    .compat-strip .cs-k { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--sky); margin-bottom: 4px; }
+    .compat-strip .cs-v { font-size: 28px; font-weight: 800; letter-spacing: -.5px; color: #fff; }
+    .compat-strip .cs-v span { color: var(--ys-amber); }
+    .compat-strip .cs-r { display: flex; align-items: center; gap: 14px; }
+    .compat-strip .cs-r img { height: 58px; filter: drop-shadow(0 10px 20px rgba(0,0,0,.4)); }
+    .compat-strip .cs-r a { padding: 13px 26px; border-radius: 0; background: var(--ys-amber); color: #0a1628; font-weight: 700; font-size: 13px; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; }
+    @media (max-width: 768px) { .compat-strip .cs-in { flex-direction: column; text-align: center; } .compat-strip .cs-l { flex-direction: column; } }
     .qs-item { padding: 28px 20px; text-align: center; border-right: 1px solid var(--border); }
     .qs-item:last-child { border-right: none; }
     .qs-icon { font-size: 24px; margin-bottom: 8px; color: var(--blue); }
@@ -201,20 +234,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
     .feature-card {
-      background: var(--white); border-radius: 20px; padding: 32px;
+      background: var(--white); border-radius: 0; padding: 32px;
       border: 1px solid var(--border);
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       box-shadow: 0 4px 16px rgba(0,132,200,0.04);
     }
     .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,132,200,0.12); border-color: var(--sky); }
-    .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
+    .feature-icon { width: 52px; height: 52px; border-radius: 0; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; background: var(--cloud); color: var(--blue); }
     .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
     .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
     .feature-highlight { color: var(--blue); font-weight: 600; }
 
     /* SPECS TABLE */
     .card-specs {
-      background: var(--white); border-radius: 24px; padding: 40px;
+      background: var(--white); border-radius: 0; padding: 40px;
       border: 1px solid var(--border);
       box-shadow: 0 4px 24px rgba(0,132,200,0.06);
     }
@@ -236,7 +269,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     @media (max-width: 768px) { .work-grid { grid-template-columns: 1fr; } }
     .work-card {
-      background: var(--white); border-radius: 20px; overflow: hidden;
+      background: var(--white); border-radius: 0; overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 16px rgba(0,132,200,0.04);
@@ -249,7 +282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-tag { font-size: 10px; color: var(--blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
     .work-title { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
     .work-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-    .work-results { background: var(--light); border: 1px dashed var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; }
+    .work-results { background: var(--light); border: 1px dashed var(--border); border-radius: 0; padding: 14px 16px; margin-bottom: 16px; }
     .work-results-label { font-size: 10px; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
     .work-result-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12px; }
     .work-result-row .k { color: var(--muted); }
@@ -259,30 +292,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .work-link:hover { gap: 10px; }
 
     /* GCS */
-    .card-gcs {
-      background: linear-gradient(135deg, var(--cloud) 0%, var(--white) 100%);
-      border-radius: 24px; padding: 40px;
-      border: 1px solid var(--border);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
-    }
-    @media (max-width: 768px) { .card-gcs { grid-template-columns: 1fr; } }
+    .card-gcs { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); background: linear-gradient(120deg, #071120 0%, #0a1c33 60%, #0e3a63 100%); overflow: hidden; }
+    .gcs-strip-in { max-width: 1200px; margin: 0 auto; padding: 72px 56px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    @media (max-width: 768px) { .gcs-strip-in { grid-template-columns: 1fr; gap: 24px; padding: 44px 24px; } .gcs-image-wrap img { max-height: 320px; } }
     .gcs-image-wrap { display: flex; justify-content: center; align-items: center; }
-    .gcs-image-wrap img { max-width: 100%; max-height: 320px; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,132,200,0.15); }
+    .gcs-image-wrap img { max-width: 100%; max-height: 460px; object-fit: contain; display: block; filter: drop-shadow(0 22px 44px rgba(0,0,0,0.45)); }
+    .gcs-pre { color: var(--sky); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+    .gcs-h2 { color: #fff; font-size: 40px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
+    .gcs-sep { width: 60px; height: 4px; background: var(--ys-amber); margin: 18px 0 22px; }
+    .gcs-desc { color: #a9c3d6; font-size: 15px; line-height: 1.75; margin-bottom: 24px; }
+    .card-gcs .chip { background: rgba(79,195,247,0.12); color: #bfe3f5; border: 1px solid rgba(79,195,247,0.3); }
+    @media (max-width: 768px) { .gcs-h2 { font-size: 28px; } }
 
     /* CTA */
-    .card-cta {
-      background: linear-gradient(135deg, var(--blue) 0%, #006fb0 100%);
-      border-radius: 24px; padding: 56px; text-align: center;
-      position: relative; overflow: hidden; color: white;
-    }
-    .card-cta::before { content: ''; position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 200px; background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%); }
-    .cta-content { position: relative; z-index: 1; }
-    .card-cta h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+    .card-cta { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); margin-top: -40px; background: linear-gradient(120deg, #071120 0%, #0a1c33 55%, #0e3a63 100%); padding: 100px 56px; text-align: center; overflow: hidden; color: white; }
+    .card-cta::before { content: ''; position: absolute; inset: 0; background-image: url('/images/payloads/yellowscan/mapper-plus-oem-pointcloud.jpg'); background-size: cover; background-position: center; opacity: .14; mix-blend-mode: screen; pointer-events: none; }
+    .cta-content { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; }
+    .card-cta h2 { font-size: 44px; font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -1px; }
     .card-cta .cta-desc { font-size: 15px; opacity: 0.9; max-width: 550px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-primary { background: white; color: var(--blue); padding: 14px 32px; border-radius: 0; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.3s; }
     .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+    .btn-cta-outline { background: transparent; color: white; padding: 14px 32px; border: 1.5px solid rgba(255,255,255,0.5); border-radius: 0; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
     .btn-cta-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
     .cta-contact { font-size: 13px; margin-top: 28px; opacity: 0.85; }
   
@@ -300,7 +331,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .badge { padding: 4px 10px !important; font-size: 10px !important; }
       /* Card grids — 1 col on mobile */
       .card-features, .features-grid, .specs-grid, .work-image-grid, .quick-stats { grid-template-columns: 1fr !important; }
-      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 16px !important; }
+      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 0 !important; }
       .specs-header h2 { font-size: 22px !important; }
       .card-label { font-size: 14px !important; }
       /* Tables — horizontal scroll */
@@ -312,7 +343,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .cta-buttons { flex-direction: column !important; gap: 12px !important; }
       .cta-buttons .btn { width: 100% !important; text-align: center !important; justify-content: center !important; }
       /* Page content */
-      .page-content { padding: 24px 16px !important; }
+      .page-content { padding: 24px 16px 0 !important; }
       /* Hide elements that don't fit */
       .hero-tech, .hero-footer { font-size: 11px !important; }
       /* Spec grids */
@@ -354,7 +385,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       /* Image grids */
       .ref-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
       /* CTA card */
-      .card-cta h2 { font-size: 22px !important; }
+      .card-cta h2 { font-size: 26px !important; }
       .cta-content { padding: 0 !important; }
       .cta-logos { flex-wrap: wrap !important; gap: 12px !important; }
       .cta-logo-text { font-size: 16px !important; }
@@ -373,7 +404,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         height: 40px;
         background: transparent;
         border: 1px solid rgba(0,132,200,0.3);
-        border-radius: 8px;
+        border-radius: 0;
         cursor: pointer;
         color: #0084C8;
         z-index: 1000;
@@ -414,7 +445,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .mobile-drawer-close {
         background: transparent;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         width: 36px;
         height: 36px;
         color: white;
@@ -459,7 +490,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-align: center;
         padding: 10px;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         color: white;
         text-decoration: none;
         font-size: 12px;
@@ -472,7 +503,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background: #0084C8;
         color: white;
         padding: 14px;
-        border-radius: 8px;
+        border-radius: 0;
         margin-top: 16px;
         text-decoration: none;
         font-size: 13px;
@@ -744,7 +775,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 3 / 4 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
       }
       /* Results — 2 cols landscape 4:3 */
       .work-image-grid img:not(:first-child) { 
@@ -753,7 +784,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 4 / 3 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 8px !important;
+        border-radius: 0 !important;
       }
     }
     /* Desktop featured image — safer center position */
@@ -967,7 +998,7 @@ Request Demo
             <p class="hero-tagline">INNOVATE BEYOND LIMITS</p>
             <div class="hero-separator"></div>
             <p class="hero-desc">
-              E-VTOL Fixed-Wing UAV with a 2.5m wingspan — up to <strong style="color:var(--blue)">2.5 hours</strong>
+              E-VTOL Fixed-Wing UAV with a 2.5m wingspan — up to <strong style="color:var(--blue)">2 hours</strong>
               per flight with a 1kg payload, covering wide areas in a single mission.
               Field-proven for Mapping, LiDAR Survey and Multi-sensor Payload missions across Thailand.
             </p>
@@ -989,7 +1020,7 @@ Request Demo
       <div class="quick-stats">
         <div class="qs-item">
           <div class="qs-icon"><span class="material-symbols-outlined">schedule</span></div>
-          <div class="qs-value">2.5<span class="unit">hrs</span></div>
+          <div class="qs-value">2<span class="unit">hrs</span></div>
           <div class="qs-label">Flight Time</div>
         </div>
         <div class="qs-item">
@@ -1020,7 +1051,7 @@ Request Demo
         <div class="feature-card">
           <div class="feature-icon"><span class="material-symbols-outlined">hourglass_top</span></div>
           <h3>Long Endurance</h3>
-          <p>Up to <span class="feature-highlight">2.5 hours</span> per flight with 1kg payload (3 hours without payload) — covers wide areas in a single mission.</p>
+          <p><span class="feature-highlight">2 hours</span> with payload / 2.5 hours without payload — covers wide areas in a single mission.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><span class="material-symbols-outlined">photo_camera</span></div>
@@ -1036,7 +1067,7 @@ Request Demo
 
       <!-- CARD 3.5: VIDEO INTRODUCTION -->
       <div class="section-label"><div class="card-label">Video Introduction</div></div>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,132,200,0.12); border: 1px solid var(--border);">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0; box-shadow: 0 8px 32px rgba(0,132,200,0.12); border: 1px solid var(--border);">
         <iframe
           src="https://www.youtube.com/embed/KQpqLxfQPjI"
           title="INSEE-250 Introduction"
@@ -1072,7 +1103,7 @@ Request Demo
       </div>
 
       <!-- CARD 3.7: REDUNDANT SYSTEM BANNER -->
-      <div style="background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%); border-radius: 20px; padding: 40px; color: white; position: relative; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 100%); border-radius: 0; padding: 40px; color: white; position: relative; overflow: hidden;">
         <div style="position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(79,195,247,0.18) 0%, transparent 70%); pointer-events: none;"></div>
         <div style="position: relative; z-index: 1;">
           <div style="font-size: 12px; font-weight: 700; letter-spacing: 3px; color: var(--sky); text-transform: uppercase; margin-bottom: 12px;">// REDUNDANT SYSTEM</div>
@@ -1081,23 +1112,23 @@ Request Demo
             Every critical system on the INSEE-250 is engineered with full <strong style="color: var(--sky);">redundancy</strong> for maximum safety — if any single component fails, the backup takes over instantly without affecting the mission.
           </p>
           <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
-            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 12px; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
+            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 0; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
               <div style="font-size: 24px; font-weight: 800; color: var(--sky); line-height: 1;">2×</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">RTK Receivers</div>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 12px; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
+            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 0; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
               <div style="font-size: 24px; font-weight: 800; color: var(--sky); line-height: 1;">2×</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Radio Antennas</div>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 12px; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
+            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 0; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
               <div style="font-size: 24px; font-weight: 800; color: var(--sky); line-height: 1;">2×</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Control Units</div>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 12px; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
+            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 0; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
               <div style="font-size: 24px; font-weight: 800; color: var(--sky); line-height: 1;">2×</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Batteries</div>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 12px; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
+            <div style="background: rgba(255,255,255,0.08); padding: 16px 12px; border-radius: 0; text-align: center; border: 1px solid rgba(79,195,247,0.2);">
               <div style="font-size: 24px; font-weight: 800; color: var(--sky); line-height: 1;">3×</div>
               <div style="font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">IMU Sensors</div>
             </div>
@@ -1105,13 +1136,24 @@ Request Demo
         </div>
       </div>
 
+      <!-- SECTION BREAK: Proven Payloads -->
+      <section class="section-break">
+        <div class="sb-bg" style="background-image:url('/images/payloads/yellowscan/mapper-plus-oem-pointcloud.jpg');"></div>
+        <div class="sb-ov"></div>
+        <div class="sb-in">
+          <div class="sb-label">Proven Payloads</div>
+          <h2>Field-tested with <span class="y">multi-sensor payloads</span></h2>
+          <p>LiDAR · Oblique · Full-frame RGB · Multispectral — proven on real missions across Thailand</p>
+        </div>
+      </section>
+
             <!-- CARD 4.7: CONFIGURATOR (Phase 1: 3D Model + Payload Switcher) -->
       <div class="section-label"><div class="card-label">Build Your INSEE-250 · Choose Payload</div></div>
-      <div style="background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%); border-radius: 24px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,132,200,0.06); position: relative; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, var(--white) 0%, var(--cloud) 100%); border-radius: 0; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,132,200,0.06); position: relative; overflow: hidden;">
         <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,132,200,0.08) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="configurator-grid" style="position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: stretch;">
           <!-- LEFT: 3D Viewer -->
-          <div style="position: relative; background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 60%, #e8f4ff 100%); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); min-height: 460px;">
+          <div style="position: relative; background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 60%, #e8f4ff 100%); border-radius: 0; overflow: hidden; border: 1px solid var(--border); min-height: 460px;">
             <canvas id="cfg-3d-canvas" class="configurator-viewer" style="width: 100%; height: 100%; display: block; cursor: grab;"></canvas>
             <!-- HUD brackets -->
             <div style="position: absolute; top: 16px; left: 16px; width: 24px; height: 24px; border-top: 2px solid var(--blue); border-left: 2px solid var(--blue); pointer-events: none;"></div>
@@ -1124,7 +1166,7 @@ Request Demo
               Drag to rotate · Scroll to zoom
             </div>
             <!-- Payload floating preview (inside scene) -->
-            <div id="cfg-payload-float" style="position: absolute; bottom: 70px; right: 30px; width: 110px; height: 110px; background: rgba(255,255,255,0.92); border: 1px solid rgba(0,132,200,0.25); border-radius: 14px; padding: 8px; box-shadow: 0 8px 24px rgba(0,132,200,0.18); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none;">
+            <div id="cfg-payload-float" style="position: absolute; bottom: 70px; right: 30px; width: 110px; height: 110px; background: rgba(255,255,255,0.92); border: 1px solid rgba(0,132,200,0.25); border-radius: 0; padding: 8px; box-shadow: 0 8px 24px rgba(0,132,200,0.18); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none;">
               <img id="cfg-payload-img" src="/images/payloads/yellowscan/mapper-plus-product.png" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;"/>
             </div>
             <!-- Loading hint -->
@@ -1139,33 +1181,33 @@ Request Demo
             <p style="font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 2px; margin: 0;">Selected Payload</p>
             <!-- Thumbnail grid 3x2 -->
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
-              <button type="button" class="cfg-thumb cfg-thumb-active" data-cfg="0" onclick="cfgSelect(0)" style="background: var(--white); border: 2px solid var(--blue); border-radius: 12px; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,132,200,0.15);">
+              <button type="button" class="cfg-thumb cfg-thumb-active" data-cfg="0" onclick="cfgSelect(0)" style="background: var(--white); border: 2px solid var(--blue); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,132,200,0.15);">
                 <img src="/images/payloads/yellowscan/mapper-plus-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper+</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="1" onclick="cfgSelect(1)" style="background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="1" onclick="cfgSelect(1)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
                 <img src="/images/payloads/chcnav-AA10-insee-250.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">CHCNav AA10</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="2" onclick="cfgSelect(2)" style="background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="2" onclick="cfgSelect(2)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
                 <img src="/images/payloads/gvi-h600-insee-250.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">GVI H600</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="3" onclick="cfgSelect(3)" style="background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="3" onclick="cfgSelect(3)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
                 <img src="/images/payloads/riebo-d2m/riebo-d2m-main-photo.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Riebo D2M</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="4" onclick="cfgSelect(4)" style="background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="4" onclick="cfgSelect(4)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
                 <img src="/images/payloads/sony-ilx-lr1-insee-250.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Sony ILX-LR1</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="5" onclick="cfgSelect(5)" style="background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="5" onclick="cfgSelect(5)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
                 <img src="/images/payloads/is-tr-50.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">IS-TR-50</span>
               </button>
             </div>
             <!-- Info card -->
-            <div style="background: var(--white); border-radius: 14px; padding: 18px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; flex: 1;">
+            <div style="background: var(--white); border-radius: 0; padding: 18px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; flex: 1;">
               <span id="cfg-tag" style="display: inline-block; background: rgba(242,169,0,0.12); color: #B07900; padding: 4px 10px; border-radius: 100px; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; align-self: flex-start; transition: opacity 0.3s;">YS Partner · LiDAR</span>
               <h3 id="cfg-name" style="font-size: 20px; font-weight: 700; color: var(--navy); margin: 0; letter-spacing: -0.5px; transition: opacity 0.3s;">YellowScan Mapper+</h3>
               <p id="cfg-desc" style="font-size: 12px; color: var(--muted); line-height: 1.6; margin: 0; transition: opacity 0.3s;">Lightweight OEM LiDAR purpose-built for Fixed-Wing UAVs — produces high-density point clouds, ideal for terrain mapping and corridor survey.</p>
@@ -1348,7 +1390,7 @@ Request Demo
             <div class="spec-row"><span class="spec-key">Transmission Power (EIRP)</span><span class="spec-val">20 dBm</span></div>
           </div>
           <div>
-            <div class="spec-row"><span class="spec-key">Flight Time</span><span class="spec-val">2.5 hrs @ 1kg / 3 hrs no payload</span></div>
+            <div class="spec-row"><span class="spec-key">Flight Time</span><span class="spec-val">2 hrs (with payload) / 2.5 hrs (no payload)</span></div>
             <div class="spec-row"><span class="spec-key">Flight Distance</span><span class="spec-val">180–270 km</span></div>
             <div class="spec-row"><span class="spec-key">Max Cruising Speed</span><span class="spec-val">108 km/h (30 m/s)</span></div>
             <div class="spec-row"><span class="spec-key">Min Cruising Speed</span><span class="spec-val">72 km/h (20 m/s)</span></div>
@@ -1378,28 +1420,20 @@ Request Demo
 
       <!-- CARD 4.5: BROCHURE -->
       <div class="section-label"><div class="card-label">Brochure</div></div>
-      <div style="background: var(--white); border-radius: 24px; padding: 40px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,132,200,0.06);">
-        <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-end; margin-bottom: 28px;">
-          <div style="flex: 1; min-width: 280px;">
-            <h2 style="font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.5px;">INSEE-250 Product Brochure</h2>
-            <div style="width: 50px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 16px;"></div>
-            <p style="font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 620px;">
-              Full specifications, technical details and capabilities of the INSEE-250 in a single PDF — preview below or download a copy for later reference.
-            </p>
-          </div>
-          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="/images/products/insee-250/brochure.pdf" download="INSEE-250-Brochure.pdf" class="btn btn-primary">
-              <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
-              Download Brochure
-            </a>
-            <a href="/images/products/insee-250/brochure.pdf" target="_blank" class="btn btn-outline">
-              <span class="material-symbols-outlined" style="font-size: 18px;">open_in_new</span>
-              Open in New Tab
-            </a>
-          </div>
-        </div>
-        <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border); height: 800px; background: var(--light);">
-          <iframe src="/images/products/insee-250/brochure.pdf" style="width: 100%; height: 100%; border: none;" title="INSEE-250 Brochure"></iframe>
+      <div style="background: var(--white); border: 1px solid var(--border); padding: 44px; display: flex; flex-wrap: wrap; gap: 44px; align-items: center;">
+        <a href="/images/products/insee-250/brochure.pdf" target="_blank" style="flex: 0 0 auto; width: 280px; max-width: 100%; display: block; border: 1px solid var(--border); box-shadow: 0 16px 40px rgba(0,132,200,0.15); transition: transform 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+          <img src="/images/products/insee-250/brochure-cover.jpg" alt="INSEE-250 Brochure Cover" style="width: 100%; display: block;"/>
+        </a>
+        <div style="flex: 1; min-width: 280px;">
+          <h2 style="font-size: 30px; font-weight: 800; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.5px;">INSEE-250 Product Brochure</h2>
+          <div style="width: 50px; height: 3px; background: var(--blue); margin-bottom: 18px;"></div>
+          <p style="font-size: 15px; color: var(--muted); line-height: 1.75; max-width: 560px; margin-bottom: 28px;">
+            Full specifications, technical details and capabilities of the INSEE-250 in a single PDF — download a copy for later reference.
+          </p>
+          <a href="/images/products/insee-250/brochure.pdf" download="INSEE-250-Brochure.pdf" class="btn btn-primary clip-path-angled">
+            <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+            Download Brochure (PDF)
+          </a>
         </div>
       </div>
 
@@ -1499,31 +1533,32 @@ Request Demo
 
       </div>
 
-      <!-- CARD 6: GCS -->
-      <div class="section-label"><div class="card-label">Ground Control Station</div></div>
-      <div class="card-gcs">
-        <div class="gcs-image-wrap">
-          <img src="/images/products/gcs/GCS.png" alt="INSEE-GCS-01"/>
-        </div>
-        <div>
-          <p class="hero-pretitle">INSEE-GCS-01</p>
-          <h2 style="font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -1px;">INSEE Pilot Ground Station</h2>
-          <div class="hero-separator" style="margin: 16px 0 20px;"></div>
-          <p style="font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 20px;">
-            Ground Station configurable for your mission — supports 10–15" display, Intel Core i5/i7, up to 16GB RAM, up to 10-hour battery life
-            with <strong style="color:var(--blue)">INSEE Pilot software</strong> and <strong style="color:var(--blue)">ADS-B</strong> for situational awareness.
-          </p>
-          <div class="payload-chips">
-            <span class="chip">10–15" Display</span>
-            <span class="chip">Intel i5/i7</span>
-            <span class="chip">16GB RAM</span>
-            <span class="chip">10hr Battery</span>
-            <span class="chip">1000 nits</span>
-            <span class="chip">IP55</span>
-            <span class="chip">ADS-B</span>
+      <!-- CARD 6: GCS (full-bleed strip) -->
+      <section class="card-gcs">
+        <div class="gcs-strip-in">
+          <div class="gcs-image-wrap">
+            <img src="/images/products/gcs/GCS.png" alt="INSEE-GCS-01"/>
+          </div>
+          <div>
+            <p class="gcs-pre">Ground Control Station · INSEE-GCS-01</p>
+            <h2 class="gcs-h2">INSEE Pilot Ground Station</h2>
+            <div class="gcs-sep"></div>
+            <p class="gcs-desc">
+              Ground Station configurable for your mission — supports 10–15" display, Intel Core i5/i7, up to 16GB RAM, up to 10-hour battery life
+              with <strong style="color:var(--sky)">INSEE Pilot software</strong> and <strong style="color:var(--sky)">ADS-B</strong> for situational awareness.
+            </p>
+            <div class="payload-chips">
+              <span class="chip">10–15" Display</span>
+              <span class="chip">Intel i5/i7</span>
+              <span class="chip">16GB RAM</span>
+              <span class="chip">10hr Battery</span>
+              <span class="chip">1000 nits</span>
+              <span class="chip">IP55</span>
+              <span class="chip">ADS-B</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- CARD 7: CTA -->
       <div class="card-cta">
@@ -1545,7 +1580,7 @@ Request Demo
 </main>
 
 <!-- ==================== FOOTER ==================== -->
-<footer style="background:#0A1628; padding: 48px 0; margin-top: 40px;">
+<footer style="background:#0A1628; padding: 48px 0; margin-top: 0;">
 <div class="max-w-[1440px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
 <img alt="INSEE UAV Logo" class="h-8 opacity-60" src="/images/logo-insee.png"/>
 <div class="text-center space-y-1">

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

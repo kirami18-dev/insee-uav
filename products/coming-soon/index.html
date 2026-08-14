@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
 <head>
+<script>
+/* EN-default: new visitors -> /en/ mirror; remembered TH choice stays TH */
+(function(){try{var l=localStorage.getItem('insee_lang');if(l==='th')return;var p=location.pathname;if(p.indexOf('/en/')===0)return;if(p.indexOf('/admin')===0)return;location.replace('/en'+(p==='/'?'/':p)+location.search+location.hash);}catch(e){}})();
+</script>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

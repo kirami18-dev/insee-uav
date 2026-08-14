@@ -1,4 +1,9 @@
 <html class="dark" lang="en"><head>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -895,12 +900,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="absolute top-4 right-4 md:top-8 md:right-8 space-y-2">
 <div class="bg-[#0A1628]/80 backdrop-blur-md px-2 md:px-3 py-1 border-r-2 border-primary-container">
 <p class="text-[10px] text-on-surface-variant uppercase">FLIGHT TIME</p>
-<p class="text-base md:text-xl font-bold text-white">240<span class="text-[10px] md:text-xs ml-1 text-primary-container">MIN</span></p>
+<p class="text-base md:text-xl font-bold text-white">120<span class="text-[10px] md:text-xs ml-1 text-primary-container">MIN</span></p>
 </div>
 <div class="bg-[#0A1628]/80 backdrop-blur-md px-2 md:px-3 py-1 border-r-2 border-tertiary">
 <p class="text-[10px] text-on-surface-variant uppercase">MAX RANGE</p>
 <p class="text-base md:text-xl font-bold text-white">180<span class="text-[10px] md:text-xs ml-1 text-tertiary">KM</span></p>
 </div>
+</div>
+<div class="absolute bottom-3 left-3 md:bottom-6 md:right-6 md:left-auto flex flex-col gap-2 z-20">
+<button type="button" onclick="uavZoom(-1)" aria-label="Zoom in" style="touch-action:manipulation" class="w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-[#0A1628]/85 backdrop-blur-md border border-primary-container/50 rounded-lg text-white active:bg-primary-container/40 transition-all"><span class="material-symbols-outlined text-xl">zoom_in</span></button>
+<button type="button" onclick="uavZoom(1)" aria-label="Zoom out" style="touch-action:manipulation" class="w-11 h-11 md:w-10 md:h-10 flex items-center justify-center bg-[#0A1628]/85 backdrop-blur-md border border-primary-container/50 rounded-lg text-white active:bg-primary-container/40 transition-all"><span class="material-symbols-outlined text-xl">zoom_out</span></button>
 </div>
 </div>
 </div>
@@ -1221,7 +1230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="relative grid grid-cols-3 gap-4 border-t border-[#CCE5F5] pt-6">
 <div>
 <p class="text-[10px] text-brand-muted uppercase">ENDURANCE</p>
-<p class="text-lg font-bold text-brand-blue">240 MIN</p>
+<p class="text-lg font-bold text-brand-blue">120 MIN</p>
 </div>
 <div>
 <p class="text-[10px] text-brand-muted uppercase">PAYLOAD</p>
@@ -1259,7 +1268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="text-sm text-brand-muted font-light mb-6">5-lens 130MP oblique camera weighing just 630g. Captures 5 angles simultaneously to build 1:500-accuracy 3D models — ideal for cadastral mapping without GCPs.</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
-<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
+<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓</p>
 </div>
 </div></a>
 <!-- Card 2 -->
@@ -1273,7 +1282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="text-sm text-brand-muted font-light mb-6">Sony's 61MP Full-Frame camera, purpose-built for UAVs. Delivers high-resolution orthophotos for professional photogrammetry and 3D mapping workflows.</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
-<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
+<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓</p>
 </div>
 </div></a>
 <!-- Card 3 -->
@@ -1302,7 +1311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="text-sm text-brand-muted font-light mb-6">LiDAR system weighing just 1.3kg with an integrated 26MP camera. Up to 750m range, &lt;5cm accuracy, 7-return capability — penetrates forest canopies for forestry and terrain mapping.</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
-<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
+<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓</p>
 </div>
 </div></a>
 <!-- Card 5 -->
@@ -1316,7 +1325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="text-sm text-brand-muted font-light mb-6">All-in-one 1.55kg LiDAR + RGB system combining LiDAR, GNSS, IMU and a 45MP camera in one unit. 2–5cm accuracy, 500,000 points/second, 8-return capability — cuts through dense canopy.</p>
 <div class="mt-auto pt-4 border-t border-brand-light-blue">
 <p class="text-[10px] font-bold text-brand-navy/60 uppercase">Compatible with:</p>
-<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓ INSEE-350 ✓</p>
+<p class="text-[11px] font-bold text-brand-blue uppercase">INSEE-250 ✓</p>
 </div>
 </div></a>
 <!-- Card 6 -->
@@ -2015,6 +2024,15 @@ if (canvas) {
   controls.enablePan = false;
   controls.minDistance = 3;
   controls.maxDistance = 12;
+
+  window.uavZoom = function(dir){
+    const offset = camera.position.clone().sub(controls.target);
+    let dist = offset.length() * (dir > 0 ? 1.2 : 1/1.2);
+    dist = Math.min(controls.maxDistance, Math.max(controls.minDistance, dist));
+    offset.setLength(dist);
+    camera.position.copy(controls.target).add(offset);
+    controls.update();
+  };
 
   // HDR Lighting
   new RGBELoader()

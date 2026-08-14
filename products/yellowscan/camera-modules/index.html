@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html class="dark" lang="th">
 <head>
+<script>
+/* EN-default: new visitors -> /en/ mirror; remembered TH choice stays TH */
+(function(){try{var l=localStorage.getItem('insee_lang');if(l==='th')return;var p=location.pathname;if(p.indexOf('/en/')===0)return;if(p.indexOf('/admin')===0)return;location.replace('/en'+(p==='/'?'/':p)+location.search+location.hash);}catch(e){}})();
+</script>
+<script>
+/* remember language choice on toggle click */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!a.getAttribute('href'))return;var t=a.classList.contains('lang-toggle-btn')||a.id==='lang-en'||a.id==='lang-th'||(a.closest&&a.closest('.mobile-drawer-lang'));if(!t)return;try{var u=new URL(a.href,location.origin);localStorage.setItem('insee_lang',u.pathname.indexOf('/en/')===0?'en':'th');}catch(err){}},true);
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -141,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CARD 1: HERO */
     .card-hero {
       background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 60%, #D6EBFA 100%);
-      border-radius: 24px; padding: 0; position: relative; overflow: hidden;
+      border-radius: 0; padding: 0; position: relative; overflow: hidden;
       border: 1px solid rgba(79,195,247,0.12);
     }
     .card-hero::before {
@@ -170,7 +179,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-tagline { font-size: 22px; font-weight: 500; color: #1E3A4F; margin-bottom: 16px; }
     .hero-desc { font-size: 15px; color: var(--ys-mist); line-height: 1.7; max-width: 600px; }
     .hero-footer { margin-top: 40px; display: flex; align-items: center; gap: 24px; position: relative; z-index: 1; flex-wrap: wrap; }
-    .hero-tech { display: flex; align-items: center; gap: 16px; padding: 12px 20px; background: rgba(10,22,40,0.05); border-radius: 12px; border: 1px solid rgba(10,22,40,0.08); }
+    .hero-tech { display: flex; align-items: center; gap: 16px; padding: 12px 20px; background: rgba(10,22,40,0.05); border-radius: 0; border: 1px solid rgba(10,22,40,0.08); }
     .hero-tech span { font-size: 13px; color: var(--ys-mist); font-weight: 500; }
     .tech-brand { font-size: 14px; font-weight: 700; color: var(--white); }
 
@@ -179,12 +188,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media (max-width: 768px) { .card-features { grid-template-columns: 1fr; } }
     .feature-card {
       background: linear-gradient(145deg, var(--ys-raisin) 0%, var(--ys-dorian) 100%);
-      border-radius: 20px; padding: 36px;
+      border-radius: 0; padding: 36px;
       border: 1px solid rgba(10,22,40,0.06);
       transition: transform 0.3s, border-color 0.3s;
     }
     .feature-card:hover { transform: translateY(-4px); border-color: rgba(242,169,0,0.2); }
-    .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
+    .feature-icon { width: 52px; height: 52px; border-radius: 0; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px; }
     .icon-blue { background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(13,71,161,0.2)); border: 1px solid rgba(79,195,247,0.2); }
     .icon-amber { background: linear-gradient(135deg, rgba(242,169,0,0.15), rgba(242,169,0,0.05)); border: 1px solid rgba(242,169,0,0.2); }
     .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
@@ -194,7 +203,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CARD 3: CAMERA MODELS */
     .card-models {
       background: linear-gradient(160deg, var(--ys-raisin) 0%, #EBF5FF 100%);
-      border-radius: 24px; padding: 48px;
+      border-radius: 0; padding: 48px;
       border: 1px solid rgba(79,195,247,0.1);
       position: relative; overflow: hidden;
     }
@@ -207,7 +216,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; z-index: 1; }
     @media (max-width: 768px) { .models-grid { grid-template-columns: 1fr; } }
     .model-card {
-      border-radius: 20px; padding: 32px; text-align: center;
+      border-radius: 0; padding: 32px; text-align: center;
       transition: transform 0.3s;
     }
     .model-card:hover { transform: translateY(-4px); }
@@ -241,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CARD 4: SPECS TABLE */
     .card-specs-table {
       background: linear-gradient(135deg, #EBF5FF 0%, var(--ys-dorian) 100%);
-      border-radius: 24px; padding: 48px;
+      border-radius: 0; padding: 48px;
       border: 1px solid rgba(242,169,0,0.1);
       position: relative; overflow: hidden;
     }
@@ -263,13 +272,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* CARD 5: COMPATIBILITY */
     .card-compat {
-      background: var(--ys-raisin); border-radius: 24px; padding: 48px;
+      background: var(--ys-raisin); border-radius: 0; padding: 48px;
       border: 1px solid rgba(10,22,40,0.06);
     }
     .compat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; z-index: 1; }
     @media (max-width: 768px) { .compat-grid { grid-template-columns: repeat(2, 1fr); } }
     .compat-item {
-      text-align: center; padding: 28px 16px; border-radius: 16px;
+      text-align: center; padding: 28px 16px; border-radius: 0;
       background: linear-gradient(145deg, rgba(10,22,40,0.03), rgba(10,22,40,0.01));
       border: 1px solid rgba(10,22,40,0.06);
       transition: transform 0.3s, border-color 0.3s;
@@ -282,11 +291,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CARD 6: PACKAGE */
     .card-package { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     @media (max-width: 768px) { .card-package { grid-template-columns: 1fr; } }
-    .package-item { border-radius: 20px; padding: 36px; }
+    .package-item { border-radius: 0; padding: 36px; }
     .package-hw { background: linear-gradient(145deg, var(--ys-raisin), #EBF5FF); border: 1px solid rgba(79,195,247,0.15); }
     .package-svc { background: linear-gradient(145deg, var(--ys-raisin), var(--ys-dorian)); border: 1px solid rgba(242,169,0,0.15); }
     .package-sw { background: linear-gradient(145deg, #EBF5FF, var(--ys-raisin)); border: 1px solid rgba(79,195,247,0.1); }
-    .package-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
+    .package-icon { width: 44px; height: 44px; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
     .pkg-icon-blue { background: rgba(79,195,247,0.12); border: 1px solid rgba(79,195,247,0.2); }
     .pkg-icon-amber { background: rgba(242,169,0,0.12); border: 1px solid rgba(242,169,0,0.2); }
     .package-item h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
@@ -300,7 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* CARD 7: CTA */
     .card-cta {
       background: linear-gradient(135deg, #D6EBFA 0%, #EBF5FF 50%, #FFFFFF 100%);
-      border-radius: 24px; padding: 56px; text-align: center;
+      border-radius: 0; padding: 56px; text-align: center;
       position: relative; overflow: hidden;
       border: 1px solid rgba(79,195,247,0.15);
     }
@@ -316,7 +325,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .card-cta h2 span { color: var(--ys-amber); }
     .card-cta .cta-desc { font-size: 15px; color: var(--ys-mist); max-width: 550px; margin: 0 auto 32px; line-height: 1.65; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
-    .btn { padding: 14px 32px; border-radius: 12px; font-size: 14px; font-weight: 600; font-family: 'Inter', 'Kanit', system-ui, sans-serif; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
+    .btn { padding: 14px 32px; border-radius: 0; font-size: 14px; font-weight: 600; font-family: 'Inter', 'Kanit', system-ui, sans-serif; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; }
     .btn-primary { background: linear-gradient(135deg, var(--ys-amber), #e09800); color: var(--ys-dorian); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(242,169,0,0.25); }
     .btn-outline { background: transparent; color: var(--insee-blue); border: 1.5px solid rgba(79,195,247,0.4); }
@@ -340,7 +349,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .badge { padding: 4px 10px !important; font-size: 10px !important; }
       /* Card grids — 1 col on mobile */
       .card-features, .features-grid, .specs-grid, .work-image-grid, .quick-stats { grid-template-columns: 1fr !important; }
-      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 16px !important; }
+      .card-hero, .card-specs, .card-laser, .card-mission, .card-package, .card-cta { padding: 24px !important; border-radius: 0 !important; }
       .specs-header h2 { font-size: 22px !important; }
       .card-label { font-size: 14px !important; }
       /* Tables — horizontal scroll */
@@ -413,7 +422,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         height: 40px;
         background: transparent;
         border: 1px solid rgba(0,132,200,0.3);
-        border-radius: 8px;
+        border-radius: 0;
         cursor: pointer;
         color: #0084C8;
         z-index: 1000;
@@ -454,7 +463,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .mobile-drawer-close {
         background: transparent;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         width: 36px;
         height: 36px;
         color: white;
@@ -499,7 +508,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         text-align: center;
         padding: 10px;
         border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 8px;
+        border-radius: 0;
         color: white;
         text-decoration: none;
         font-size: 12px;
@@ -512,7 +521,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         background: #0084C8;
         color: white;
         padding: 14px;
-        border-radius: 8px;
+        border-radius: 0;
         margin-top: 16px;
         text-decoration: none;
         font-size: 13px;
@@ -784,7 +793,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 3 / 4 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 12px !important;
+        border-radius: 0 !important;
       }
       /* Results — 2 cols landscape 4:3 */
       .work-image-grid img:not(:first-child) { 
@@ -793,7 +802,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         aspect-ratio: 4 / 3 !important;
         object-fit: cover !important;
         object-position: center center !important;
-        border-radius: 8px !important;
+        border-radius: 0 !important;
       }
     }
     /* Desktop featured image — safer center position */
@@ -942,6 +951,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   color: #0084C8;
   background-color: rgba(0,132,200,0.06);
 }
+
+/* ===== Quantum full-bleed strips redesign (2026-08) ===== */
+.card-hero{position:relative;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border:none!important;box-shadow:none!important;}
+.hero-grid{max-width:1200px;margin-left:auto;margin-right:auto;}
+.quick-stats{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);margin-top:-40px;border-left:none!important;border-right:none!important;box-shadow:none!important;}
+.card-cta{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);}
+.btn-primary{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));}
 </style>
 <header class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-[#CCE5F5]">
 <div class="flex justify-between items-center max-w-[1440px] mx-auto px-8 py-4">
@@ -1307,7 +1323,7 @@ Request Demo
       </div>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
 
-        <a href="/products/insee-250/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 20px; padding: 28px; border: 1px solid rgba(79,195,247,0.2); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,132,200,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <a href="/products/insee-250/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 0; padding: 28px; border: 1px solid rgba(79,195,247,0.2); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(0,132,200,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,132,200,0.06) 0%, transparent 70%); pointer-events: none;"></div>
           <div style="position: relative; z-index: 1;">
             <div style="height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
@@ -1317,7 +1333,7 @@ Request Demo
             <h3 style="font-size: 22px; font-weight: 700; color: #0A1628; margin-bottom: 12px; letter-spacing: -0.5px;">INSEE-250</h3>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 12px; border-top: 1px solid #CCE5F5; margin-bottom: 14px;">
               <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">PAYLOAD</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2 kg</p></div>
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2.5 hr</p></div>
+              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2 hr</p></div>
               <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">SPEED</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">108 km/h</p></div>
             </div>
             <div style="display: inline-flex; align-items: center; gap: 6px; color: #0084C8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
@@ -1327,7 +1343,7 @@ Request Demo
           </div>
         </a>
 
-        <a href="/products/insee-350/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 20px; padding: 28px; border: 1px solid rgba(242,169,0,0.25); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(242,169,0,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <a href="/products/insee-350/" style="display: block; background: linear-gradient(135deg, #ffffff 0%, #EBF5FF 100%); border-radius: 0; padding: 28px; border: 1px solid rgba(242,169,0,0.25); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(242,169,0,0.2)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(242,169,0,0.08) 0%, transparent 70%); pointer-events: none;"></div>
           <div style="position: relative; z-index: 1;">
             <div style="height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
@@ -1337,7 +1353,7 @@ Request Demo
             <h3 style="font-size: 22px; font-weight: 700; color: #0A1628; margin-bottom: 12px; letter-spacing: -0.5px;">INSEE-350</h3>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 12px; border-top: 1px solid #CCE5F5; margin-bottom: 14px;">
               <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">PAYLOAD</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">5 kg</p></div>
-              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2.5 hr</p></div>
+              <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">ENDURANCE</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">2 hr</p></div>
               <div><p style="font-size: 9px; color: #4A6B80; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">SPEED</p><p style="font-size: 14px; font-weight: 700; color: #0084C8;">144 km/h</p></div>
             </div>
             <div style="display: inline-flex; align-items: center; gap: 6px; color: #0084C8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
