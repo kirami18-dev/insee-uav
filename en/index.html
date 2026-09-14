@@ -804,6 +804,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mega-col-title blue">Other Payloads</div>
     <div class="mega-sub-title">Riebo</div>
     <a class="mega-link" href="/en/products/riebo/d2m/">D2M Oblique</a>
+    <a class="mega-link" href="/en/products/riebo/r6p/">R6P Mapping</a>
     <div class="mega-sub-title">GVI</div>
     <a class="mega-link" href="/en/products/gvi/h600/">LiAir H600</a>
     <a class="mega-link" href="/en/products/gvi/h800/">LiAir H800</a>
@@ -2009,7 +2010,7 @@ if (canvas) {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(canvas.clientWidth, canvas.clientHeight);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.75;
+  renderer.toneMappingExposure = 0.6;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   const scene = new THREE.Scene();
@@ -2041,12 +2042,12 @@ if (canvas) {
     .load('3 point beige.hdr', (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
-      scene.environmentIntensity = 0.5;
+      scene.environmentIntensity = 0.35;
     });
 
   // Ambient light fallback
-  scene.add(new THREE.AmbientLight(0xffffff, 0.25));
-  const dirLight = new THREE.DirectionalLight(0x4fc3f7, 0.8);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+  const dirLight = new THREE.DirectionalLight(0x4fc3f7, 0.45);
   dirLight.position.set(5, 10, 5);
   scene.add(dirLight);
 
@@ -2055,18 +2056,24 @@ if (canvas) {
   dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
   const gltfLoader = new GLTFLoader();
   gltfLoader.setDRACOLoader(dracoLoader);
-  gltfLoader.setPath('/images/models/insee-006/');
-  gltfLoader.load('006.draco.glb', (gltf) => {
-    const object = gltf.scene;
-    // Center & scale model
-    const box = new THREE.Box3().setFromObject(object);
+  // INSEE-250 Gen 006 airframe + YellowScan Mapper Ultra mounted at belly
+  const modelRoot = new THREE.Group();
+  scene.add(modelRoot);
+  gltfLoader.load('/images/models/insee-006-GLTF/006_web.draco.glb', (gltf) => {
+    modelRoot.add(gltf.scene);
+    // Center & scale on airframe bounds
+    const box = new THREE.Box3().setFromObject(modelRoot);
     const center = box.getCenter(new THREE.Vector3());
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
     const scale = 6 / maxDim;
-    object.scale.setScalar(scale);
-    object.position.sub(center.multiplyScalar(scale));
-    scene.add(object);
+    modelRoot.scale.setScalar(scale);
+    modelRoot.position.sub(center.multiplyScalar(scale));
+    // Mount YellowScan Mapper Ultra (native-unit offset onto belly mount [0.495,1.276,3.179])
+    gltfLoader.load('/images/models/Payload/YS_MapperUltar_web.glb', (pg) => {
+      pg.scene.position.set(-0.202, 0.282, 1.264);
+      modelRoot.add(pg.scene);
+    });
   });
 
   // Resize handler
@@ -2127,6 +2134,7 @@ if (canvas) {
     <div class="mobile-drawer-section">
       <div class="mobile-drawer-section-title">Other Payloads</div>
       <a class="mobile-drawer-link" href="/en/products/riebo/d2m/">Riebo D2M</a>
+      <a class="mobile-drawer-link" href="/en/products/riebo/r6p/">Riebo R6P</a>
       <a class="mobile-drawer-link" href="/en/products/gvi/h600/">GVI LiAir H600</a>
       <a class="mobile-drawer-link" href="/en/products/gvi/h800/">GVI LiAir H800</a>
       <a class="mobile-drawer-link" href="/en/products/chcnav/aa10/">CHCNav AlphaAir 10</a>

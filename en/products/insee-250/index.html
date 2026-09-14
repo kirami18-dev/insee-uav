@@ -912,6 +912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mega-col-title blue">Other Payloads</div>
     <div class="mega-sub-title">Riebo</div>
     <a class="mega-link" href="/en/products/riebo/d2m/">D2M Oblique</a>
+    <a class="mega-link" href="/en/products/riebo/r6p/">R6P Mapping</a>
     <div class="mega-sub-title">GVI</div>
     <a class="mega-link" href="/en/products/gvi/h600/">LiAir H600</a>
     <a class="mega-link" href="/en/products/gvi/h800/">LiAir H800</a>
@@ -1161,13 +1162,17 @@ Request Demo
             <div style="position: absolute; top: 16px; right: 16px; width: 24px; height: 24px; border-top: 2px solid var(--blue); border-right: 2px solid var(--blue); pointer-events: none;"></div>
             <div style="position: absolute; bottom: 16px; left: 16px; width: 24px; height: 24px; border-bottom: 2px solid var(--blue); border-left: 2px solid var(--blue); pointer-events: none;"></div>
             <div style="position: absolute; bottom: 16px; right: 16px; width: 24px; height: 24px; border-bottom: 2px solid var(--blue); border-right: 2px solid var(--blue); pointer-events: none;"></div>
+            <div style="position: absolute; bottom: 14px; right: 14px; display: flex; flex-direction: column; gap: 8px; z-index: 12;">
+              <button type="button" onclick="cfgZoom(-1)" aria-label="Zoom in" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; background: rgba(10,22,40,0.82); border: 1px solid rgba(79,195,247,0.5); color: #fff; cursor: pointer; backdrop-filter: blur(4px); transition: background 0.2s;" onmouseover="this.style.background='rgba(0,132,200,0.9)'" onmouseout="this.style.background='rgba(10,22,40,0.82)'"><span class="material-symbols-outlined" style="font-size: 20px;">zoom_in</span></button>
+              <button type="button" onclick="cfgZoom(1)" aria-label="Zoom out" style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; background: rgba(10,22,40,0.82); border: 1px solid rgba(79,195,247,0.5); color: #fff; cursor: pointer; backdrop-filter: blur(4px); transition: background 0.2s;" onmouseover="this.style.background='rgba(0,132,200,0.9)'" onmouseout="this.style.background='rgba(10,22,40,0.82)'"><span class="material-symbols-outlined" style="font-size: 20px;">zoom_out</span></button>
+            </div>
             <!-- Drag hint -->
             <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: rgba(10,22,40,0.78); color: white; padding: 5px 14px; border-radius: 100px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; backdrop-filter: blur(4px); pointer-events: none; display: flex; align-items: center; gap: 6px;">
               <span class="material-symbols-outlined" style="font-size: 13px;">drag_pan</span>
               Drag to rotate · Scroll to zoom
             </div>
             <!-- Payload floating preview (inside scene) -->
-            <div id="cfg-payload-float" style="position: absolute; bottom: 70px; right: 30px; width: 110px; height: 110px; background: rgba(255,255,255,0.92); border: 1px solid rgba(0,132,200,0.25); border-radius: 0; padding: 8px; box-shadow: 0 8px 24px rgba(0,132,200,0.18); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none;">
+            <div id="cfg-payload-float" style="position: absolute; bottom: 70px; right: 30px; width: 110px; height: 110px; background: rgba(255,255,255,0.92); border: 1px solid rgba(0,132,200,0.25); border-radius: 0; padding: 8px; box-shadow: 0 8px 24px rgba(0,132,200,0.18); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; transition: opacity 0.3s; pointer-events: none;">
               <img id="cfg-payload-img" src="/images/payloads/yellowscan/mapper-plus-product.png" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;"/>
             </div>
             <!-- Loading hint -->
@@ -1184,25 +1189,21 @@ Request Demo
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
               <button type="button" class="cfg-thumb cfg-thumb-active" data-cfg="0" onclick="cfgSelect(0)" style="background: var(--white); border: 2px solid var(--blue); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,132,200,0.15);">
                 <img src="/images/payloads/yellowscan/mapper-plus-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
-                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper+</span>
+                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper+ OEM</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="1" onclick="cfgSelect(1)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
-                <img src="/images/payloads/chcnav-AA10-insee-250.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
-                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">CHCNav AA10</span>
+              <button type="button" class="cfg-thumb" data-cfg="1" onclick="cfgSelect(1)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; ">
+                <img src="/images/payloads/yellowscan/mapper-ultra-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
+                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper Ultra</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="2" onclick="cfgSelect(2)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
-                <img src="/images/payloads/gvi-h600-insee-250.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
-                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">GVI H600</span>
-              </button>
-              <button type="button" class="cfg-thumb" data-cfg="3" onclick="cfgSelect(3)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="2" onclick="cfgSelect(2)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; ">
                 <img src="/images/payloads/riebo-d2m/riebo-d2m-main-photo.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Riebo D2M</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="4" onclick="cfgSelect(4)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
-                <img src="/images/payloads/sony-ilx-lr1-insee-250.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
-                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Sony ILX-LR1</span>
+              <button type="button" class="cfg-thumb" data-cfg="3" onclick="cfgSelect(3)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; ">
+                <img src="/images/payloads/riebo-r6p.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
+                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Riebo R6P</span>
               </button>
-              <button type="button" class="cfg-thumb" data-cfg="5" onclick="cfgSelect(5)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+              <button type="button" class="cfg-thumb" data-cfg="4" onclick="cfgSelect(4)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; ">
                 <img src="/images/payloads/is-tr-50.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">IS-TR-50</span>
               </button>
@@ -1229,18 +1230,17 @@ Request Demo
             </div>
           </div>
         </div>
-        <p style="font-size: 11px; color: var(--muted); text-align: center; margin-top: 20px; font-style: italic;">* 3D Model is interactive — Phase 2 will add 3D payload swap when R&D delivers payload models.</p>
+        <p style="font-size: 11px; color: var(--muted); text-align: center; margin-top: 20px; font-style: italic;">* Interactive — rotate, zoom, and pick a payload to swap the 3D model instantly (preview — models not yet poly-reduced, may load slowly).</p>
       </div>
       <!-- Configurator JS: payload data + thumb logic -->
       <script>
         (function() {
           const cfgData = [
-            { tag: 'YS Partner · LiDAR', name: 'YellowScan Mapper+', desc: 'Lightweight OEM LiDAR purpose-built for Fixed-Wing UAVs — produces high-density point clouds, ideal for terrain mapping and corridor survey.', payloadImg: '/images/payloads/yellowscan/mapper-plus-product.png', weight: '1.4 kg', usage: 'Terrain / Corridor', link: '/en/products/yellowscan/mapper-plus/' },
-            { tag: 'CHCNav · LiDAR + RGB', name: 'CHCNav AlphaAir 10', desc: 'All-in-one 1.55 kg LiDAR + RGB 45 MP system — 2–5 cm accuracy, 500K pts/s, 8 returns to penetrate dense canopy.', payloadImg: '/images/payloads/chc-aa10/chc-aa10-1.jpg', weight: '1.55 kg', usage: 'Forest / Mapping', link: '/en/products/chcnav/aa10/' },
-            { tag: 'GVI · LiDAR + Camera', name: 'GVI LiAir H600', desc: '1.3 kg LiDAR with integrated 26 MP camera — 750 m range, <5 cm accuracy, 7-return capability that penetrates forest canopies.', payloadImg: '/images/payloads/gvi-h600/gvi-h600-1.jpg', weight: '1.3 kg', usage: 'Forestry / Survey', link: '/en/products/gvi/h600/' },
-            { tag: 'Riebo · Oblique Camera', name: 'Riebo D2M Oblique', desc: '5-lens 130 MP oblique camera at just 630 g — captures 5 angles simultaneously to build 1:500-accuracy 3D models without GCPs.', payloadImg: '/images/payloads/riebo-d2m/riebo-d2m-main-photo.png', weight: '0.63 kg', usage: 'Cadastral / 3D Model', link: '/en/products/riebo/d2m/' },
-            { tag: 'Sony · Full-Frame RGB', name: 'Sony ILX-LR1', desc: "Sony's 61 MP Full-Frame camera, purpose-built for UAVs — high-resolution orthophotos for professional photogrammetry and 3D mapping." , payloadImg: '/images/payloads/sony-ilx-lr1/sony-ilx-lr1-1.JPG', weight: '0.66 kg', usage: 'Orthophoto / Mapping', link: '/en/products/sony/ilx-lr1/' },
-            { tag: 'INSEE In-house · EO/IR', name: 'INSEE IS-TR-50', desc: 'EO/IR Dual-Sensor camera with AI tracking, 30× zoom, and a 5 km laser range finder — built for Surveillance and ISR missions.', payloadImg: '/images/payloads/is-tr-50.png', weight: '— kg', usage: 'Surveillance / ISR', link: '/en/products/insee/is-tr-50/' },
+            { tag: 'YS Partner · LiDAR', name: 'YellowScan Mapper+ OEM', desc: 'Lightweight OEM LiDAR purpose-built for Fixed-Wing UAVs — produces high-density point clouds, ideal for terrain mapping and corridor survey.', weight: '~1.1 kg', usage: 'Terrain / Corridor', link: '/en/products/yellowscan/mapper-plus/' },
+            { tag: 'YS Partner · Long-Range LiDAR', name: 'YellowScan Mapper Ultra', desc: 'Long-range wide-FOV LiDAR that scans large areas per flight — ideal for corridor mapping and large-scale terrain survey.', weight: '~1.6 kg', usage: 'Long-Range / Corridor', link: '/en/products/yellowscan/mapper-ultra/' },
+            { tag: 'Riebo · Oblique Camera', name: 'Riebo D2M', desc: '5-lens 130 MP oblique camera at just 630 g — captures 5 angles simultaneously to build 1:500-accuracy 3D models without GCPs.', weight: '0.63 kg', usage: 'Cadastral / 3D Model', link: '/en/products/riebo/d2m/' },
+            { tag: 'Riebo · Single-Lens Mapping', name: 'Riebo R6P', desc: 'Single-lens 61 MP mapping camera weighing just 205 g — 18/40 mm lens, 89.8° FOV, ideal for orthophoto and high-resolution mapping on UAVs.', weight: '0.205 kg', usage: 'Orthophoto / Mapping', link: '/en/products/riebo/r6p/' },
+            { tag: 'INSEE In-house · EO/IR', name: 'INSEE IS-TR-50', desc: 'EO/IR dual-sensor camera with AI tracking, 30× zoom, and a 5 km laser range finder — built for Surveillance and ISR missions.', weight: '— kg', usage: 'Surveillance / ISR', link: '/en/products/insee/is-tr-50/' },
           ];
           const tag = document.getElementById('cfg-tag');
           const name = document.getElementById('cfg-name');
@@ -1253,7 +1253,7 @@ Request Demo
           const thumbs = document.querySelectorAll('.cfg-thumb');
           window.cfgSelect = function(idx) {
             const d = cfgData[idx];
-            [tag, name, desc, weight, usage, link, payloadFloat].forEach(el => el.style.opacity = '0');
+            [tag, name, desc, weight, usage, link].forEach(el => el.style.opacity = '0');
             setTimeout(() => {
               tag.textContent = d.tag;
               name.textContent = d.name;
@@ -1261,9 +1261,9 @@ Request Demo
               weight.textContent = d.weight;
               usage.textContent = d.usage;
               link.href = d.link;
-              payloadImg.src = d.payloadImg;
-              [tag, name, desc, weight, usage, link, payloadFloat].forEach(el => el.style.opacity = '1');
+              [tag, name, desc, weight, usage, link].forEach(el => el.style.opacity = '1');
             }, 220);
+            if (window.cfgLoadPayload) window.cfgLoadPayload(idx);
             thumbs.forEach((t, i) => {
               if (i === idx) {
                 t.style.borderColor = 'var(--blue)';
@@ -1324,8 +1324,14 @@ Request Demo
           controls.autoRotate = true;
           controls.autoRotateSpeed = 1.2;
           controls.enablePan = false;
-          controls.minDistance = 3;
+          controls.minDistance = 1.2;
           controls.maxDistance = 12;
+          window.cfgZoom = function(dir) {
+            const off = camera.position.clone().sub(controls.target);
+            let d = off.length() * (dir > 0 ? 1.25 : 1/1.25);
+            d = Math.min(controls.maxDistance, Math.max(controls.minDistance, d));
+            off.setLength(d); camera.position.copy(controls.target).add(off); controls.update();
+          };
           new RGBELoader().setPath('/images/models/insee-005/').load('3 point beige.hdr', (tex) => {
             tex.mapping = THREE.EquirectangularReflectionMapping;
             scene.environment = tex;
@@ -1338,19 +1344,40 @@ Request Demo
           dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
           const gltfLoader = new GLTFLoader();
           gltfLoader.setDRACOLoader(dracoLoader);
-          gltfLoader.setPath('/images/models/insee-005/');
-          gltfLoader.load('insee-uav.draco.glb', (gltf) => {
-            const object = gltf.scene;
-            const box = new THREE.Box3().setFromObject(object);
+          const modelRoot = new THREE.Group();
+          scene.add(modelRoot);
+          const loaderEl = document.getElementById('cfg-loading');
+          let currentPayload = null;
+          const PAYLOAD_FILES = ['YS_Mapper+OEM_web.glb','YS_MapperUltar_web.glb','RB_D2M_web.glb','RB_R6P_web.glb','Thermal SV_web.glb'];
+          // Offset (native units) to move each payload's tray node onto the aircraft belly mount [0.495,1.276,3.179]
+          const PAYLOAD_OFFSETS = [
+            [-0.197, 0.311, 1.242],
+            [-0.202, 0.282, 1.264],
+            [-0.249, 0.302, 1.275],
+            [-0.631, -0.048, 1.666],
+            [-0.188, 0.289, 1.251]
+          ];
+          window.cfgLoadPayload = function(idx) {
+            if (currentPayload) { modelRoot.remove(currentPayload); currentPayload = null; }
+            const url = '/images/models/Payload/' + encodeURIComponent(PAYLOAD_FILES[idx]);
+            gltfLoader.load(url, (g) => {
+              const o = PAYLOAD_OFFSETS[idx] || [0,0,0];
+              g.scene.position.set(o[0], o[1], o[2]);
+              currentPayload = g.scene;
+              modelRoot.add(currentPayload);
+            });
+          };
+          gltfLoader.load('/images/models/insee-006-GLTF/006_web.glb', (gltf) => {
+            modelRoot.add(gltf.scene);
+            const box = new THREE.Box3().setFromObject(modelRoot);
             const center = box.getCenter(new THREE.Vector3());
             const size = box.getSize(new THREE.Vector3());
             const maxDim = Math.max(size.x, size.y, size.z);
             const scale = 6 / maxDim;
-            object.scale.setScalar(scale);
-            object.position.sub(center.multiplyScalar(scale));
-            scene.add(object);
-            const loader = document.getElementById('cfg-loading');
-            if (loader) loader.style.display = 'none';
+            modelRoot.scale.setScalar(scale);
+            modelRoot.position.sub(center.multiplyScalar(scale));
+            if (loaderEl) loaderEl.style.display = 'none';
+            window.cfgLoadPayload(0);
           });
           function onResize() {
             const w = canvas.clientWidth;
@@ -1740,6 +1767,7 @@ if (window.netlifyIdentity) {
     <div class="mobile-drawer-section">
       <div class="mobile-drawer-section-title">Other Payloads</div>
       <a class="mobile-drawer-link" href="/en/products/riebo/d2m/">Riebo D2M</a>
+      <a class="mobile-drawer-link" href="/en/products/riebo/r6p/">Riebo R6P</a>
       <a class="mobile-drawer-link" href="/en/products/gvi/h600/">GVI LiAir H600</a>
       <a class="mobile-drawer-link" href="/en/products/gvi/h800/">GVI LiAir H800</a>
       <a class="mobile-drawer-link" href="/en/products/chcnav/aa10/">CHCNav AlphaAir 10</a>
