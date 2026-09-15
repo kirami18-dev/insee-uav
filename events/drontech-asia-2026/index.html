@@ -812,6 +812,170 @@ Request Demo
       </div>
     </div>
 
+    <!-- ==================== SECRET REVEAL / MK II TEASER ==================== -->
+    <div class="section-label"><div class="card-label">World Premiere · เปิดตัวครั้งแรก</div></div>
+    <style>
+      #mk2-teaser { position: relative; border-radius: 24px; overflow: hidden; margin-bottom: 32px;
+        background: radial-gradient(ellipse at 30% 40%, #0d1b33 0%, #060b16 60%, #03060d 100%);
+        border: 1px solid #12203a; box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
+      #mk2-teaser .mk2-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.05fr 1fr; gap: 24px; align-items: center; padding: 40px; }
+      #mk2-teaser .mk2-glow { position: absolute; z-index: 1; inset: 0; pointer-events: none;
+        background: radial-gradient(circle at 32% 52%, rgba(242,169,0,0.20) 0%, transparent 42%),
+                    radial-gradient(circle at 30% 50%, rgba(79,195,247,0.16) 0%, transparent 50%); }
+      #mk2-teaser .mk2-stage { position: relative; min-height: 400px; border-radius: 16px; overflow: hidden;
+        background: radial-gradient(circle at 50% 55%, rgba(242,169,0,0.10) 0%, rgba(6,11,22,0) 55%); }
+      #mk2-canvas { width: 100%; height: 100%; display: block; pointer-events: none; }
+      #mk2-teaser .mk2-qmark { position: absolute; top: 16px; left: 18px; z-index: 3; font-size: 11px; font-weight: 700;
+        letter-spacing: 2px; color: #F2A900; text-transform: uppercase; border: 1px solid rgba(242,169,0,0.4);
+        padding: 5px 12px; border-radius: 100px; background: rgba(6,11,22,0.55); backdrop-filter: blur(4px); }
+      #mk2-teaser .mk2-scan { position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0.5;
+        background: repeating-linear-gradient(0deg, rgba(79,195,247,0.05) 0px, rgba(79,195,247,0.05) 1px, transparent 1px, transparent 4px); }
+      #mk2-teaser .mk2-badge { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 3px;
+        color: #F2A900; text-transform: uppercase; margin-bottom: 14px; }
+      #mk2-teaser h2 { color: #fff; font-size: 40px; line-height: 1.08; font-weight: 800; letter-spacing: -1px; margin: 0 0 16px; }
+      #mk2-teaser .mk2-sub { color: #9db4cc; font-size: 15px; line-height: 1.65; margin: 0 0 26px; max-width: 460px; }
+      #mk2-teaser .mk2-cdlabel { font-size: 11px; font-weight: 700; letter-spacing: 2px;
+        text-transform: uppercase; color: #6f8aa6; margin-bottom: 10px; }
+      #mk2-teaser .mk2-cd { display: flex; gap: 10px; margin-bottom: 22px; }
+      #mk2-teaser .mk2-cd .u { min-width: 66px; text-align: center; background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(79,195,247,0.18); border-radius: 12px; padding: 12px 6px; }
+      #mk2-teaser .mk2-cd .n { display: block; font-size: 30px; font-weight: 800; color: #fff; line-height: 1; font-variant-numeric: tabular-nums; }
+      #mk2-teaser .mk2-cd .l { display: block; font-size: 10px; font-weight: 600; color: #6f8aa6; text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+      #mk2-teaser .mk2-ev { display: flex; align-items: center; gap: 8px; color: #9db4cc; font-size: 13px; font-weight: 600; }
+      #mk2-teaser .mk2-ev .material-symbols-outlined { font-size: 18px; color: #F2A900; }
+      @media (max-width: 768px) {
+        #mk2-teaser .mk2-grid { grid-template-columns: 1fr; padding: 24px; gap: 8px; }
+        #mk2-teaser .mk2-stage { min-height: 300px; }
+        #mk2-teaser h2 { font-size: 30px; }
+        #mk2-teaser .mk2-cd .u { min-width: 0; flex: 1; }
+        #mk2-teaser .mk2-cd .n { font-size: 24px; }
+      }
+    </style>
+    <div id="mk2-teaser">
+      <div class="mk2-glow"></div>
+      <div class="mk2-grid">
+        <div class="mk2-stage">
+          <canvas id="mk2-canvas"></canvas>
+          <div class="mk2-scan"></div>
+          <div class="mk2-qmark">รุ่นใหม่ · ความลับ</div>
+        </div>
+        <div>
+          <span class="mk2-badge">WORLD PREMIERE</span>
+          <h2>เจเนอเรชันใหม่<br>กำลังจะมา</h2>
+          <p class="mk2-sub">อะไรซ่อนอยู่ในเงา? รุ่นใหม่ล่าสุดของ INSEE UAV จะเผยโฉมตัวจริงเป็นครั้งแรกในงาน DronTech Asia 2026 — ลองเดาสิว่าคืออะไร แล้วมาดูของจริงที่บูธ</p>
+          <div class="mk2-cdlabel">นับถอยหลังสู่การเปิดตัว</div>
+          <div class="mk2-cd" id="mk2-cd">
+            <div class="u"><span class="n" data-u="d">--</span><span class="l">วัน</span></div>
+            <div class="u"><span class="n" data-u="h">--</span><span class="l">ชม.</span></div>
+            <div class="u"><span class="n" data-u="m">--</span><span class="l">นาที</span></div>
+            <div class="u"><span class="n" data-u="s">--</span><span class="l">วิ</span></div>
+          </div>
+          <div class="mk2-ev"><span class="material-symbols-outlined">calendar_month</span>11–13 พฤศจิกายน 2026 · IMPACT เมืองทองธานี</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        var target = new Date('2026-11-11T00:00:00+07:00').getTime();
+        var root = document.getElementById('mk2-cd');
+        function pad(n){ return (n<10?'0':'')+n; }
+        function tick() {
+          var diff = target - Date.now();
+          if (diff < 0) diff = 0;
+          var d = Math.floor(diff/86400000);
+          var h = Math.floor(diff%86400000/3600000);
+          var m = Math.floor(diff%3600000/60000);
+          var s = Math.floor(diff%60000/1000);
+          root.querySelector('[data-u=d]').textContent = d;
+          root.querySelector('[data-u=h]').textContent = pad(h);
+          root.querySelector('[data-u=m]').textContent = pad(m);
+          root.querySelector('[data-u=s]').textContent = pad(s);
+        }
+        tick(); setInterval(tick, 1000);
+      })();
+    </script>
+    <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/" } }
+    </script>
+    <script type="module">
+      import * as THREE from 'three';
+      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+      import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+      const canvas = document.getElementById('mk2-canvas');
+      if (canvas) {
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.0;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(40, canvas.clientWidth / canvas.clientHeight, 0.01, 1000);
+        camera.position.set(1.92, 0.89, 3.75);
+        camera.lookAt(0, 0.32, 0);
+        // Silhouette lighting: dark body, glowing rim from behind
+        scene.add(new THREE.AmbientLight(0x0a1224, 0.35));
+        const rimA = new THREE.DirectionalLight(0xF2A900, 7); rimA.position.set(-4, 3.5, -5); scene.add(rimA);
+        const rimB = new THREE.DirectionalLight(0x4FC3F7, 4); rimB.position.set(4, 2, -4); scene.add(rimB);
+        const topFill = new THREE.DirectionalLight(0x1a2f52, 0.6); topFill.position.set(0, 6, 2); scene.add(topFill);
+        // ---- Display podium (static) + glowing rim ----
+        const STAND_TOP = 0.0;
+        const podium = new THREE.Mesh(
+          new THREE.CylinderGeometry(2.0, 2.2, 0.15, 72),
+          new THREE.MeshStandardMaterial({ color: 0x0b1120, metalness: 0.6, roughness: 0.35 })
+        );
+        podium.position.y = STAND_TOP - 0.07; scene.add(podium);
+        const ring = new THREE.Mesh(
+          new THREE.TorusGeometry(2.08, 0.022, 18, 128),
+          new THREE.MeshBasicMaterial({ color: 0xF2A900 })
+        );
+        ring.rotation.x = Math.PI / 2; ring.position.y = STAND_TOP + 0.01; scene.add(ring);
+        // soft contact shadow / glow on the floor
+        const sc = document.createElement('canvas'); sc.width = sc.height = 128;
+        const sctx = sc.getContext('2d');
+        const rg = sctx.createRadialGradient(64, 64, 4, 64, 64, 64);
+        rg.addColorStop(0, 'rgba(0,0,0,0.55)'); rg.addColorStop(0.55, 'rgba(3,6,13,0.28)'); rg.addColorStop(1, 'rgba(0,0,0,0)');
+        sctx.fillStyle = rg; sctx.fillRect(0, 0, 128, 128);
+        const shadowTex = new THREE.CanvasTexture(sc);
+        const shadow = new THREE.Mesh(
+          new THREE.CircleGeometry(3.2, 64),
+          new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, opacity: 0.6, depthWrite: false })
+        );
+        shadow.rotation.x = -Math.PI / 2; shadow.position.y = STAND_TOP - 0.12; scene.add(shadow);
+        // ---- Aircraft on turntable ----
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+        const gltfLoader = new GLTFLoader(); gltfLoader.setDRACOLoader(dracoLoader);
+        const spinner = new THREE.Group(); scene.add(spinner);
+        gltfLoader.load('/images/models/mk2-teaser.glb', (gltf) => {
+          gltf.scene.traverse((o) => {
+            if (o.isMesh) o.material = new THREE.MeshStandardMaterial({ color: 0x0a0e17, metalness: 0.45, roughness: 0.5 });
+          });
+          spinner.add(gltf.scene);
+          const box = new THREE.Box3().setFromObject(gltf.scene);
+          const size = box.getSize(new THREE.Vector3());
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 3.2 / maxDim;
+          gltf.scene.scale.setScalar(scale);
+          const box2 = new THREE.Box3().setFromObject(gltf.scene);
+          const c2 = box2.getCenter(new THREE.Vector3());
+          gltf.scene.position.x -= c2.x;
+          gltf.scene.position.z -= c2.z;
+          gltf.scene.position.y -= box2.min.y;         // bottom on the floor
+          gltf.scene.position.y += STAND_TOP + 0.08;   // seated on the stage
+        });
+        function onResize() {
+          const w = canvas.clientWidth, h = canvas.clientHeight;
+          renderer.setSize(w, h, false);
+          camera.aspect = w / h; camera.updateProjectionMatrix();
+        }
+        window.addEventListener('resize', onResize);
+        function animate() { requestAnimationFrame(animate); spinner.rotation.y += 0.004; renderer.render(scene, camera); }
+        animate();
+      }
+    </script>
+    <!-- ==================== END MK II TEASER ==================== -->
+
     <!-- About -->
     <div class="section-label"><div class="card-label">About the Event</div></div>
     <div class="recap-card">
