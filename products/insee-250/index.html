@@ -1193,7 +1193,7 @@ Request Demo
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
               <button type="button" class="cfg-thumb cfg-thumb-active" data-cfg="0" onclick="cfgSelect(0)" style="background: var(--white); border: 2px solid var(--blue); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,132,200,0.15);">
                 <img src="/images/payloads/yellowscan/mapper-plus-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
-                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper+ OEM</span>
+                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper+</span>
               </button>
               <button type="button" class="cfg-thumb" data-cfg="1" onclick="cfgSelect(1)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; ">
                 <img src="/images/payloads/yellowscan/mapper-ultra-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
@@ -1210,6 +1210,14 @@ Request Demo
               <button type="button" class="cfg-thumb" data-cfg="4" onclick="cfgSelect(4)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s; ">
                 <img src="/images/payloads/is-tr-50.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
                 <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">IS-TR-50</span>
+              </button>
+              <button type="button" class="cfg-thumb" data-cfg="5" onclick="cfgSelect(5)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+                <img src="/images/payloads/yellowscan/mapper-plus-oem-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
+                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Mapper+ OEM VC</span>
+              </button>
+              <button type="button" class="cfg-thumb" data-cfg="6" onclick="cfgSelect(6)" style="background: var(--white); border: 2px solid var(--border); border-radius: 0; padding: 10px 6px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: all 0.2s;">
+                <img src="/images/payloads/yellowscan/surveyor-ultra-iii-oem-product.png" alt="" style="width: 100%; height: 50px; object-fit: contain;"/>
+                <span style="font-size: 9px; font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2;">Surveyor Ultra</span>
               </button>
             </div>
             <!-- Info card -->
@@ -1240,11 +1248,13 @@ Request Demo
       <script>
         (function() {
           const cfgData = [
-            { tag: 'YS Partner · LiDAR', name: 'YellowScan Mapper+ OEM', desc: 'LiDAR OEM น้ำหนักเบาออกแบบมาเพื่อ Fixed-Wing UAV โดยเฉพาะ — สร้าง Point Cloud ความหนาแน่นสูงสำหรับ Terrain Mapping และ Corridor Survey', weight: '~1.1 kg', usage: 'Terrain / Corridor', link: '/products/yellowscan/mapper-plus/' },
+            { tag: 'YS Partner · LiDAR', name: 'YellowScan Mapper+', desc: 'LiDAR OEM น้ำหนักเบาออกแบบมาเพื่อ Fixed-Wing UAV โดยเฉพาะ — สร้าง Point Cloud ความหนาแน่นสูงสำหรับ Terrain Mapping และ Corridor Survey', weight: '~1.1 kg', usage: 'Terrain / Corridor', link: '/products/yellowscan/mapper-plus/' },
             { tag: 'YS Partner · Long-Range LiDAR', name: 'YellowScan Mapper Ultra', desc: 'LiDAR ระยะไกล FOV กว้าง สแกนพื้นที่กว้างต่อเที่ยว — เหมาะกับ Corridor Mapping และงานสำรวจภูมิประเทศขนาดใหญ่', weight: '~1.6 kg', usage: 'Long-Range / Corridor', link: '/products/yellowscan/mapper-ultra/' },
             { tag: 'Riebo · Oblique Camera', name: 'Riebo D2M', desc: 'Oblique Camera 5 เลนส์ 130MP น้ำหนัก 630g — ถ่ายภาพพร้อมกัน 5 มุม สร้าง 3D Model ระดับ 1:500 ไม่ต้องใช้ GCP', weight: '0.63 kg', usage: 'Cadastral / 3D Model', link: '/products/riebo/d2m/' },
             { tag: 'Riebo · Single-Lens Mapping', name: 'Riebo R6P', desc: 'กล้อง Mapping เลนส์เดี่ยว 61MP น้ำหนักเบาเพียง 205g — เลนส์ 18/40mm, FOV 89.8°, เหมาะกับงาน Orthophoto และแผนที่ความละเอียดสูงบน UAV', weight: '0.205 kg', usage: 'Orthophoto / Mapping', link: '/products/riebo/r6p/' },
             { tag: 'INSEE In-house · EO/IR', name: 'INSEE IS-TR-50', desc: 'EO/IR Dual-Sensor Camera พร้อม AI Tracking + 30× Zoom + Laser Range Finder 5km — สำหรับงาน Surveillance และ ISR', weight: '— kg', usage: 'Surveillance / ISR', link: '/products/insee/is-tr-50/' },
+            { tag: 'YS Partner · LiDAR', name: 'YellowScan Mapper+ OEM VC', desc: 'Mapper+ OEM เวอร์ชัน VC — LiDAR OEM น้ำหนักเบาสำหรับ Fixed-Wing UAV สร้าง Point Cloud ความหนาแน่นสูงสำหรับ Terrain Mapping และ Corridor Survey', weight: '~1.1 kg', usage: 'Terrain / Corridor', link: '/products/yellowscan/mapper-plus/' },
+            { tag: 'YS Partner · Survey LiDAR', name: 'YellowScan Surveyor Ultra III OEM', desc: 'LiDAR ระดับ Survey-grade พร้อมกล้อง RGB ในตัว น้ำหนักเบา เหมาะกับงาน Topographic Survey และ Corridor Mapping ระดับมืออาชีพ', weight: '~0.75 kg', usage: 'Survey / Topographic', link: '/products/yellowscan/surveyor-ultra-iii-oem/' },
           ];
           const tag = document.getElementById('cfg-tag');
           const name = document.getElementById('cfg-name');
@@ -1364,14 +1374,16 @@ Request Demo
           scene.add(modelRoot);
           const loaderEl = document.getElementById('cfg-loading');
           let currentPayload = null;
-          const PAYLOAD_FILES = ['YS_Mapper+OEM_web.glb','YS_MapperUltar_web.glb','RB_D2M_web.glb','RB_R6P_web.glb','Thermal SV_web.glb'];
+          const PAYLOAD_FILES = ['YS_Mapper+OEM_web.glb','YS_MapperUltar_web.glb','RB_D2M_web.glb','RB_R6P_web.glb','Thermal SV_web.glb','YS_Mapper+OEM_VC.glb','YS_Surveyor_Ultra.glb'];
           // Offset (native units) to move each payload's tray node onto the aircraft belly mount [0.495,1.276,3.179]
           const PAYLOAD_OFFSETS = [
             [-0.197, 0.311, 1.242],
             [-0.202, 0.282, 1.264],
             [-0.249, 0.302, 1.275],
             [-0.631, -0.048, 1.666],
-            [-0.188, 0.289, 1.251]
+            [-0.188, 0.289, 1.251],
+            [-0.182, 0.318, 1.229],
+            [-0.218, 0.302, 1.259]
           ];
           window.cfgLoadPayload = function(idx) {
             if (currentPayload) { modelRoot.remove(currentPayload); currentPayload = null; }
