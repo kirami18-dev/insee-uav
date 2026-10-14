@@ -1395,7 +1395,7 @@ Request Demo
               modelRoot.add(currentPayload);
             });
           };
-          gltfLoader.load('/images/models/006_modelWeb-v2.glb', (gltf) => {
+          gltfLoader.load('/images/models/006_modelWeb_3-v1_web.glb', (gltf) => {
             modelRoot.add(gltf.scene);
             const box = new THREE.Box3().setFromObject(modelRoot);
             const center = box.getCenter(new THREE.Vector3());

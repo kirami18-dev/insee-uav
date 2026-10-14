@@ -2059,7 +2059,7 @@ if (canvas) {
   // INSEE-250 Gen 006 airframe + YellowScan Mapper Ultra mounted at belly
   const modelRoot = new THREE.Group();
   scene.add(modelRoot);
-  gltfLoader.load('/images/models/006_modelWeb-v2.glb', (gltf) => {
+  gltfLoader.load('/images/models/006_modelWeb_3-v1_web.glb', (gltf) => {
     modelRoot.add(gltf.scene);
     // Center & scale on airframe bounds
     const box = new THREE.Box3().setFromObject(modelRoot);
